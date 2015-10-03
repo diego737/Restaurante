@@ -22,7 +22,7 @@
 
     Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
         midocente.apellidos = textbox2.text
-        midocente.nombre = TextBox3.Text
+        midocente.Nombres = TextBox3.Text
         midocente.correo = TextBox4.Text
 
         Select Case operacion_

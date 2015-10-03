@@ -85,6 +85,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\BaseDatosClass.vb" />
     <Compile Include="IU\AsignaturasForm.Designer.vb">
       <DependentUpon>AsignaturasForm.vb</DependentUpon>
     </Compile>
@@ -244,7 +245,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Datos\" />
     <Folder Include="Utiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
