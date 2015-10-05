@@ -13,7 +13,7 @@ Module ModuloPrincipal
         asignaturas_list = New AsignaturasCollection
         docentes_list = New DocentesCollection
 
-        Application.EnableVisualStyles()
+        Application.EnableVisuadocentes_listyles()
         Application.Run(MenuForm)
     End Sub
 
