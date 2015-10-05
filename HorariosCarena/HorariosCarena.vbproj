@@ -180,6 +180,10 @@
       <DependentUpon>DisponibilidadForm.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="IU\DisponibilidadGrid.resx">
+      <DependentUpon>DisponibilidadGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="IU\DocentesForm.resx">
       <DependentUpon>DocentesForm.vb</DependentUpon>
       <SubType>Designer</SubType>
