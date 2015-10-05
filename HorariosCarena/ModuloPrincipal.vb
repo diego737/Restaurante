@@ -7,13 +7,13 @@ Module ModuloPrincipal
     Public disponibilidades_list As DisponibilidadesCollection
     Public docentes_list As DocentesCollection
     'Public horarios_list As HorariosCollection
-    'Public modulos_list As ModulosCollection
+    Public modulos_list As ModuloCollection
 
     Sub Main()
         asignaturas_list = New AsignaturasCollection
         docentes_list = New DocentesCollection
 
-        Application.EnableVisuadocentes_listyles()
+        'Application.EnableVisuadocentes_listyles()
         Application.Run(MenuForm)
     End Sub
 

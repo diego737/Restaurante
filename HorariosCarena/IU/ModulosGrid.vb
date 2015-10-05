@@ -18,10 +18,10 @@
     End Sub
 
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
-        If Modulo_list.Count = 0 Then Exit Sub
+        If modulos_list.Count = 0 Then Exit Sub
 
         ModuloForm.accion = "Elimina"
-        ModuloForm.indicemodulo = CStr(DataGridView1.CurrentRow.Index)
+        ModuloForm.indicemodulo = CInt(DataGridView1.CurrentRow.Index)
 
         llenarform1()
 
@@ -45,7 +45,7 @@
 
     Private Sub ModulosGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        DataGridView1.DataSource = Modulo_list
+        DataGridView1.DataSource = modulos_list
 
     End Sub
 End Class

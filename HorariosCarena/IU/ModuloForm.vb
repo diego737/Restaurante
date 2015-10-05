@@ -34,22 +34,22 @@
             Case "Alta"
                 If ComboBox1.SelectedItem Is Nothing Then Exit Sub
 
-                If ComboBox2.SelectedItem = Nothing Then Exit Sub
+                If ComboBox2.SelectedItem Is Nothing Then Exit Sub
 
-                If ComboBox3.SelectedItem = Nothing Then Exit Sub
+                If ComboBox3.SelectedItem Is Nothing Then Exit Sub
 
                 Modulos_list.Add(MiModulo)
 
             Case "Elimina"
 
-                If Modulo_list.Count = 0 Then Exit Sub
+                If modulos_list.Count = 0 Then Exit Sub
 
-                Modulo_list.RemoveAt(indicemodulo_)
+                modulos_list.RemoveAt(indicemodulo_)
 
             Case "Modifica"
-                Modulo_list.Item(indicemodulo_).IdDia = MiModulo.IdDia
-                Modulo_list.Item(indicemodulo_).inicio = MiModulo.inicio
-                Modulo_list.Item(indicemodulo_).fin = MiModulo.fin
+                modulos_list.Item(indicemodulo_).IdDia = MiModulo.IdDia
+                modulos_list.Item(indicemodulo_).inicio = MiModulo.inicio
+                modulos_list.Item(indicemodulo_).fin = MiModulo.fin
 
                 ModulosGrid.DataGridView1.Refresh()
 

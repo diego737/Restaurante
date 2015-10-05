@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5B770CF4-8EED-474F-9FF8-3E5CA181D5F0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -162,33 +162,42 @@
     <Compile Include="Reglas\DisponibilidadesCollection.vb" />
     <Compile Include="Reglas\DocenteClass.vb" />
     <Compile Include="Reglas\DocentesCollection.vb" />
+    <Compile Include="Reglas\HorarioClass.vb" />
     <Compile Include="Reglas\ModuloClass.vb" />
     <Compile Include="Reglas\ModuloCollection.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="IU\AsignaturasForm.resx">
       <DependentUpon>AsignaturasForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IU\AsignaturasGrid.resx">
       <DependentUpon>AsignaturasGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IU\DisponibilidadForm.resx">
       <DependentUpon>DisponibilidadForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IU\DocentesForm.resx">
       <DependentUpon>DocentesForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IU\DocentesGrid.resx">
       <DependentUpon>DocentesGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IU\MenuForm.resx">
       <DependentUpon>MenuForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IU\ModuloForm.resx">
       <DependentUpon>ModuloForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="IU\ModulosGrid.resx">
       <DependentUpon>ModulosGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -206,6 +215,7 @@
     <None Include="My Project\DataSources\DocentesCollection.datasource" />
     <None Include="My Project\DataSources\DocentesForm.datasource" />
     <None Include="My Project\DataSources\DocentesGrid.datasource" />
+    <None Include="My Project\DataSources\ModuloCollection.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

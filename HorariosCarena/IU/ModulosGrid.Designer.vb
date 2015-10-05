@@ -30,11 +30,11 @@ Partial Class ModulosGrid
         Me.Editar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdDiaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.InicioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.FinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.ModuloCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.ModuloCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,7 +47,7 @@ Partial Class ModulosGrid
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.Gold
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdDiaDataGridViewTextBoxColumn, Me.InicioDataGridViewTextBoxColumn, Me.FinDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Default
         Me.DataGridView1.DataSource = Me.ModuloCollectionBindingSource
         Me.DataGridView1.GridColor = System.Drawing.Color.Red
@@ -102,37 +102,37 @@ Partial Class ModulosGrid
         Me.Salir.Size = New System.Drawing.Size(65, 36)
         Me.Salir.Text = "Salir"
         '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdDiaDataGridViewTextBoxColumn
-        '
-        Me.IdDiaDataGridViewTextBoxColumn.DataPropertyName = "IdDia"
-        Me.IdDiaDataGridViewTextBoxColumn.HeaderText = "IdDia"
-        Me.IdDiaDataGridViewTextBoxColumn.Name = "IdDiaDataGridViewTextBoxColumn"
-        Me.IdDiaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'InicioDataGridViewTextBoxColumn
-        '
-        Me.InicioDataGridViewTextBoxColumn.DataPropertyName = "inicio"
-        Me.InicioDataGridViewTextBoxColumn.HeaderText = "inicio"
-        Me.InicioDataGridViewTextBoxColumn.Name = "InicioDataGridViewTextBoxColumn"
-        Me.InicioDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'FinDataGridViewTextBoxColumn
-        '
-        Me.FinDataGridViewTextBoxColumn.DataPropertyName = "fin"
-        Me.FinDataGridViewTextBoxColumn.HeaderText = "fin"
-        Me.FinDataGridViewTextBoxColumn.Name = "FinDataGridViewTextBoxColumn"
-        Me.FinDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'ModuloCollectionBindingSource
         '
-        Me.ModuloCollectionBindingSource.DataSource = GetType(horarios_carena_bej.ModuloCollection)
+        Me.ModuloCollectionBindingSource.DataSource = GetType(WindowsApplication1.ModuloCollection)
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "IdDia"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "IdDia"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "inicio"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "inicio"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "fin"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "fin"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
         'ModulosGrid
         '
@@ -162,5 +162,9 @@ Partial Class ModulosGrid
     Friend WithEvents IdDiaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents InicioDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FinDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ModuloCollectionBindingSource As System.Windows.Forms.BindingSource
 End Class
