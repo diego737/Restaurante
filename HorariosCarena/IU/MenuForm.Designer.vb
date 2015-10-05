@@ -22,6 +22,7 @@ Partial Class MenuForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuForm))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.DocentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -52,43 +53,44 @@ Partial Class MenuForm
         'DocentesToolStripMenuItem
         '
         Me.DocentesToolStripMenuItem.Name = "DocentesToolStripMenuItem"
-        Me.DocentesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DocentesToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.DocentesToolStripMenuItem.Text = "Docentes"
         '
         'AsignaturasToolStripMenuItem
         '
         Me.AsignaturasToolStripMenuItem.Name = "AsignaturasToolStripMenuItem"
-        Me.AsignaturasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AsignaturasToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.AsignaturasToolStripMenuItem.Text = "Asignaturas"
         '
         'DisponibilidadToolStripMenuItem
         '
         Me.DisponibilidadToolStripMenuItem.Name = "DisponibilidadToolStripMenuItem"
-        Me.DisponibilidadToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DisponibilidadToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.DisponibilidadToolStripMenuItem.Text = "Disponibilidad"
         '
         'ModulosToolStripMenuItem
         '
         Me.ModulosToolStripMenuItem.Name = "ModulosToolStripMenuItem"
-        Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.ModulosToolStripMenuItem.Text = "Modulos"
         '
         'HorariosToolStripMenuItem
         '
         Me.HorariosToolStripMenuItem.Name = "HorariosToolStripMenuItem"
-        Me.HorariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.HorariosToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.HorariosToolStripMenuItem.Text = "Horarios"
         '
         'CarreraToolStripMenuItem
         '
         Me.CarreraToolStripMenuItem.Name = "CarreraToolStripMenuItem"
-        Me.CarreraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CarreraToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.CarreraToolStripMenuItem.Text = "Carrera"
         '
         'MenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(784, 561)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
