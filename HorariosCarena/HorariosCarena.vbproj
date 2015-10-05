@@ -163,6 +163,7 @@
     <Compile Include="Reglas\DocenteClass.vb" />
     <Compile Include="Reglas\DocentesCollection.vb" />
     <Compile Include="Reglas\HorarioClass.vb" />
+    <Compile Include="Reglas\HorariosCollection.vb" />
     <Compile Include="Reglas\ModuloClass.vb" />
     <Compile Include="Reglas\ModuloCollection.vb" />
   </ItemGroup>
