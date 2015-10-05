@@ -2,8 +2,12 @@
 
 Module ModuloPrincipal
 
-    Public docentes_list As DocentesCollection
     Public asignaturas_list As AsignaturasCollection
+    'Public carreras_list As CarreasCollection
+    Public disponibilidades_list As DisponibilidadesCollection
+    Public docentes_list As DocentesCollection
+    'Public horarios_list As HorariosCollection
+    'Public modulos_list As ModulosCollection
 
     Sub Main()
         asignaturas_list = New AsignaturasCollection

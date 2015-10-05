@@ -21,9 +21,9 @@
     End Property
 
     Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
-        midocente.apellidos = textbox2.text
-        midocente.Nombres = TextBox3.Text
-        midocente.correo = TextBox4.Text
+        midocente.Apellidos = TextBox1.Text
+        midocente.Nombres = TextBox2.Text
+        midocente.Correo = TextBox3.Text
 
         Select Case operacion_
             Case "alta"
@@ -31,13 +31,15 @@
             Case "elimina"
                 docentes_list.RemoveAt(indice_)
             Case "modifica"
-                docentes_list.Item(indice).nombre = midocente.nombre
+                docentes_list.Item(indice_).Nombres = midocente.Nombres
                 docentes_list.Item(indice_).correo = midocente.correo
-                docenteGrid.DataGridView1.Refresh()
+                DocentesGrid.DataGridView1.Refresh()
 
 
 
         End Select
+
         Me.Close()
+    End Sub
 
 End Class

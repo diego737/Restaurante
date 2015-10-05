@@ -32,13 +32,13 @@
 
         Select Case Accion_
             Case "Alta"
-                If ComboBox1.SelectedItem = Nothing Then Exit Sub
+                If ComboBox1.SelectedItem Is Nothing Then Exit Sub
 
                 If ComboBox2.SelectedItem = Nothing Then Exit Sub
 
                 If ComboBox3.SelectedItem = Nothing Then Exit Sub
 
-                Modulo_list.Add(MiModulo)
+                Modulos_list.Add(MiModulo)
 
             Case "Elimina"
 
