@@ -26,6 +26,10 @@ Partial Class MenuForm
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.DocentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.AsignaturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.DisponibilidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ModulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.HorariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.CarreraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,7 +44,7 @@ Partial Class MenuForm
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DocentesToolStripMenuItem, Me.AsignaturasToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DocentesToolStripMenuItem, Me.AsignaturasToolStripMenuItem, Me.DisponibilidadToolStripMenuItem, Me.ModulosToolStripMenuItem, Me.HorariosToolStripMenuItem, Me.CarreraToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(53, 20)
         Me.ToolStripMenuItem1.Text = "Tablas"
@@ -56,6 +60,30 @@ Partial Class MenuForm
         Me.AsignaturasToolStripMenuItem.Name = "AsignaturasToolStripMenuItem"
         Me.AsignaturasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AsignaturasToolStripMenuItem.Text = "Asignaturas"
+        '
+        'DisponibilidadToolStripMenuItem
+        '
+        Me.DisponibilidadToolStripMenuItem.Name = "DisponibilidadToolStripMenuItem"
+        Me.DisponibilidadToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DisponibilidadToolStripMenuItem.Text = "Disponibilidad"
+        '
+        'ModulosToolStripMenuItem
+        '
+        Me.ModulosToolStripMenuItem.Name = "ModulosToolStripMenuItem"
+        Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ModulosToolStripMenuItem.Text = "Modulos"
+        '
+        'HorariosToolStripMenuItem
+        '
+        Me.HorariosToolStripMenuItem.Name = "HorariosToolStripMenuItem"
+        Me.HorariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.HorariosToolStripMenuItem.Text = "Horarios"
+        '
+        'CarreraToolStripMenuItem
+        '
+        Me.CarreraToolStripMenuItem.Name = "CarreraToolStripMenuItem"
+        Me.CarreraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CarreraToolStripMenuItem.Text = "Carrera"
         '
         'MenuForm
         '
@@ -79,4 +107,8 @@ Partial Class MenuForm
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DocentesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AsignaturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DisponibilidadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ModulosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HorariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CarreraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
