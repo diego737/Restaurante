@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5B770CF4-8EED-474F-9FF8-3E5CA181D5F0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -98,6 +98,18 @@
     <Compile Include="IU\AsignaturasGrid.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="IU\CarreraForm.Designer.vb">
+      <DependentUpon>CarreraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IU\CarreraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IU\CarreraGrid.Designer.vb">
+      <DependentUpon>CarreraGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IU\CarreraGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IU\DisponibilidadForm.Designer.vb">
       <DependentUpon>DisponibilidadForm.vb</DependentUpon>
     </Compile>
@@ -158,12 +170,13 @@
     </Compile>
     <Compile Include="Reglas\AsignaturaClass.vb" />
     <Compile Include="Reglas\AsignaturasCollection.vb" />
+    <Compile Include="Reglas\CarreraClass.vb" />
+    <Compile Include="Reglas\CarreraCollection.vb" />
     <Compile Include="Reglas\DisponibilidadClass.vb" />
     <Compile Include="Reglas\DisponibilidadesCollection.vb" />
     <Compile Include="Reglas\DocenteClass.vb" />
     <Compile Include="Reglas\DocentesCollection.vb" />
     <Compile Include="Reglas\HorarioClass.vb" />
-    <Compile Include="Reglas\HorariosCollection.vb" />
     <Compile Include="Reglas\ModuloClass.vb" />
     <Compile Include="Reglas\ModuloCollection.vb" />
   </ItemGroup>
@@ -175,6 +188,12 @@
     <EmbeddedResource Include="IU\AsignaturasGrid.resx">
       <DependentUpon>AsignaturasGrid.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IU\CarreraForm.resx">
+      <DependentUpon>CarreraForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IU\CarreraGrid.resx">
+      <DependentUpon>CarreraGrid.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IU\DisponibilidadForm.resx">
       <DependentUpon>DisponibilidadForm.vb</DependentUpon>
