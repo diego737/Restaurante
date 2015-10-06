@@ -92,7 +92,7 @@ Partial Class CarreraGrid
         '
         'AltaToolStripMenuItem
         '
-        Me.AltaToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._025
+        'Me.AltaToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._025
         Me.AltaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.AltaToolStripMenuItem.Name = "AltaToolStripMenuItem"
         Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
@@ -100,21 +100,21 @@ Partial Class CarreraGrid
         '
         'ModificarToolStripMenuItem
         '
-        Me.ModificarToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._597
+        'Me.ModificarToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._597
         Me.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
         Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(86, 20)
         Me.ModificarToolStripMenuItem.Text = "Modificar"
         '
         'CancelarToolStripMenuItem
         '
-        Me.CancelarToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._327
+        'Me.CancelarToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._327
         Me.CancelarToolStripMenuItem.Name = "CancelarToolStripMenuItem"
         Me.CancelarToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.CancelarToolStripMenuItem.Text = "Cancelar"
         '
         'SalirToolStripMenuItem
         '
-        Me.SalirToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._667
+        'Me.SalirToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._667
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(52, 59)
         Me.SalirToolStripMenuItem.Text = "Salir"
