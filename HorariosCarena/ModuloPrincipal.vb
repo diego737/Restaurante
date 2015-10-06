@@ -3,7 +3,7 @@
 Module ModuloPrincipal
 
     Public asignaturas_list As AsignaturasCollection
-    Public carreras_list As CarreaCollection
+    'Public carreras_list As CarreaCollection
     Public disponibilidades_list As DisponibilidadesCollection
     Public docentes_list As DocentesCollection
     'Public horarios_list As HorariosCollection
