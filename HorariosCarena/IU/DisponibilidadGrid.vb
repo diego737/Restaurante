@@ -39,9 +39,9 @@
 
     End Sub
 
-    Private Sub docenteGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        DataGridView1.DataSource = docentes_list
+    
 
+    Private Sub DisponibilidadGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        DataGridView1.DataSource = disponibilidades_list
     End Sub
-
 End Class
