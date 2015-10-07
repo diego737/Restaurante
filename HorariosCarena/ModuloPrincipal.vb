@@ -3,7 +3,7 @@
 Module ModuloPrincipal
 
     Public asignaturas_list As AsignaturasCollection
-    'Public carreras_list As CarreaCollection
+    Public carreras_list As CarreraCollection
     Public disponibilidades_list As DisponibilidadesCollection
     Public docentes_list As DocentesCollection
     Public horarios_list As HorariosCollection
@@ -15,7 +15,7 @@ Module ModuloPrincipal
         disponibilidades_list = New DisponibilidadesCollection
         horarios_list = New HorariosCollection
         modulos_list = New ModuloCollection
-        'carreras_list = New CarreraCollection
+        carreras_list = New CarreraCollection
 
         'Application.EnableVisuadocentes_listyles()
         Application.Run(MenuForm)
