@@ -25,10 +25,10 @@ Partial Class DisponibilidadGrid
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DisponibilidadGrid))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton
+        Me.agregar = New System.Windows.Forms.ToolStripButton
+        Me.modificar = New System.Windows.Forms.ToolStripButton
+        Me.eliminar = New System.Windows.Forms.ToolStripButton
+        Me.salir = New System.Windows.Forms.ToolStripButton
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -47,44 +47,44 @@ Partial Class DisponibilidadGrid
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripButton4})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.agregar, Me.modificar, Me.eliminar, Me.salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(507, 25)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton1
+        'agregar
         '
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(67, 22)
-        Me.ToolStripButton1.Text = "agregar"
+        Me.agregar.Image = CType(resources.GetObject("agregar.Image"), System.Drawing.Image)
+        Me.agregar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.agregar.Name = "agregar"
+        Me.agregar.Size = New System.Drawing.Size(67, 22)
+        Me.agregar.Text = "agregar"
         '
-        'ToolStripButton2
+        'modificar
         '
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(78, 22)
-        Me.ToolStripButton2.Text = "modificar"
+        Me.modificar.Image = CType(resources.GetObject("modificar.Image"), System.Drawing.Image)
+        Me.modificar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.modificar.Name = "modificar"
+        Me.modificar.Size = New System.Drawing.Size(78, 22)
+        Me.modificar.Text = "modificar"
         '
-        'ToolStripButton3
+        'eliminar
         '
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(70, 22)
-        Me.ToolStripButton3.Text = "eliminar"
+        Me.eliminar.Image = CType(resources.GetObject("eliminar.Image"), System.Drawing.Image)
+        Me.eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.Size = New System.Drawing.Size(70, 22)
+        Me.eliminar.Text = "eliminar"
         '
-        'ToolStripButton4
+        'salir
         '
-        Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
-        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton4.Name = "ToolStripButton4"
-        Me.ToolStripButton4.Size = New System.Drawing.Size(48, 22)
-        Me.ToolStripButton4.Text = "salir"
+        Me.salir.Image = CType(resources.GetObject("salir.Image"), System.Drawing.Image)
+        Me.salir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.salir.Name = "salir"
+        Me.salir.Size = New System.Drawing.Size(48, 22)
+        Me.salir.Text = "salir"
         '
         'DisponibilidadGrid
         '
@@ -104,8 +104,8 @@ Partial Class DisponibilidadGrid
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents agregar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents modificar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents eliminar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents salir As System.Windows.Forms.ToolStripButton
 End Class
