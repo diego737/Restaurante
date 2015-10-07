@@ -281,6 +281,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\025.png" />
+    <Content Include="Resources\327.png" />
+    <Content Include="Resources\597.png" />
+    <Content Include="Resources\667.png" />
+    <Content Include="Resources\agregar.gif" />
+    <Content Include="Resources\bienvenidos.gif" />
+    <Content Include="Resources\descarga.png" />
+    <Content Include="Resources\eliminar.gif" />
+    <Content Include="Resources\modificar.gif" />
+    <Content Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Utiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
