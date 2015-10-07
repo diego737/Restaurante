@@ -25,9 +25,9 @@
     End Sub
     Private Sub llenarForm()
         DocentesForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
-        DocentesForm.TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value.ToString
-        DocentesForm.TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value.ToString
-        DocentesForm.TextBox4.Text = DataGridView1.CurrentRow.Cells(3).Value.ToString
+        DocentesForm.NOMBRE.Text = DataGridView1.CurrentRow.Cells(1).Value.ToString
+        DocentesForm.APELLIDO.Text = DataGridView1.CurrentRow.Cells(2).Value.ToString
+        DocentesForm.CORREO_STR.Text = DataGridView1.CurrentRow.Cells(3).Value.ToString
     End Sub
 
     Private Sub DocentesGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

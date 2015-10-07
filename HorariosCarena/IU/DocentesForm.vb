@@ -20,12 +20,12 @@
     End Property
  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If TextBox2.Text = "" Then Exit Sub
-        If TextBox3.Text = "" Then Exit Sub
-        If TextBox4.Text = "" Then Exit Sub
-        MiDocente.Nombres = TextBox2.Text
-        MiDocente.Apellidos = TextBox3.Text
-        MiDocente.Correo = TextBox4.Text
+        If NOMBRE.Text = "" Then Exit Sub
+        If APELLIDO.Text = "" Then Exit Sub
+        If CORREO_STR.Text = "" Then Exit Sub
+        MiDocente.Nombres = NOMBRE.Text
+        MiDocente.Apellidos = APELLIDO.Text
+        MiDocente.Correo = CORREO_STR.Text
         Select Case operacion_
             Case "Agregar"
                 docentes_list.Add(MiDocente)
@@ -42,5 +42,171 @@
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Me.Close()
+    End Sub
+
+   
+    Private Sub NOMBRE_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles NOMBRE.KeyPress
+        If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    
+    Private Sub APELLIDO_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles APELLIDO.KeyPress
+        If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub CORREO_STR_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles CORREO_STR.KeyPress
+        'Aca se validad cada tecla que se va pulscando, si se aprueba
+        'se pone el Handled en false si no se aprueba va en true.
+        Select Case e.KeyChar
+            Case CChar("a") To CChar("z")
+                'Habilita el ingreso de las tecla "a" a la "z"
+
+            Case CChar(".")
+                'Si la longitud del textbox es cero no permite el punto.
+                If CORREO_STR.TextLength = 0 Then Exit Sub
+
+                Dim correo, pto As String
+
+                correo = CORREO_STR.Text
+                'Obtengo la última tecla tipeada.
+                pto = correo.Substring(correo.Length - 1, 1)
+
+                'Si es un punto lo bloqueo.
+                If pto = "." Then
+                    e.Handled = True
+                End If
+
+            Case CChar("@")
+                'Solo puede haber una arroba.
+                Dim correo, arro As String
+
+                correo = CORREO_STR.Text
+                'Obtengo la última tecla tipeada.
+                arro = correo.Substring(correo.Length - 1, 1)
+
+                'Si es una arroba lo bloqueo.
+                If arro = "@" Then
+                    e.Handled = True
+                End If
+
+            Case CChar("_"), CChar("-")
+                'Para el caso de guión bajo y guión medio.
+                e.Handled = False
+
+            Case Else
+                'Si es una tecla de control se habilita.
+                If Char.IsControl(e.KeyChar) Then
+                    e.Handled = False
+                Else
+                    e.Handled = True
+                End If
+
+        End Select
+
+    End Sub
+
+
+
+    Private Sub CORREO_STR_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles CORREO_STR.LostFocus
+        'esta validación se produce cuando el textbox pierde el foco,
+        'lo que significa que el usuario ha terminado.
+        Dim correo, cuenta, dominio As String
+        Dim arroba, punto As Integer
+        Dim ente(8) As String
+
+        ente(0) = ".com"
+        ente(1) = ".org"
+        ente(2) = ".net"
+        ente(3) = ".edu"
+        ente(4) = ".gov"
+        ente(5) = ".gob"
+        ente(6) = ".mil"
+        ente(7) = ".inf"
+        ente(8) = ".tur"
+
+        correo = CORREO_STR.Text
+
+        arroba = correo.IndexOf("@")
+
+        If arroba = -1 Then
+            MsgBox("falta arroba")
+            TextBox1.Focus()
+            Exit Sub
+        End If
+
+        'Recupero la cadena hasta el lugar antes de la arroba.
+        'La variable arroba tiene la posición de la arroba.
+        cuenta = correo.Substring(0, arroba)
+        dominio = correo.Substring(arroba + 1)
+
+        'Busco el punto en el dominio.
+        punto = dominio.IndexOf(".")
+
+        If punto = -1 Then
+            TextBox1.Focus()
+            MsgBox("Falta el punto en el dominio.")
+            Exit Sub
+        End If
+
+        Dim ult, pri As String
+
+        'Obtengo el último caracter de la cadena correo.
+        pri = correo.Substring(0, 1)
+        'Obtengo el último caracter de la cadena correo.
+        ult = correo.Substring(correo.Length - 1)
+
+        If pri = "@" Then
+            MsgBox("No puede comenzar con arroba.")
+            TextBox1.Focus()
+            Exit Sub
+        End If
+
+        If ult = "@" Then
+            MsgBox("No puede terminar con arroba.")
+            TextBox1.Focus()
+            Exit Sub
+        End If
+
+        If pri = "." Then
+            MsgBox("No puede comenzar con punto.")
+            TextBox1.Focus()
+            Exit Sub
+        End If
+
+        If ult = "." Then
+            MsgBox("No puede terminar con punto.")
+            TextBox1.Focus()
+            Exit Sub
+        End If
+
+        Dim x, ext As Integer
+
+        For x = 0 To 8
+            'Busco cada extensión en el dominio.
+            ext = dominio.IndexOf(ente(x))
+
+            'Si encuentro la extensión en el dominio finalizo.
+            If ext > 0 Then
+                Exit For
+            End If
+        Next
+
+        'Si ext es igual a -1 es porque no encontro ninguna de las extensiones.
+        If ext = -1 Then
+            MsgBox("falta terminacion o terminacion inválida")
+            TextBox1.Focus()
+            Exit Sub
+        End If
+
+        MsgBox("Validación de correo correcta.")
+
     End Sub
 End Class
