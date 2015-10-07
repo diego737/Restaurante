@@ -53,37 +53,37 @@ Partial Class MenuForm
         'DocentesToolStripMenuItem
         '
         Me.DocentesToolStripMenuItem.Name = "DocentesToolStripMenuItem"
-        Me.DocentesToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.DocentesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.DocentesToolStripMenuItem.Text = "Docentes"
         '
         'AsignaturasToolStripMenuItem
         '
         Me.AsignaturasToolStripMenuItem.Name = "AsignaturasToolStripMenuItem"
-        Me.AsignaturasToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.AsignaturasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AsignaturasToolStripMenuItem.Text = "Asignaturas"
         '
         'DisponibilidadToolStripMenuItem
         '
         Me.DisponibilidadToolStripMenuItem.Name = "DisponibilidadToolStripMenuItem"
-        Me.DisponibilidadToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.DisponibilidadToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.DisponibilidadToolStripMenuItem.Text = "Disponibilidad"
         '
         'ModulosToolStripMenuItem
         '
         Me.ModulosToolStripMenuItem.Name = "ModulosToolStripMenuItem"
-        Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.ModulosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ModulosToolStripMenuItem.Text = "Modulos"
         '
         'HorariosToolStripMenuItem
         '
         Me.HorariosToolStripMenuItem.Name = "HorariosToolStripMenuItem"
-        Me.HorariosToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.HorariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.HorariosToolStripMenuItem.Text = "Horarios"
         '
         'CarreraToolStripMenuItem
         '
         Me.CarreraToolStripMenuItem.Name = "CarreraToolStripMenuItem"
-        Me.CarreraToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
+        Me.CarreraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CarreraToolStripMenuItem.Text = "Carrera"
         '
         'MenuForm
