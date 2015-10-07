@@ -6,15 +6,13 @@
 
     End Sub
 
-
-
-    Private Sub Modif_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modif.Click
+    Private Sub modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles modificar.Click
         DisponibilidadForm.operacion = "Modificar"
         DisponibilidadForm.indice = CByte(DataGridView1.CurrentRow.Index)
         llenarForm()
         DisponibilidadForm.Show()
-
     End Sub
+    
 
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles eliminar.Click
         DisponibilidadForm.operacion = "Elimnina"
@@ -39,9 +37,11 @@
 
     End Sub
 
-    
+
 
     Private Sub DisponibilidadGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DataGridView1.DataSource = disponibilidades_list
     End Sub
+
+    
 End Class
