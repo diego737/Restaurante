@@ -133,6 +133,18 @@
     <Compile Include="IU\DocentesGrid.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="IU\HorarioForm.Designer.vb">
+      <DependentUpon>HorarioForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IU\HorarioForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IU\HorariosGrid.Designer.vb">
+      <DependentUpon>HorariosGrid.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IU\HorariosGrid.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IU\MenuForm.Designer.vb">
       <DependentUpon>MenuForm.vb</DependentUpon>
     </Compile>
@@ -213,6 +225,14 @@
       <DependentUpon>DocentesGrid.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="IU\HorarioForm.resx">
+      <DependentUpon>HorarioForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IU\HorariosGrid.resx">
+      <DependentUpon>HorariosGrid.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="IU\MenuForm.resx">
       <DependentUpon>MenuForm.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -241,6 +261,7 @@
     <None Include="My Project\DataSources\DocentesCollection.datasource" />
     <None Include="My Project\DataSources\DocentesForm.datasource" />
     <None Include="My Project\DataSources\DocentesGrid.datasource" />
+    <None Include="My Project\DataSources\HorariosCollection.datasource" />
     <None Include="My Project\DataSources\ModuloCollection.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
