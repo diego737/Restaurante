@@ -41,7 +41,7 @@
     End Sub
 
     Private Sub HorariosGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        horarios_list.TraerHorarios()
         DataGridView1.DataSource = horarios_list
 
     End Sub
