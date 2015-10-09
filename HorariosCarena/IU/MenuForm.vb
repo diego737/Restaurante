@@ -24,9 +24,9 @@
     End Sub
 
     Private Sub HorariosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HorariosToolStripMenuItem.Click
-        'Dim frmhorarios As New HorariosGrid
-        'frmhorarios.MdiParent = Me
-        'frmhorarios.show()
+        Dim frmhorarios As New HorariosGrid
+        frmhorarios.MdiParent = Me
+        frmhorarios.Show()
     End Sub
 
     Private Sub CarreraToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CarreraToolStripMenuItem.Click
