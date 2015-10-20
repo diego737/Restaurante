@@ -27,17 +27,20 @@
         MiHorario.IdDia = ComboBox2.SelectedIndex + 1
         MiHorario.IdAsignatura = ComboBox3.SelectedIndex + 1
         MiHorario.IdModulo = ComboBox4.SelectedIndex + 1
+
         Select Case operacion_
             Case "Alta"
-                
-                If ComboBox1.SelectedItem Is Nothing Then Exit Sub
 
-                If ComboBox2.SelectedItem Is Nothing Then Exit Sub
+                'If ComboBox1.SelectedItem Is Nothing Then Exit Sub
 
-                If ComboBox3.SelectedItem Is Nothing Then Exit Sub
+                'If ComboBox2.SelectedItem Is Nothing Then Exit Sub
 
-                If ComboBox4.SelectedItem Is Nothing Then Exit Sub
+                'If ComboBox3.SelectedItem Is Nothing Then Exit Sub
+
+                'If ComboBox4.SelectedItem Is Nothing Then Exit Sub
+
                 horarios_list.Add(MiHorario)
+
 
             Case "Elimina"
                 If horarios_list.Count = 0 Then Exit Sub
@@ -54,6 +57,7 @@
         End Select
 
         Me.Close()
+
     End Sub
 
     Private Sub Cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar.Click

@@ -46,4 +46,7 @@
 
     End Sub
 
+    Private Sub Grabar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar.Click
+        horarios_list.TraerHorarios()
+    End Sub
 End Class

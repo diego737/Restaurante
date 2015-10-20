@@ -29,6 +29,7 @@ Partial Class HorariosGrid
         Me.Editar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
+        Me.Actualizar = New System.Windows.Forms.ToolStripButton
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.IdDiaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -43,7 +44,7 @@ Partial Class HorariosGrid
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Editar, Me.Eliminar, Me.Salir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Editar, Me.Eliminar, Me.Salir, Me.Actualizar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(576, 25)
@@ -82,6 +83,14 @@ Partial Class HorariosGrid
         Me.Salir.Name = "Salir"
         Me.Salir.Size = New System.Drawing.Size(49, 22)
         Me.Salir.Text = "Salir"
+        '
+        'Actualizar
+        '
+        Me.Actualizar.Image = CType(resources.GetObject("Actualizar.Image"), System.Drawing.Image)
+        Me.Actualizar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Actualizar.Name = "Actualizar"
+        Me.Actualizar.Size = New System.Drawing.Size(79, 22)
+        Me.Actualizar.Text = "Actualizar"
         '
         'DataGridView1
         '
@@ -165,4 +174,5 @@ Partial Class HorariosGrid
     Friend WithEvents IdAsignaturaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdModuloDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents HorariosCollectionBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Actualizar As System.Windows.Forms.ToolStripButton
 End Class

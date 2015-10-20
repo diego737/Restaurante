@@ -156,6 +156,7 @@ Partial Class HorarioForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "HorarioForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "HorarioForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()
