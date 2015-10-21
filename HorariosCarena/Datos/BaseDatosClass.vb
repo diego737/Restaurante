@@ -121,20 +121,6 @@ Public Class BaseDatosClass
             " SET Nombre = @Nombre, Apellidos = @Apellidos, Email = @Email, Fecha = @Fecha" & _
             " WHERE ID = @ID"
 
-        'Using con As New SqlConnection(sCon)
-        '    Dim cmd As New SqlCommand(sel, con)
-        '    cmd.Parameters.AddWithValue("@ID", Id)
-        '    cmd.Parameters.AddWithValue("@Nombre", nombre)
-        '    cmd.Parameters.AddWithValue("@Apellidos", apellidos)
-        '    cmd.Parameters.AddWithValue("@Email", email)
-        '    cmd.Parameters.AddWithValue("@Fecha", fecha)
-
-        '    con.Open()
-        '    Dim t As Integer = cmd.ExecuteNonQuery()
-        '    con.Close()
-
-        '    'Console.WriteLine("Filas actualizadas: {0}", t)
-        'End Using
     End Sub
 
 End Class

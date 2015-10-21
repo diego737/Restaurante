@@ -25,6 +25,7 @@ Public Class HorariosCollection
         For Each dr As DataRow In MiDataTable.Rows
             Mihorario = New HorarioClass
 
+            Mihorario.Id = CInt(dr("Id"))
             Mihorario.IdCarrera = CInt(dr("IdCarrera"))
             Mihorario.IdDia = CInt(dr("IdDia"))
             Mihorario.IdAsignatura = CInt(dr("IdAsignatura"))
@@ -43,12 +44,14 @@ Public Class HorariosCollection
         objBaseDatos.objTabla = "horarios"
 
         Me.Add(MiHorario)
+        'objBaseDatos.Insertar(MiHorario)
 
     End Sub
 
     Public Sub EliminarHorario(ByVal Id As Integer)
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
+        objBaseDatos.objTabla = "horarios"
 
         'Lo elimino en de la tabla horarios en la base horarios.
         objBaseDatos.Eliminar(Id)
@@ -62,6 +65,7 @@ Public Class HorariosCollection
 
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
+        objBaseDatos.objTabla = "horarios"
 
         'Actualizo la tabla horarios con el Id.
         objBaseDatos.Actualizar(MiHorario, Id)
