@@ -1,5 +1,5 @@
 ﻿Imports System.ComponentModel
-Imports 
+Imports System.Data.SqlClient
 Public Class DisponibilidadesCollection
     Inherits BindingList(Of DisponibilidadClass)
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
