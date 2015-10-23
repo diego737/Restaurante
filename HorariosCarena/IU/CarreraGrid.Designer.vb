@@ -88,7 +88,7 @@ Partial Class CarreraGrid
         '
         'CarreraCollectionBindingSource
         '
-        Me.CarreraCollectionBindingSource.DataSource = GetType(WindowsApplication1.CarreraCollection)
+        Me.CarreraCollectionBindingSource.DataSource = GetType(WindowsApplication1.CarrerasCollection)
         '
         'AltaToolStripMenuItem
         '

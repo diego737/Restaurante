@@ -183,7 +183,7 @@
     <Compile Include="Reglas\AsignaturaClass.vb" />
     <Compile Include="Reglas\AsignaturasCollection.vb" />
     <Compile Include="Reglas\CarreraClass.vb" />
-    <Compile Include="Reglas\CarreraCollection.vb" />
+    <Compile Include="Reglas\CarrerasCollection.vb" />
     <Compile Include="Reglas\DisponibilidadClass.vb" />
     <Compile Include="Reglas\DisponibilidadesCollection.vb" />
     <Compile Include="Reglas\DocenteClass.vb" />
