@@ -32,11 +32,12 @@
         Select Case operacion_
             Case "Agregar"
 
-                asignaturas_list.Add(MiAsignatura)
+                'asignaturas_list.Add(MiAsignatura)
                 asignaturas_list.InsertarAsignatura(MiAsignatura)
+
             Case "Eliminar"
 
-                asignaturas_list.RemoveAt(indice_)
+                'asignaturas_list.RemoveAt(indice_)
                 asignaturas_list.EliminarAsignatura(indice_)
             Case "Modificar"
 
@@ -45,13 +46,13 @@
                 asignaturas_list.Item(indice_).Asignados = MiAsignatura.Asignados
                 asignaturas_list.Item(indice_).IdDocente = MiAsignatura.IdDocente
                 'AsignaturasGrid.DataGridView1.Refresh()
-                asignaturas_list.ActualizarAsignatura(MiAsignatura, indice_)
-                AsignaturasGrid.DataGridView1.Refresh()
+                'asignaturas_list.ActualizarAsignatura(MiAsignatura, indice_)
+                'AsignaturasGrid.DataGridView1.Refresh()
         End Select
         Me.Close()
         'Me.Refresh()
-        AsignaturasGrid.DataGridView1.RefreshEdit()
-        'AsignaturasGrid.DataGridView1.Refresh()
+        'AsignaturasGrid.DataGridView1.RefreshEdit()
+        AsignaturasGrid.DataGridView1.Refresh()
     End Sub
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Me.Close()
