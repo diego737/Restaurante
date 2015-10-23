@@ -4,12 +4,18 @@
     Dim Inicio_ As Integer
     Dim Fin_ As Integer
 
-    Public ReadOnly Property Id() As Integer
+    Public Property Id() As Integer
         Get
             Return Id_
 
         End Get
+        Set(ByVal value As Integer)
+
+            Id_ = value
+
+        End Set
     End Property
+
     Public Property IdDia() As Integer
         Get
             Return IdDia_
