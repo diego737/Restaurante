@@ -22,14 +22,19 @@ Partial Class DisponibilidadGrid
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DisponibilidadGrid))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdDocenteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DisponibilidadesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.agregar = New System.Windows.Forms.ToolStripButton
-        Me.modificar = New System.Windows.Forms.ToolStripButton
-        Me.eliminar = New System.Windows.Forms.ToolStripButton
-        Me.salir = New System.Windows.Forms.ToolStripButton
+        Me.Agregar = New System.Windows.Forms.ToolStripButton
+        Me.Modificar = New System.Windows.Forms.ToolStripButton
+        Me.Eliminar = New System.Windows.Forms.ToolStripButton
+        Me.Salir = New System.Windows.Forms.ToolStripButton
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -37,54 +42,75 @@ Partial Class DisponibilidadGrid
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdDocenteDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.DisponibilidadesCollectionBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 28)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(507, 262)
+        Me.DataGridView1.Size = New System.Drawing.Size(507, 234)
         Me.DataGridView1.TabIndex = 0
+        '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdDocenteDataGridViewTextBoxColumn
+        '
+        Me.IdDocenteDataGridViewTextBoxColumn.DataPropertyName = "IdDocente"
+        Me.IdDocenteDataGridViewTextBoxColumn.HeaderText = "IdDocente"
+        Me.IdDocenteDataGridViewTextBoxColumn.Name = "IdDocenteDataGridViewTextBoxColumn"
+        Me.IdDocenteDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DisponibilidadesCollectionBindingSource
+        '
+        Me.DisponibilidadesCollectionBindingSource.AllowNew = True
+        Me.DisponibilidadesCollectionBindingSource.DataSource = GetType(WindowsApplication1.DisponibilidadesCollection)
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.agregar, Me.modificar, Me.eliminar, Me.salir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(507, 25)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'agregar
+        'Agregar
         '
-        Me.agregar.Image = CType(resources.GetObject("agregar.Image"), System.Drawing.Image)
-        Me.agregar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.agregar.Name = "agregar"
-        Me.agregar.Size = New System.Drawing.Size(67, 22)
-        Me.agregar.Text = "agregar"
+        Me.Agregar.Image = CType(resources.GetObject("Agregar.Image"), System.Drawing.Image)
+        Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Agregar.Name = "Agregar"
+        Me.Agregar.Size = New System.Drawing.Size(69, 22)
+        Me.Agregar.Text = "Agregar"
         '
-        'modificar
+        'Modificar
         '
-        Me.modificar.Image = CType(resources.GetObject("modificar.Image"), System.Drawing.Image)
-        Me.modificar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.modificar.Name = "modificar"
-        Me.modificar.Size = New System.Drawing.Size(78, 22)
-        Me.modificar.Text = "modificar"
+        Me.Modificar.Image = CType(resources.GetObject("Modificar.Image"), System.Drawing.Image)
+        Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Modificar.Name = "Modificar"
+        Me.Modificar.Size = New System.Drawing.Size(78, 22)
+        Me.Modificar.Text = "Modificar"
         '
-        'eliminar
+        'Eliminar
         '
-        Me.eliminar.Image = CType(resources.GetObject("eliminar.Image"), System.Drawing.Image)
-        Me.eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.Size = New System.Drawing.Size(70, 22)
-        Me.eliminar.Text = "eliminar"
+        Me.Eliminar.Image = CType(resources.GetObject("Eliminar.Image"), System.Drawing.Image)
+        Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.Size = New System.Drawing.Size(70, 22)
+        Me.Eliminar.Text = "Eliminar"
         '
-        'salir
+        'Salir
         '
-        Me.salir.Image = CType(resources.GetObject("salir.Image"), System.Drawing.Image)
-        Me.salir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.salir.Name = "salir"
-        Me.salir.Size = New System.Drawing.Size(48, 22)
-        Me.salir.Text = "salir"
+        Me.Salir.Image = CType(resources.GetObject("Salir.Image"), System.Drawing.Image)
+        Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Salir.Name = "Salir"
+        Me.Salir.Size = New System.Drawing.Size(49, 22)
+        Me.Salir.Text = "Salir"
         '
         'DisponibilidadGrid
         '
@@ -96,6 +122,7 @@ Partial Class DisponibilidadGrid
         Me.Name = "DisponibilidadGrid"
         Me.Text = "DisponibilidadGrid"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -104,8 +131,11 @@ Partial Class DisponibilidadGrid
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents agregar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents modificar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents eliminar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents salir As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Agregar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Modificar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Eliminar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Salir As System.Windows.Forms.ToolStripButton
+    Friend WithEvents IdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IdDocenteDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DisponibilidadesCollectionBindingSource As System.Windows.Forms.BindingSource
 End Class

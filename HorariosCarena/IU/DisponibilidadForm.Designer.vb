@@ -26,10 +26,10 @@ Partial Class DisponibilidadForm
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.TextBox2 = New System.Windows.Forms.TextBox
-        Me.TextBox3 = New System.Windows.Forms.TextBox
         Me.aceptar = New System.Windows.Forms.Button
-        Me.agregar = New System.Windows.Forms.Button
+        Me.cancelar = New System.Windows.Forms.Button
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox
         Me.SuspendLayout()
         '
         'Label1
@@ -61,24 +61,10 @@ Partial Class DisponibilidadForm
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(133, 44)
+        Me.TextBox1.Location = New System.Drawing.Point(130, 44)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 3
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(133, 83)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 4
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(133, 125)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox3.TabIndex = 5
         '
         'aceptar
         '
@@ -89,24 +75,40 @@ Partial Class DisponibilidadForm
         Me.aceptar.Text = "aceptar"
         Me.aceptar.UseVisualStyleBackColor = True
         '
-        'agregar
+        'cancelar
         '
-        Me.agregar.Location = New System.Drawing.Point(169, 200)
-        Me.agregar.Name = "agregar"
-        Me.agregar.Size = New System.Drawing.Size(75, 23)
-        Me.agregar.TabIndex = 7
-        Me.agregar.Text = "agregar"
-        Me.agregar.UseVisualStyleBackColor = True
+        Me.cancelar.Location = New System.Drawing.Point(169, 200)
+        Me.cancelar.Name = "cancelar"
+        Me.cancelar.Size = New System.Drawing.Size(75, 23)
+        Me.cancelar.TabIndex = 7
+        Me.cancelar.Text = "cancelar"
+        Me.cancelar.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(130, 88)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(102, 21)
+        Me.ComboBox1.TabIndex = 8
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(130, 124)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(102, 21)
+        Me.ComboBox2.TabIndex = 9
         '
         'DisponibilidadForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 262)
-        Me.Controls.Add(Me.agregar)
+        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cancelar)
         Me.Controls.Add(Me.aceptar)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -121,8 +123,8 @@ Partial Class DisponibilidadForm
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents aceptar As System.Windows.Forms.Button
-    Friend WithEvents agregar As System.Windows.Forms.Button
+    Friend WithEvents cancelar As System.Windows.Forms.Button
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
 End Class

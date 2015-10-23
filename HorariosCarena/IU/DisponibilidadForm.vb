@@ -1,6 +1,6 @@
 ﻿Public Class DisponibilidadForm
     Dim operacion_ As String
-    Dim midocente As New DocenteClass
+    Dim MiDisponibilidad As New DisponibilidadClass
     Public Property operacion() As String
         Get
             Return operacion_
@@ -21,23 +21,27 @@
     End Property
 
     Private Sub aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles aceptar.Click
-        midocente.Apellidos = TextBox1.Text
-        midocente.Nombres = TextBox2.Text
-        midocente.Correo = TextBox3.Text
+
+        MiDisponibilidad.IdDocente = ComboBox1.SelectedIndex + 1
+        MiDisponibilidad.IdModulo = ComboBox2.SelectedIndex + 1
 
         Select Case operacion_
             Case "alta"
-                docentes_list.Add(midocente)
+                'disponibilidad_list.Add(MiDisponibilidad)
+                disponibilidades_list.InsertarDisponibilidad(MiDisponibilidad)
             Case "elimina"
-                docentes_list.RemoveAt(indice_)
+                If disponibilidades_list.Count = 0 Then Exit Sub
+
+                'horarios_list.RemoveAt(indice_)
+                disponibilidades_list.EliminarDisponibilidad(indice_)
             Case "modifica"
-                docentes_list.Item(indice_).Nombres = midocente.Nombres
-                docentes_list.Item(indice_).correo = midocente.correo
-                DocentesGrid.DataGridView1.Refresh()
-
-
-
+                disponibilidades_list.ActualizarDisponibilidad(MiDisponibilidad, indice_)
+                DisponibilidadGrid.DataGridView1.Refresh()
         End Select
+
+
+
+
 
         Me.Close()
     End Sub
