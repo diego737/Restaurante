@@ -51,6 +51,7 @@
                 modulos_list.Item(indicemodulo_).inicio = MiModulo.inicio
                 modulos_list.Item(indicemodulo_).fin = MiModulo.fin
 
+                modulos_list.ActualizarModulo(MiModulo, indicemodulo_)
                 ModulosGrid.DataGridView1.Refresh()
 
         End Select
