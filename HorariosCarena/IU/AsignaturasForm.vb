@@ -33,11 +33,11 @@
             Case "Agregar"
 
                 asignaturas_list.Add(MiAsignatura)
-
+                asignaturas_list.InsertarAsignatura(MiAsignatura)
             Case "Eliminar"
 
                 asignaturas_list.RemoveAt(indice_)
-
+                asignaturas_list.EliminarAsignatura(indice_)
             Case "Modificar"
 
                 asignaturas_list.Item(indice_).Modulos = MiAsignatura.Modulos
@@ -45,6 +45,8 @@
                 asignaturas_list.Item(indice_).Asignados = MiAsignatura.Asignados
                 asignaturas_list.Item(indice_).IdDocente = MiAsignatura.IdDocente
                 'AsignaturasGrid.DataGridView1.Refresh()
+                asignaturas_list.ActualizarAsignatura(MiAsignatura, indice_)
+                AsignaturasGrid.DataGridView1.Refresh()
         End Select
         Me.Close()
         'Me.Refresh()
