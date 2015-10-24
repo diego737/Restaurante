@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CarreraGrid
+Partial Class CarrerasGrid
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,19 +24,19 @@ Partial Class CarreraGrid
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
-        Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CarreraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CursoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CarreraCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.AltaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ModificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CancelarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.CarreraCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -49,23 +49,6 @@ Partial Class CarreraGrid
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(344, 226)
         Me.DataGridView1.TabIndex = 0
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(40, 40)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.BajaToolStripMenuItem, Me.ModificarToolStripMenuItem, Me.CancelarToolStripMenuItem, Me.SalirToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(404, 63)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'BajaToolStripMenuItem
-        '
-        Me.BajaToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
-        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(12, 20)
-        Me.BajaToolStripMenuItem.Text = "Baja"
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -90,37 +73,50 @@ Partial Class CarreraGrid
         '
         Me.CarreraCollectionBindingSource.DataSource = GetType(WindowsApplication1.CarrerasCollection)
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(40, 40)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.BajaToolStripMenuItem, Me.ModificarToolStripMenuItem, Me.CancelarToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(404, 24)
+        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
         'AltaToolStripMenuItem
         '
-        'Me.AltaToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._025
         Me.AltaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.AltaToolStripMenuItem.Name = "AltaToolStripMenuItem"
-        Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
+        Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
         Me.AltaToolStripMenuItem.Text = "Alta"
+        '
+        'BajaToolStripMenuItem
+        '
+        Me.BajaToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
+        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(12, 20)
+        Me.BajaToolStripMenuItem.Text = "Baja"
         '
         'ModificarToolStripMenuItem
         '
-        'Me.ModificarToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._597
         Me.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
-        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(86, 20)
+        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.ModificarToolStripMenuItem.Text = "Modificar"
         '
         'CancelarToolStripMenuItem
         '
-        'Me.CancelarToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._327
         Me.CancelarToolStripMenuItem.Name = "CancelarToolStripMenuItem"
-        Me.CancelarToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
+        Me.CancelarToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.CancelarToolStripMenuItem.Text = "Cancelar"
         '
         'SalirToolStripMenuItem
         '
-        'Me.SalirToolStripMenuItem.Image = Global.WindowsApplication1.My.Resources.Resources._667
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(52, 59)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         Me.SalirToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'CarreraGrid
+        'CarrerasGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -128,12 +124,12 @@ Partial Class CarreraGrid
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "CarreraGrid"
-        Me.Text = "CarreraGrid"
+        Me.Name = "CarrerasGrid"
+        Me.Text = "CarrerasGrid"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CarreraCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.CarreraCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

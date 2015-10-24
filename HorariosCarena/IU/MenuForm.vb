@@ -1,37 +1,50 @@
 ﻿Public Class MenuForm
-    Private Sub DocentesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DocentesToolStripMenuItem.Click
-        Dim frmdocentegrid As New DocentesGrid
-        frmdocentegrid.MdiParent = Me
-        frmdocentegrid.Show()
-    End Sub
+    Private Sub Asignaturas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Asignaturas.Click
 
-    Private Sub AsignaturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AsignaturasToolStripMenuItem.Click
         Dim frmasignaturagrid As New AsignaturasGrid
         frmasignaturagrid.MdiParent = Me
         frmasignaturagrid.Show()
+
     End Sub
 
-    Private Sub DisponibilidadToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DisponibilidadToolStripMenuItem.Click
+    Private Sub Disponibilidad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Disponibilidad.Click
+
         Dim frmdisponibilidad As New DisponibilidadGrid
         frmdisponibilidad.MdiParent = Me
         frmdisponibilidad.Show()
+
     End Sub
 
-    Private Sub ModulosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModulosToolStripMenuItem.Click
-        Dim frmmodulos As New ModulosGrid
-        frmmodulos.MdiParent = Me
-        frmmodulos.Show()
+    Private Sub Docentes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Docentes.Click
+
+        Dim frmdocentegrid As New DocentesGrid
+        frmdocentegrid.MdiParent = Me
+        frmdocentegrid.Show()
+
     End Sub
 
-    Private Sub HorariosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HorariosToolStripMenuItem.Click
+    Private Sub Carreras_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Carreras.Click
+
+        Dim frmcarreras As New CarrerasGrid
+        frmcarreras.MdiParent = Me
+        frmcarreras.Show()
+
+    End Sub
+
+    Private Sub Horarios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Horarios.Click
+
         Dim frmhorarios As New HorariosGrid
         frmhorarios.MdiParent = Me
         frmhorarios.Show()
+
     End Sub
 
-    Private Sub CarreraToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CarreraToolStripMenuItem.Click
-        'Dim frmcarreras As New CarrerasGrid
-        'frmcarreras.MdiParent = Me
-        'frmcarreras.show()
+    Private Sub Modulos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modulos.Click
+
+        Dim frmmodulos As New ModulosGrid
+        frmmodulos.MdiParent = Me
+        frmmodulos.Show()
+
     End Sub
+
 End Class

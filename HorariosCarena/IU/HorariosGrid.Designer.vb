@@ -23,13 +23,12 @@ Partial Class HorariosGrid
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HorariosGrid))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
-        Me.Editar = New System.Windows.Forms.ToolStripButton
+        Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
-        Me.Salir = New System.Windows.Forms.ToolStripButton
         Me.Actualizar = New System.Windows.Forms.ToolStripButton
+        Me.Salir = New System.Windows.Forms.ToolStripButton
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.IdDiaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -44,53 +43,51 @@ Partial Class HorariosGrid
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Editar, Me.Eliminar, Me.Salir, Me.Actualizar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(576, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(578, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'Agregar
         '
-        Me.Agregar.Image = CType(resources.GetObject("Agregar.Image"), System.Drawing.Image)
+        Me.Agregar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Agregar.Name = "Agregar"
-        Me.Agregar.Size = New System.Drawing.Size(69, 22)
+        Me.Agregar.Size = New System.Drawing.Size(53, 22)
         Me.Agregar.Text = "Agregar"
         '
-        'Editar
+        'Modificar
         '
-        Me.Editar.Image = CType(resources.GetObject("Editar.Image"), System.Drawing.Image)
-        Me.Editar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Editar.Name = "Editar"
-        Me.Editar.Size = New System.Drawing.Size(57, 22)
-        Me.Editar.Text = "Editar"
+        Me.Modificar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Modificar.Name = "Modificar"
+        Me.Modificar.Size = New System.Drawing.Size(62, 22)
+        Me.Modificar.Text = "Modificar"
         '
         'Eliminar
         '
-        Me.Eliminar.Image = CType(resources.GetObject("Eliminar.Image"), System.Drawing.Image)
+        Me.Eliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(70, 22)
+        Me.Eliminar.Size = New System.Drawing.Size(54, 22)
         Me.Eliminar.Text = "Eliminar"
-        '
-        'Salir
-        '
-        Me.Salir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.Salir.Image = CType(resources.GetObject("Salir.Image"), System.Drawing.Image)
-        Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(49, 22)
-        Me.Salir.Text = "Salir"
         '
         'Actualizar
         '
-        Me.Actualizar.Image = CType(resources.GetObject("Actualizar.Image"), System.Drawing.Image)
+        Me.Actualizar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Actualizar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Actualizar.Name = "Actualizar"
-        Me.Actualizar.Size = New System.Drawing.Size(79, 22)
+        Me.Actualizar.Size = New System.Drawing.Size(63, 22)
         Me.Actualizar.Text = "Actualizar"
+        '
+        'Salir
+        '
+        Me.Salir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Salir.Name = "Salir"
+        Me.Salir.Size = New System.Drawing.Size(33, 22)
+        Me.Salir.Text = "Salir"
         '
         'DataGridView1
         '
@@ -100,10 +97,10 @@ Partial Class HorariosGrid
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdDiaDataGridViewTextBoxColumn, Me.IdCarreraDataGridViewTextBoxColumn, Me.IdAsignaturaDataGridViewTextBoxColumn, Me.IdModuloDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.HorariosCollectionBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 28)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 48)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(576, 258)
+        Me.DataGridView1.Size = New System.Drawing.Size(576, 318)
         Me.DataGridView1.TabIndex = 1
         '
         'IdDataGridViewTextBoxColumn
@@ -149,7 +146,7 @@ Partial Class HorariosGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(576, 285)
+        Me.ClientSize = New System.Drawing.Size(578, 368)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "HorariosGrid"
@@ -164,7 +161,7 @@ Partial Class HorariosGrid
     End Sub
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents Agregar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents Editar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Modificar As System.Windows.Forms.ToolStripButton
     Friend WithEvents Eliminar As System.Windows.Forms.ToolStripButton
     Friend WithEvents Salir As System.Windows.Forms.ToolStripButton
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView

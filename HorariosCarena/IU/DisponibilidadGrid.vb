@@ -14,16 +14,14 @@
         DisponibilidadForm.Show()
     End Sub
 
-
-    Private Sub Editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar.Click
+    Private Sub Modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modificar.Click
         DisponibilidadForm.operacion = "Modifica"
         DisponibilidadForm.indice = CByte(DataGridView1.CurrentRow.Index)
 
-        LlenarForm1()
+        llenarForm1()
 
         DisponibilidadForm.Show()
     End Sub
-
 
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
         DisponibilidadForm.operacion = "Elimina"
@@ -45,7 +43,4 @@
 
     End Sub
 
-    Private Sub Actualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Actualizar.Click
-        disponibilidades_list.TraerDisponibilidad()
-    End Sub
 End Class

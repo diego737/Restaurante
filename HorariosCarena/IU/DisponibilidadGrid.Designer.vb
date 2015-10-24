@@ -33,6 +33,7 @@ Partial Class DisponibilidadGrid
         Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
+        Me.Actualizar = New System.Windows.Forms.ToolStripButton
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -73,7 +74,7 @@ Partial Class DisponibilidadGrid
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Actualizar, Me.Salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(507, 25)
@@ -112,6 +113,14 @@ Partial Class DisponibilidadGrid
         Me.Salir.Size = New System.Drawing.Size(49, 22)
         Me.Salir.Text = "Salir"
         '
+        'Actualizar
+        '
+        Me.Actualizar.Image = CType(resources.GetObject("Actualizar.Image"), System.Drawing.Image)
+        Me.Actualizar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Actualizar.Name = "Actualizar"
+        Me.Actualizar.Size = New System.Drawing.Size(79, 22)
+        Me.Actualizar.Text = "Actualizar"
+        '
         'DisponibilidadGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -138,4 +147,5 @@ Partial Class DisponibilidadGrid
     Friend WithEvents IdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdDocenteDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DisponibilidadesCollectionBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Actualizar As System.Windows.Forms.ToolStripButton
 End Class

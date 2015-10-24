@@ -16,7 +16,7 @@
     End Sub
 
 
-    Private Sub Editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar.Click
+    Private Sub Editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modificar.Click
         HorarioForm.operacion = "Modifica"
         HorarioForm.indice = CByte(DataGridView1.CurrentRow.Index)
 
