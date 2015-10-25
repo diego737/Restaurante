@@ -57,7 +57,7 @@ Partial Class MenuForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tablas, Me.Procesos, Me.Salir})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(929, 56)
+        Me.MenuStrip1.Size = New System.Drawing.Size(804, 56)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -75,7 +75,7 @@ Partial Class MenuForm
         Me.Asignaturas.Image = Global.WindowsApplication1.My.Resources.Resources.Asignatura48
         Me.Asignaturas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Asignaturas.Name = "Asignaturas"
-        Me.Asignaturas.Size = New System.Drawing.Size(232, 102)
+        Me.Asignaturas.Size = New System.Drawing.Size(230, 102)
         Me.Asignaturas.Text = "Asignaturas"
         '
         'Carreras
@@ -83,7 +83,7 @@ Partial Class MenuForm
         Me.Carreras.Image = Global.WindowsApplication1.My.Resources.Resources.Carrera48
         Me.Carreras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Carreras.Name = "Carreras"
-        Me.Carreras.Size = New System.Drawing.Size(232, 102)
+        Me.Carreras.Size = New System.Drawing.Size(230, 102)
         Me.Carreras.Text = "Carreras"
         '
         'Disponibilidad
@@ -91,7 +91,7 @@ Partial Class MenuForm
         Me.Disponibilidad.Image = Global.WindowsApplication1.My.Resources.Resources.Disponibilidad48
         Me.Disponibilidad.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Disponibilidad.Name = "Disponibilidad"
-        Me.Disponibilidad.Size = New System.Drawing.Size(232, 102)
+        Me.Disponibilidad.Size = New System.Drawing.Size(230, 102)
         Me.Disponibilidad.Text = "Disponibilidad"
         '
         'Docentes
@@ -99,7 +99,7 @@ Partial Class MenuForm
         Me.Docentes.Image = Global.WindowsApplication1.My.Resources.Resources.Docente48a
         Me.Docentes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Docentes.Name = "Docentes"
-        Me.Docentes.Size = New System.Drawing.Size(232, 102)
+        Me.Docentes.Size = New System.Drawing.Size(230, 102)
         Me.Docentes.Text = "Docentes"
         '
         'Horarios
@@ -107,7 +107,7 @@ Partial Class MenuForm
         Me.Horarios.Image = Global.WindowsApplication1.My.Resources.Resources.Horarios48
         Me.Horarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Horarios.Name = "Horarios"
-        Me.Horarios.Size = New System.Drawing.Size(232, 102)
+        Me.Horarios.Size = New System.Drawing.Size(230, 102)
         Me.Horarios.Text = "Horarios"
         '
         'Modulos
@@ -115,7 +115,7 @@ Partial Class MenuForm
         Me.Modulos.Image = Global.WindowsApplication1.My.Resources.Resources.Modulo48
         Me.Modulos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Modulos.Name = "Modulos"
-        Me.Modulos.Size = New System.Drawing.Size(232, 102)
+        Me.Modulos.Size = New System.Drawing.Size(230, 102)
         Me.Modulos.Text = "Módulos"
         '
         'Procesos
@@ -246,7 +246,7 @@ Partial Class MenuForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(929, 611)
+        Me.ClientSize = New System.Drawing.Size(804, 531)
         Me.Controls.Add(Me.MenuStrip1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
