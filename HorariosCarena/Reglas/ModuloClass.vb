@@ -5,6 +5,7 @@
     Dim Fin_ As Integer
 
     Public Property Id() As Integer
+
         Get
             Return Id_
 
