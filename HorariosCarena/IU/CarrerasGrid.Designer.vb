@@ -23,20 +23,25 @@ Partial Class CarrerasGrid
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CarrerasGrid))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CarreraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CursoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CarreraCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
-        Me.AltaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ModificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.CancelarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
+        Me.Alta = New System.Windows.Forms.ToolStripLabel
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton
+        Me.Baja = New System.Windows.Forms.ToolStripLabel
+        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
+        Me.Modifica = New System.Windows.Forms.ToolStripLabel
+        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton
+        Me.Salir = New System.Windows.Forms.ToolStripLabel
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CarreraCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -73,63 +78,88 @@ Partial Class CarrerasGrid
         '
         Me.CarreraCollectionBindingSource.DataSource = GetType(WindowsApplication1.CarrerasCollection)
         '
-        'MenuStrip1
+        'ToolStrip1
         '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(40, 40)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem, Me.BajaToolStripMenuItem, Me.ModificarToolStripMenuItem, Me.CancelarToolStripMenuItem, Me.SalirToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(404, 24)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.Alta, Me.ToolStripButton2, Me.Baja, Me.ToolStripButton3, Me.Modifica, Me.ToolStripButton4, Me.Salir})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(404, 25)
+        Me.ToolStrip1.TabIndex = 1
+        Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'AltaToolStripMenuItem
+        'ToolStripButton1
         '
-        Me.AltaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.AltaToolStripMenuItem.Name = "AltaToolStripMenuItem"
-        Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
-        Me.AltaToolStripMenuItem.Text = "Alta"
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "ToolStripButton1"
         '
-        'BajaToolStripMenuItem
+        'Alta
         '
-        Me.BajaToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
-        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(12, 20)
-        Me.BajaToolStripMenuItem.Text = "Baja"
+        Me.Alta.Name = "Alta"
+        Me.Alta.Size = New System.Drawing.Size(28, 22)
+        Me.Alta.Text = "Alta"
         '
-        'ModificarToolStripMenuItem
+        'ToolStripButton2
         '
-        Me.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
-        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
-        Me.ModificarToolStripMenuItem.Text = "Modificar"
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton2.Text = "ToolStripButton2"
         '
-        'CancelarToolStripMenuItem
+        'Baja
         '
-        Me.CancelarToolStripMenuItem.Name = "CancelarToolStripMenuItem"
-        Me.CancelarToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
-        Me.CancelarToolStripMenuItem.Text = "Cancelar"
+        Me.Baja.Name = "Baja"
+        Me.Baja.Size = New System.Drawing.Size(29, 22)
+        Me.Baja.Text = "Baja"
         '
-        'SalirToolStripMenuItem
+        'ToolStripButton3
         '
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
-        Me.SalirToolStripMenuItem.Text = "Salir"
-        Me.SalirToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
+        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton3.Name = "ToolStripButton3"
+        Me.ToolStripButton3.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton3.Text = "ToolStripButton3"
+        '
+        'Modifica
+        '
+        Me.Modifica.Name = "Modifica"
+        Me.Modifica.Size = New System.Drawing.Size(54, 22)
+        Me.Modifica.Text = "Modifica"
+        '
+        'ToolStripButton4
+        '
+        Me.ToolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
+        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton4.Name = "ToolStripButton4"
+        Me.ToolStripButton4.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton4.Text = "ToolStripButton4"
+        '
+        'Salir
+        '
+        Me.Salir.Name = "Salir"
+        Me.Salir.Size = New System.Drawing.Size(29, 22)
+        Me.Salir.Text = "Salir"
         '
         'CarrerasGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(404, 350)
+        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "CarrerasGrid"
         Me.Text = "CarrerasGrid"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CarreraCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -139,10 +169,14 @@ Partial Class CarrerasGrid
     Friend WithEvents CarreraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CursoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CarreraCollectionBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents AltaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BajaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ModificarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CancelarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
+    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Alta As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Baja As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Modifica As System.Windows.Forms.ToolStripLabel
+    Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Salir As System.Windows.Forms.ToolStripLabel
 End Class
