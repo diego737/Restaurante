@@ -38,23 +38,17 @@
 
                 'If ComboBox4.SelectedItem Is Nothing Then Exit Sub
 
-                'horarios_list.Add(MiHorario)
                 horarios_list.InsertarHorario(MiHorario)
 
             Case "Elimina"
                 If horarios_list.Count = 0 Then Exit Sub
 
-                'horarios_list.RemoveAt(indice_)
                 horarios_list.EliminarHorario(indice_)
 
             Case "Modifica"
-                'horarios_list.Item(indice_).IdDia = MiHorario.IdDia
-                'horarios_list.Item(indice_).IdCarrera = MiHorario.IdCarrera
-                'horarios_list.Item(indice_).IdAsignatura = MiHorario.IdAsignatura
-                'horarios_list.Item(indice_).IdModulo = MiHorario.IdModulo
-
                 horarios_list.ActualizarHorario(MiHorario, indice_)
                 HorariosGrid.DataGridView1.Refresh()
+
         End Select
 
         Me.Close()

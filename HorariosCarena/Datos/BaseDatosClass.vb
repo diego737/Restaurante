@@ -57,7 +57,7 @@ Public Class BaseDatosClass
         Return objDataTable
     End Function
 
-    Public Function Insertar(ByVal objDataRow As DataRow) As Integer
+    Public Function Insertar(ByVal objDataRow As Object) As Integer
 
         'Comando SQL
         Dim objComando As String = "SELECT * FROM " & objTabla_
@@ -79,22 +79,17 @@ Public Class BaseDatosClass
         objDataAdapter.Update(objDataTable)
 
         Return CInt(dr("ID"))
+
     End Function
 
     Public Sub Eliminar(ByVal Id As Integer)
         'Comando SQL
         Dim objComando As String = "DELETE FROM " & objTabla_ & " WHERE ID = @ID"
 
-        'Declaramos el objeto DataAdapter
-        Dim objDataAdapter As New SqlDataAdapter(objComando, objConexion)
-
-        'Instanciamos un objeto DataTable
-        Dim objDataTable As New DataTable
-
         Using objConexion As New SqlConnection(CadenaConexion)
             Dim cmd As New SqlCommand(objComando, objConexion)
 
-            cmd.Parameters.AddWithValue("@ID", id)
+            cmd.Parameters.AddWithValue("@ID", Id)
 
             objConexion.Open()
 

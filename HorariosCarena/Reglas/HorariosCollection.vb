@@ -43,8 +43,11 @@ Public Class HorariosCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
 
+        'Agrego MiHOrario en la tabla horarios.
+        objBaseDatos.Insertar(MiHorario)
+
+        'Agrego MiHorario en la colección actual.
         Me.Add(MiHorario)
-        'objBaseDatos.Insertar(MiHorario)
 
     End Sub
 
@@ -70,9 +73,10 @@ Public Class HorariosCollection
         'Actualizo la tabla horarios con el Id.
         objBaseDatos.Actualizar(MiHorario, Id)
 
-        'Elimino MiHorario con el Id en la colección actual.
-        'horarios_list.Item(indice_) = MiHorario
-        Me.RemoveAt(Id)
+        Me.Item(Id).IdDia = MiHorario.IdDia
+        Me.Item(Id).IdCarrera = MiHorario.IdCarrera
+        Me.Item(Id).IdAsignatura = MiHorario.IdAsignatura
+        Me.Item(Id).IdModulo = MiHorario.IdModulo
 
     End Sub
 
