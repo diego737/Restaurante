@@ -101,8 +101,8 @@ Partial Class CarrerasGrid
         'Modifica
         '
         Me.Modifica.Name = "Modifica"
-        Me.Modifica.Size = New System.Drawing.Size(54, 22)
-        Me.Modifica.Text = "Modifica"
+        Me.Modifica.Size = New System.Drawing.Size(58, 22)
+        Me.Modifica.Text = "Modificar"
         '
         'ToolStripButton4
         '

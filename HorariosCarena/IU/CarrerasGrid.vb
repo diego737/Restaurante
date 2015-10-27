@@ -10,14 +10,14 @@
     End Sub
 
     Private Sub Baja_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Baja.Click
-        CarreraForm.operacion = "Elimina"
+        CarreraForm.operacion = "Baja"
         CarreraForm.indice = DataGridView1.CurrentRow.Index
         llenarform1()
         CarreraForm.Show()
     End Sub
 
     Private Sub Modifica_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modifica.Click
-        CarreraForm.operacion = "Modifica"
+        CarreraForm.operacion = "Modificar"
         CarreraForm.indice = DataGridView1.CurrentRow.Index
         llenarform1()
         CarreraForm.Show()
@@ -25,6 +25,7 @@
 
     Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
         Me.Close()
+
     End Sub
 
     Private Sub llenarform1()
