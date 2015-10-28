@@ -25,18 +25,19 @@ Partial Class DisponibilidadGrid
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DisponibilidadGrid))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdDocenteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DisponibilidadesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
         Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
-        Me.Salir = New System.Windows.Forms.ToolStripButton
         Me.Actualizar = New System.Windows.Forms.ToolStripButton
+        Me.Salir = New System.Windows.Forms.ToolStripButton
+        Me.DisponibilidadesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdDocenteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdModuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -45,32 +46,13 @@ Partial Class DisponibilidadGrid
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdDocenteDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdDocenteDataGridViewTextBoxColumn, Me.IdModuloDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.DisponibilidadesCollectionBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(0, 28)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(507, 234)
         Me.DataGridView1.TabIndex = 0
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdDocenteDataGridViewTextBoxColumn
-        '
-        Me.IdDocenteDataGridViewTextBoxColumn.DataPropertyName = "IdDocente"
-        Me.IdDocenteDataGridViewTextBoxColumn.HeaderText = "IdDocente"
-        Me.IdDocenteDataGridViewTextBoxColumn.Name = "IdDocenteDataGridViewTextBoxColumn"
-        Me.IdDocenteDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DisponibilidadesCollectionBindingSource
-        '
-        Me.DisponibilidadesCollectionBindingSource.AllowNew = True
-        Me.DisponibilidadesCollectionBindingSource.DataSource = GetType(WindowsApplication1.DisponibilidadesCollection)
         '
         'ToolStrip1
         '
@@ -105,6 +87,14 @@ Partial Class DisponibilidadGrid
         Me.Eliminar.Size = New System.Drawing.Size(70, 22)
         Me.Eliminar.Text = "Eliminar"
         '
+        'Actualizar
+        '
+        Me.Actualizar.Image = CType(resources.GetObject("Actualizar.Image"), System.Drawing.Image)
+        Me.Actualizar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Actualizar.Name = "Actualizar"
+        Me.Actualizar.Size = New System.Drawing.Size(79, 22)
+        Me.Actualizar.Text = "Actualizar"
+        '
         'Salir
         '
         Me.Salir.Image = CType(resources.GetObject("Salir.Image"), System.Drawing.Image)
@@ -113,13 +103,30 @@ Partial Class DisponibilidadGrid
         Me.Salir.Size = New System.Drawing.Size(49, 22)
         Me.Salir.Text = "Salir"
         '
-        'Actualizar
+        'DisponibilidadesCollectionBindingSource
         '
-        Me.Actualizar.Image = CType(resources.GetObject("Actualizar.Image"), System.Drawing.Image)
-        Me.Actualizar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Actualizar.Name = "Actualizar"
-        Me.Actualizar.Size = New System.Drawing.Size(79, 22)
-        Me.Actualizar.Text = "Actualizar"
+        Me.DisponibilidadesCollectionBindingSource.DataSource = GetType(WindowsApplication1.DisponibilidadesCollection)
+        '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdDocenteDataGridViewTextBoxColumn
+        '
+        Me.IdDocenteDataGridViewTextBoxColumn.DataPropertyName = "IdDocente"
+        Me.IdDocenteDataGridViewTextBoxColumn.HeaderText = "IdDocente"
+        Me.IdDocenteDataGridViewTextBoxColumn.Name = "IdDocenteDataGridViewTextBoxColumn"
+        Me.IdDocenteDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdModuloDataGridViewTextBoxColumn
+        '
+        Me.IdModuloDataGridViewTextBoxColumn.DataPropertyName = "IdModulo"
+        Me.IdModuloDataGridViewTextBoxColumn.HeaderText = "IdModulo"
+        Me.IdModuloDataGridViewTextBoxColumn.Name = "IdModuloDataGridViewTextBoxColumn"
+        Me.IdModuloDataGridViewTextBoxColumn.ReadOnly = True
         '
         'DisponibilidadGrid
         '
@@ -131,9 +138,9 @@ Partial Class DisponibilidadGrid
         Me.Name = "DisponibilidadGrid"
         Me.Text = "DisponibilidadGrid"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -144,8 +151,9 @@ Partial Class DisponibilidadGrid
     Friend WithEvents Modificar As System.Windows.Forms.ToolStripButton
     Friend WithEvents Eliminar As System.Windows.Forms.ToolStripButton
     Friend WithEvents Salir As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Actualizar As System.Windows.Forms.ToolStripButton
     Friend WithEvents IdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdDocenteDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IdModuloDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DisponibilidadesCollectionBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Actualizar As System.Windows.Forms.ToolStripButton
 End Class
