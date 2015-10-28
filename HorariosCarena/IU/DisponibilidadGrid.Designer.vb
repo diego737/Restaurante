@@ -25,19 +25,19 @@ Partial Class DisponibilidadGrid
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DisponibilidadGrid))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdDocenteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdModuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DisponibilidadesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
         Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Actualizar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
-        Me.DisponibilidadesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdDocenteDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdModuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolStrip1.SuspendLayout()
         CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -51,15 +51,40 @@ Partial Class DisponibilidadGrid
         Me.DataGridView1.Location = New System.Drawing.Point(0, 28)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(507, 234)
+        Me.DataGridView1.Size = New System.Drawing.Size(359, 234)
         Me.DataGridView1.TabIndex = 0
+        '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdDocenteDataGridViewTextBoxColumn
+        '
+        Me.IdDocenteDataGridViewTextBoxColumn.DataPropertyName = "IdDocente"
+        Me.IdDocenteDataGridViewTextBoxColumn.HeaderText = "IdDocente"
+        Me.IdDocenteDataGridViewTextBoxColumn.Name = "IdDocenteDataGridViewTextBoxColumn"
+        Me.IdDocenteDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdModuloDataGridViewTextBoxColumn
+        '
+        Me.IdModuloDataGridViewTextBoxColumn.DataPropertyName = "IdModulo"
+        Me.IdModuloDataGridViewTextBoxColumn.HeaderText = "IdModulo"
+        Me.IdModuloDataGridViewTextBoxColumn.Name = "IdModuloDataGridViewTextBoxColumn"
+        Me.IdModuloDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DisponibilidadesCollectionBindingSource
+        '
+        Me.DisponibilidadesCollectionBindingSource.DataSource = GetType(WindowsApplication1.DisponibilidadesCollection)
         '
         'ToolStrip1
         '
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Actualizar, Me.Salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(507, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(367, 25)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -103,44 +128,19 @@ Partial Class DisponibilidadGrid
         Me.Salir.Size = New System.Drawing.Size(49, 22)
         Me.Salir.Text = "Salir"
         '
-        'DisponibilidadesCollectionBindingSource
-        '
-        Me.DisponibilidadesCollectionBindingSource.DataSource = GetType(WindowsApplication1.DisponibilidadesCollection)
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdDocenteDataGridViewTextBoxColumn
-        '
-        Me.IdDocenteDataGridViewTextBoxColumn.DataPropertyName = "IdDocente"
-        Me.IdDocenteDataGridViewTextBoxColumn.HeaderText = "IdDocente"
-        Me.IdDocenteDataGridViewTextBoxColumn.Name = "IdDocenteDataGridViewTextBoxColumn"
-        Me.IdDocenteDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdModuloDataGridViewTextBoxColumn
-        '
-        Me.IdModuloDataGridViewTextBoxColumn.DataPropertyName = "IdModulo"
-        Me.IdModuloDataGridViewTextBoxColumn.HeaderText = "IdModulo"
-        Me.IdModuloDataGridViewTextBoxColumn.Name = "IdModuloDataGridViewTextBoxColumn"
-        Me.IdModuloDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'DisponibilidadGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(507, 262)
+        Me.ClientSize = New System.Drawing.Size(367, 262)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "DisponibilidadGrid"
         Me.Text = "DisponibilidadGrid"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
