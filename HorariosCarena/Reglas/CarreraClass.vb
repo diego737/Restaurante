@@ -2,11 +2,16 @@
     Dim id_, curso_ As Integer
     Dim carrera_ As String
 
-    Public ReadOnly Property id() As Integer
+    Public Property id() As Integer
 
         Get
             Return id_
+
         End Get
+        Set(ByVal value As Integer)
+            id_ = value
+
+        End Set
     End Property
 
     Public Property carrera() As String
