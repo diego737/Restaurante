@@ -46,9 +46,9 @@ Partial Class CarreraForm
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(53, 76)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 13)
+        Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Nombre :"
+        Me.Label2.Text = "Carrera:"
         '
         'Label3
         '
