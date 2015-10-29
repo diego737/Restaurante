@@ -47,10 +47,10 @@ Partial Class CarrerasGrid
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.DataSource = Me.CarrerasCollectionBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(25, 90)
+        Me.DataGridView1.Location = New System.Drawing.Point(30, 67)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(344, 226)
+        Me.DataGridView1.Size = New System.Drawing.Size(377, 192)
         Me.DataGridView1.TabIndex = 0
         '
         'ToolStrip1
@@ -58,7 +58,7 @@ Partial Class CarrerasGrid
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.Alta, Me.ToolStripButton2, Me.Baja, Me.ToolStripButton3, Me.Modifica, Me.ToolStripButton4, Me.Salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(404, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(438, 25)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -126,7 +126,8 @@ Partial Class CarrerasGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(404, 350)
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.carreras_grid2
+        Me.ClientSize = New System.Drawing.Size(438, 259)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "CarrerasGrid"

@@ -364,6 +364,15 @@
     <None Include="Resources\Tablas.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\carreras10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carreras grid.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carreras grid2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Utiles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
