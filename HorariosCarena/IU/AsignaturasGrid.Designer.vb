@@ -32,9 +32,9 @@ Partial Class AsignaturasGrid
         Me.AsignaturasCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MenuAsig = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
+        Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
-        Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
@@ -53,6 +53,7 @@ Partial Class AsignaturasGrid
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdCarreraDataGridViewTextBoxColumn, Me.ModulosDataGridViewTextBoxColumn, Me.AsignadosDataGridViewTextBoxColumn, Me.IdDocenteDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.AsignaturasCollectionBindingSource
+        Me.DataGridView1.Enabled = False
         Me.DataGridView1.Location = New System.Drawing.Point(0, 115)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -116,6 +117,14 @@ Partial Class AsignaturasGrid
         Me.Agregar.Size = New System.Drawing.Size(101, 52)
         Me.Agregar.Text = "Agregar"
         '
+        'Modificar
+        '
+        Me.Modificar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
+        Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Modificar.Name = "Modificar"
+        Me.Modificar.Size = New System.Drawing.Size(110, 52)
+        Me.Modificar.Text = "Modificar"
+        '
         'Eliminar
         '
         Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48b
@@ -131,14 +140,6 @@ Partial Class AsignaturasGrid
         Me.Salir.Name = "Salir"
         Me.Salir.Size = New System.Drawing.Size(81, 52)
         Me.Salir.Text = "Salir"
-        '
-        'Modificar
-        '
-        Me.Modificar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
-        Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Modificar.Name = "Modificar"
-        Me.Modificar.Size = New System.Drawing.Size(110, 52)
-        Me.Modificar.Text = "Modificar"
         '
         'PictureBox1
         '

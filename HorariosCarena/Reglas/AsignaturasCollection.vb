@@ -49,10 +49,10 @@ Public Class AsignaturasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(Asignado")
+        vSQL.Append("(Asignados")
         vSQL.Append(",IdCarrera")
         vSQL.Append(",IdDocente")
-        vSQL.Append(",IdModulos)")
+        vSQL.Append(",Modulos)")
         vSQL.Append(" VALUES ")
         vSQL.Append("('" & Miasignatura.Asignados & "'")
         vSQL.Append(",'" & Miasignatura.IdCarrera & "'")
@@ -66,10 +66,10 @@ Public Class AsignaturasCollection
 
         'Return vResultado
         'Agrego MiHOrario en la tabla asignatura.
-        objBaseDatos.Insertar(vSQL.ToString)
+        'objBaseDatos.Insertar(vSQL.ToString)
 
         'Agrego MiHorario en la colección actual.
-        Me.Add(Miasignatura)
+        'Me.Add(Miasignatura)
 
     End Sub
 
