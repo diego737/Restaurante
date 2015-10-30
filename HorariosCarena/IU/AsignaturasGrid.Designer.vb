@@ -53,7 +53,6 @@ Partial Class AsignaturasGrid
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdCarreraDataGridViewTextBoxColumn, Me.ModulosDataGridViewTextBoxColumn, Me.AsignadosDataGridViewTextBoxColumn, Me.IdDocenteDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.AsignaturasCollectionBindingSource
-        Me.DataGridView1.Enabled = False
         Me.DataGridView1.Location = New System.Drawing.Point(0, 115)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
