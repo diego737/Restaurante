@@ -57,10 +57,10 @@ Public Class BaseDatosClass
         Return objDataTable
     End Function
 
-    Public Function Insertar(ByVal objDataRow As Object) As Integer
+    Public Function Insertar(ByVal comandoSQL As String) As Integer
 
         'Comando SQL
-        Dim objComando As String = "SELECT * FROM " & objTabla_
+        Dim objComando As String = "INSERT INTO " & objTabla_ & comandoSQL
 
         'Declaramos el objeto DataAdapter
         Dim objDataAdapter As New SqlDataAdapter(objComando, objConexion)

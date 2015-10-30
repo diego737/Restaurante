@@ -1,5 +1,6 @@
 Imports System.Data.SqlClient
 Imports System.ComponentModel
+Imports System.Text
 
 Public Class HorariosCollection
     Inherits BindingList(Of HorarioClass)
@@ -38,18 +39,34 @@ Public Class HorariosCollection
 
     End Function
 
-    Public Sub InsertarHorario(ByVal MiHorario As HorarioClass)
+    Private Function InsertarHorario(ByVal MiHorario As HorarioClass) As Integer
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
 
-        'Agrego MiHOrario en la tabla horarios.
-        objBaseDatos.Insertar(MiHorario)
-
         'Agrego MiHorario en la colección actual.
         Me.Add(MiHorario)
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
 
-    End Sub
+        vSQL.Append("(IdAsignatura")
+        vSQL.Append(",IdCarrera")
+        vSQL.Append(",IdDia")
+        vSQL.Append(",IdModulos)")
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & MiHorario.IdAsignatura & "'")
+        vSQL.Append(",'" & MiHorario.IdCarrera & "'")
+        vSQL.Append(",'" & MiHorario.IdDia & "'")
+        vSQL.Append(",'" & MiHorario.IdModulo & "')")
+
+        'Agrego MiHorario en la tabla horarios.
+        objBaseDatos.Insertar(MiHorario)
+
+        vResultado = True
+
+        Return vResultado
+
+    End Function
 
     Public Sub EliminarHorario(ByVal Id As Integer)
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
