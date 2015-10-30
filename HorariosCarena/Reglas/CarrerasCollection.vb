@@ -53,13 +53,7 @@ Public Class CarrerasCollection
         vSQL.Append(",Carrera")
         vSQL.Append(",curos")
         vSQL.Append(" VALUES ")
-<<<<<<< .mine
         vSQL.Append("('" & Micarrera.id & "'")
-||||||| .r132
-        vSQL.Append("('" & Micarrera.id
-=======
-        vSQL.Append("('" & Micarrera.id)
->>>>>>> .r135
         vSQL.Append(",'" & Micarrera.carrera & "'")
         vSQL.Append(",'" & Micarrera.curso & "'")
 
