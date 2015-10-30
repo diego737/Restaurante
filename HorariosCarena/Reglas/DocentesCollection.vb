@@ -65,9 +65,13 @@ Public Class DocentesCollection
         'Actualizo la tabla horarios con el Id.
         objBaseDatos.Actualizar(MiDocente, Id)
 
+        Me.Item(Id).Apellidos = MiDocente.Apellidos
+        Me.Item(Id).Correo = MiDocente.Correo
+        Me.Item(Id).Nombres = MiDocente.Nombres
+       
         'Elimino MiHorario con el Id en la colección actual.
         'docentes_list.Item(indice_) = MiDocente
-        Me.RemoveAt(Id)
+        'Me.RemoveAt(Id)
     End Sub
 
 
