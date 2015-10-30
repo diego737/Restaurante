@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
-
 Imports System.ComponentModel
+Imports System.Text
 
 Public Class CarrerasCollection
     Inherits BindingList(Of CarreraClass)
@@ -44,11 +44,27 @@ Public Class CarrerasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Carreras"
 
-        'Agrego MiCarrera en la tabla horarios.
-        objBaseDatos.Insertar(Micarrera)
-
         'Agrego MiCarrera en la colección actual.
         Me.Add(Micarrera)
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
+
+        vSQL.Append("(Id")
+        vSQL.Append(",Carrera")
+        vSQL.Append(",curos")
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & Micarrera.id
+        vSQL.Append(",'" & Micarrera.carrera & "'")
+        vSQL.Append(",'" & Micarrera.curso & "'")
+
+
+        'Agrego MiHorario en la tabla horarios.
+        objBaseDatos.Insertar(vSQL.ToString)
+
+        vResultado = True
+
+        'Return vResultado
+
 
     End Sub
 
