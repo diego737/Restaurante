@@ -127,7 +127,7 @@ Partial Class HorarioForm
         '
         'Aceptar
         '
-        Me.Aceptar.BackColor = System.Drawing.Color.Red
+        Me.Aceptar.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Aceptar.Location = New System.Drawing.Point(35, 239)
         Me.Aceptar.Name = "Aceptar"
         Me.Aceptar.Size = New System.Drawing.Size(93, 33)
@@ -137,7 +137,7 @@ Partial Class HorarioForm
         '
         'Cancelar
         '
-        Me.Cancelar.BackColor = System.Drawing.Color.Red
+        Me.Cancelar.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Cancelar.Location = New System.Drawing.Point(176, 239)
         Me.Cancelar.Name = "Cancelar"
         Me.Cancelar.Size = New System.Drawing.Size(93, 33)
@@ -149,7 +149,7 @@ Partial Class HorarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Cyan
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(305, 300)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
