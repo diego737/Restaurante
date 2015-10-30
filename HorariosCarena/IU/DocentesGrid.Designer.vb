@@ -32,16 +32,19 @@ Partial Class DocentesGrid
         Me.DocentesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MenuDocente = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
         Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox
+        Me.Label1 = New System.Windows.Forms.Label
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocentesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuDocente.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -52,10 +55,10 @@ Partial Class DocentesGrid
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NombresDataGridViewTextBoxColumn, Me.ApellidosDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.DocentesCollectionBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(13, 28)
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 122)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(504, 521)
+        Me.DataGridView1.Size = New System.Drawing.Size(578, 251)
         Me.DataGridView1.TabIndex = 0
         '
         'IdDataGridViewTextBoxColumn
@@ -92,54 +95,44 @@ Partial Class DocentesGrid
         '
         'MenuDocente
         '
-        Me.MenuDocente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.ToolStripSeparator1, Me.Eliminar, Me.ToolStripSeparator2, Me.Modificar, Me.Salir})
-        Me.MenuDocente.Location = New System.Drawing.Point(0, 0)
+        Me.MenuDocente.ImageScalingSize = New System.Drawing.Size(48, 48)
+        Me.MenuDocente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
+        Me.MenuDocente.Location = New System.Drawing.Point(0, 54)
         Me.MenuDocente.Name = "MenuDocente"
-        Me.MenuDocente.Size = New System.Drawing.Size(784, 25)
+        Me.MenuDocente.Size = New System.Drawing.Size(578, 55)
         Me.MenuDocente.TabIndex = 1
         Me.MenuDocente.Text = "ToolStrip1"
         '
         'Agregar
         '
-        Me.Agregar.Image = CType(resources.GetObject("Agregar.Image"), System.Drawing.Image)
+        Me.Agregar.Image = Global.WindowsApplication1.My.Resources.Resources.Agregar48
         Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Agregar.Name = "Agregar"
-        Me.Agregar.Size = New System.Drawing.Size(69, 22)
+        Me.Agregar.Size = New System.Drawing.Size(101, 52)
         Me.Agregar.Text = "Agregar"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'Eliminar
         '
-        Me.Eliminar.Image = CType(resources.GetObject("Eliminar.Image"), System.Drawing.Image)
+        Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48b
         Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(70, 22)
+        Me.Eliminar.Size = New System.Drawing.Size(102, 52)
         Me.Eliminar.Text = "Eliminar"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'Modificar
         '
-        Me.Modificar.Image = CType(resources.GetObject("Modificar.Image"), System.Drawing.Image)
+        Me.Modificar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
         Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Modificar.Name = "Modificar"
-        Me.Modificar.Size = New System.Drawing.Size(78, 22)
+        Me.Modificar.Size = New System.Drawing.Size(110, 52)
         Me.Modificar.Text = "Modificar"
         '
         'Salir
         '
-        Me.Salir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.Salir.Image = CType(resources.GetObject("Salir.Image"), System.Drawing.Image)
+        Me.Salir.Image = Global.WindowsApplication1.My.Resources.Resources.Salir48
         Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(49, 22)
+        Me.Salir.Size = New System.Drawing.Size(81, 52)
         Me.Salir.Text = "Salir"
         '
         'PictureBox1
@@ -151,13 +144,45 @@ Partial Class DocentesGrid
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(578, 54)
+        Me.Panel1.TabIndex = 3
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.Docente48a
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(48, 48)
+        Me.PictureBox2.TabIndex = 0
+        Me.PictureBox2.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(57, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(130, 31)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Docentes"
+        '
         'DocentesGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 561)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.ClientSize = New System.Drawing.Size(578, 368)
         Me.Controls.Add(Me.MenuDocente)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "DocentesGrid"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -167,6 +192,9 @@ Partial Class DocentesGrid
         Me.MenuDocente.ResumeLayout(False)
         Me.MenuDocente.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -182,7 +210,8 @@ Partial Class DocentesGrid
     Friend WithEvents Eliminar As System.Windows.Forms.ToolStripButton
     Friend WithEvents Modificar As System.Windows.Forms.ToolStripButton
     Friend WithEvents Salir As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
