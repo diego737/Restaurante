@@ -41,9 +41,11 @@
 
     Private Sub Modulos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modulos.Click
 
+        MenuStrip1.Enabled = False
         Dim frmmodulos As New ModulosGrid
         frmmodulos.MdiParent = Me
         frmmodulos.Show()
+        MenuStrip1.Enabled = True
 
     End Sub
 
