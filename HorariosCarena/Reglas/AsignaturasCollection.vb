@@ -49,12 +49,12 @@ Public Class AsignaturasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(Asignados")
+        vSQL.Append(",Asignados")
         vSQL.Append(",IdCarrera")
         vSQL.Append(",IdDocente")
         vSQL.Append(",Modulos)")
         vSQL.Append(" VALUES ")
-        vSQL.Append("('" & Miasignatura.Asignados & "'")
+        vSQL.Append(",'" & Miasignatura.Asignados & "'")
         vSQL.Append(",'" & Miasignatura.IdCarrera & "'")
         vSQL.Append(",'" & Miasignatura.IdDocente & "'")
         vSQL.Append(",'" & Miasignatura.Modulos & "')")
