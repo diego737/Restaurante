@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Text
 
 Public Class DocentesCollection
 
@@ -40,6 +41,29 @@ Public Class DocentesCollection
 
         Me.Add(MiDocente)
         'objBaseDatos.Insertar(MiHorario)
+        'Agrego MiHorario en la colección actual.
+        Me.Add(MiDocente)
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
+
+        vSQL.Append("(ID")
+        vSQL.Append(",(Nombres")
+        vSQL.Append(",Apellidos")
+        vSQL.Append(",Correo")
+
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & MiDocente.Id & "'")
+        vSQL.Append("('" & MiDocente.Nombres & "'")
+        vSQL.Append(",'" & MiDocente.Apellidos & "'")
+        vSQL.Append(",'" & MiDocente.Correo & "'")
+
+
+        'Agrego MiHorario en la tabla horarios.
+        objBaseDatos.Insertar(vSQL.ToString)
+
+        vResultado = True
+
+        'Return vResultado
 
     End Sub
 
@@ -68,7 +92,7 @@ Public Class DocentesCollection
         Me.Item(Id).Apellidos = MiDocente.Apellidos
         Me.Item(Id).Correo = MiDocente.Correo
         Me.Item(Id).Nombres = MiDocente.Nombres
-       
+
         'Elimino MiHorario con el Id en la colección actual.
         'docentes_list.Item(indice_) = MiDocente
         'Me.RemoveAt(Id)
