@@ -60,11 +60,11 @@ Public Class HorariosCollection
         vSQL.Append(",'" & MiHorario.IdModulo & "')")
 
         'Agrego MiHorario en la tabla horarios.
-        objBaseDatos.Insertar(MiHorario)
+        objBaseDatos.Insertar(vSQL.ToString)
 
         vResultado = True
 
-        Return vResultado
+        'Return vResultado
 
     End Function
 
