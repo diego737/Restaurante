@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.ComponentModel
+Imports System.Text
 
 Public Class ModuloCollection
     Inherits BindingList(Of ModuloClass)
