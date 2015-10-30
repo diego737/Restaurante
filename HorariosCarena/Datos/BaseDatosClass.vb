@@ -62,23 +62,35 @@ Public Class BaseDatosClass
         'Comando SQL
         Dim objComando As String = "INSERT INTO " & objTabla_ & comandoSQL
 
-        'Declaramos el objeto DataAdapter
-        Dim objDataAdapter As New SqlDataAdapter(objComando, objConexion)
+        Using objConexion As New SqlConnection(CadenaConexion)
+            Dim cmd As New SqlCommand(objComando, objConexion)
 
-        'Instanciamos un objeto DataTable
-        Dim objDataTable As New DataTable
+            'cmd.Parameters.AddWithValue("@ID", Id)
 
-        Dim objCommandBuilder As New SqlCommandBuilder(objDataAdapter)
+            objConexion.Open()
 
-        objDataAdapter.Fill(objDataTable)
+            cmd.ExecuteNonQuery()
 
-        Dim dr As DataRow = objDataTable.NewRow
+            objConexion.Close()
+        End Using
 
-        objDataTable.Rows.Add(objDataAdapter)
+        ''Declaramos el objeto DataAdapter
+        'Dim objDataAdapter As New SqlDataAdapter(objComando, objConexion)
 
-        objDataAdapter.Update(objDataTable)
+        ''Instanciamos un objeto DataTable
+        'Dim objDataTable As New DataTable
 
-        Return CInt(dr("ID"))
+        'Dim objCommandBuilder As New SqlCommandBuilder(objDataAdapter)
+
+        'objDataAdapter.Fill(objDataTable)
+
+        'Dim dr As DataRow = objDataTable.NewRow
+
+        'objDataTable.Rows.Add(objDataAdapter)
+
+        'objDataAdapter.Update(objDataTable)
+
+        'Return CInt(dr("ID"))
 
     End Function
 
