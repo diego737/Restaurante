@@ -45,7 +45,25 @@ Public Class ModuloCollection
         objBaseDatos.objTabla = "Modulos"
 
         Me.Add(MiModulo)
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
 
+        vSQL.Append("(Id")
+        vSQL.Append(",IdDia")
+        vSQL.Append(",Inicio")
+        vSQL.Append(",Fin)")
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & MiModulo.Id & "'")
+        vSQL.Append(",'" & MiModulo.IdDia & "'")
+        vSQL.Append(",'" & MiModulo.inicio & "'")
+        vSQL.Append(",'" & MiModulo.fin & "')")
+
+
+        objBaseDatos.Insertar(vSQL.ToString)
+
+        vResultado = True
+
+       
     End Sub
 
     Public Sub EliminarModulo(ByVal Id As Integer)
@@ -62,11 +80,15 @@ Public Class ModuloCollection
     Public Sub ActualizarModulo(ByVal MiModulo As ModuloClass, ByVal Id As Integer)
 
         Dim objBaseDatos As New BaseDatosClass
-        objBaseDatos.objTabla = "horarios"
+        objBaseDatos.objTabla = "Modulos"
 
         objBaseDatos.Actualizar(MiModulo, Id)
 
-        Me.RemoveAt(Id)
+
+        Me.Item(Id).Id = MiModulo.Id
+        Me.Item(Id).IdDia = MiModulo.IdDia
+        Me.Item(Id).inicio = MiModulo.inicio
+        Me.Item(Id).fin = MiModulo.fin
 
     End Sub
 
