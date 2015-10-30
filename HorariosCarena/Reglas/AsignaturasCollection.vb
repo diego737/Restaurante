@@ -1,14 +1,16 @@
 ﻿Imports System.Data.SqlClient
 Imports System.ComponentModel
-Public Class AsignaturasCollection
 
+Public Class AsignaturasCollection
     Inherits BindingList(Of AsignaturaClass)
+
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
+
         e.NewObject = New AsignaturaClass  'DocenteCollection ?
+
     End Sub
 
     Public Function TraerAsignatura() As AsignaturasCollection
-
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
 
@@ -41,8 +43,11 @@ Public Class AsignaturasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Asignaturas"
 
+        'Agrego MiHOrario en la tabla asignatura.
+        objBaseDatos.Insertar(Miasignatura)
+
+        'Agrego MiHorario en la colección actual.
         Me.Add(Miasignatura)
-        'objBaseDatos.Insertar(Miasignatura)
 
     End Sub
 
@@ -68,9 +73,15 @@ Public Class AsignaturasCollection
         'Actualizo la tabla horarios con el Id.
         objBaseDatos.Actualizar(Miasignatura, Id)
 
+        Me.Item(Id).IdDocente = Miasignatura.IdDocente
+        Me.Item(Id).IdCarrera = Miasignatura.IdCarrera
+        Me.Item(Id).Modulos = Miasignatura.Modulos
+        Me.Item(Id).Asignados = Miasignatura.Asignados
+
+
         'Elimino Miasignatura con el Id en la colección actual.
         'horarios_list.Item(indice_) = Miasignatura
-        Me.RemoveAt(Id)
+        'Me.RemoveAt(Id)
 
     End Sub
 

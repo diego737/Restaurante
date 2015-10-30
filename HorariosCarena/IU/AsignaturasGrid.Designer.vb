@@ -23,7 +23,6 @@ Partial Class AsignaturasGrid
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AsignaturasGrid))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.IdCarreraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -33,14 +32,17 @@ Partial Class AsignaturasGrid
         Me.AsignaturasCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MenuAsig = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
         Me.Salir = New System.Windows.Forms.ToolStripButton
         Me.Modificar = New System.Windows.Forms.ToolStripButton
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.Panel1 = New System.Windows.Forms.Panel
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AsignaturasCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuAsig.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -51,10 +53,10 @@ Partial Class AsignaturasGrid
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdCarreraDataGridViewTextBoxColumn, Me.ModulosDataGridViewTextBoxColumn, Me.AsignadosDataGridViewTextBoxColumn, Me.IdDocenteDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.AsignaturasCollectionBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 12)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 115)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(690, 537)
+        Me.DataGridView1.Size = New System.Drawing.Size(578, 254)
         Me.DataGridView1.TabIndex = 0
         '
         'IdDataGridViewTextBoxColumn
@@ -98,63 +100,83 @@ Partial Class AsignaturasGrid
         '
         'MenuAsig
         '
-        Me.MenuAsig.Dock = System.Windows.Forms.DockStyle.Right
-        Me.MenuAsig.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.ToolStripSeparator1, Me.Eliminar, Me.ToolStripSeparator2, Me.Salir, Me.Modificar})
-        Me.MenuAsig.Location = New System.Drawing.Point(705, 0)
+        Me.MenuAsig.ImageScalingSize = New System.Drawing.Size(48, 48)
+        Me.MenuAsig.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
+        Me.MenuAsig.Location = New System.Drawing.Point(0, 57)
         Me.MenuAsig.Name = "MenuAsig"
-        Me.MenuAsig.Size = New System.Drawing.Size(79, 561)
-        Me.MenuAsig.TabIndex = 2
+        Me.MenuAsig.Size = New System.Drawing.Size(578, 55)
+        Me.MenuAsig.TabIndex = 6
         Me.MenuAsig.Text = "ToolStrip1"
         '
         'Agregar
         '
-        Me.Agregar.Image = CType(resources.GetObject("Agregar.Image"), System.Drawing.Image)
+        Me.Agregar.Image = Global.WindowsApplication1.My.Resources.Resources.Agregar48
         Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Agregar.Name = "Agregar"
-        Me.Agregar.Size = New System.Drawing.Size(76, 20)
+        Me.Agregar.Size = New System.Drawing.Size(101, 52)
         Me.Agregar.Text = "Agregar"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(76, 6)
         '
         'Eliminar
         '
-        Me.Eliminar.Image = CType(resources.GetObject("Eliminar.Image"), System.Drawing.Image)
+        Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48b
         Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(76, 20)
+        Me.Eliminar.Size = New System.Drawing.Size(102, 52)
         Me.Eliminar.Text = "Eliminar"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(76, 6)
         '
         'Salir
         '
-        Me.Salir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.Salir.Image = CType(resources.GetObject("Salir.Image"), System.Drawing.Image)
+        Me.Salir.Image = Global.WindowsApplication1.My.Resources.Resources.Salir48
         Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(76, 20)
+        Me.Salir.Size = New System.Drawing.Size(81, 52)
         Me.Salir.Text = "Salir"
         '
         'Modificar
         '
-        Me.Modificar.Image = CType(resources.GetObject("Modificar.Image"), System.Drawing.Image)
+        Me.Modificar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
         Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Modificar.Name = "Modificar"
-        Me.Modificar.Size = New System.Drawing.Size(76, 20)
+        Me.Modificar.Size = New System.Drawing.Size(110, 52)
         Me.Modificar.Text = "Modificar"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Asignatura48
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(48, 51)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(57, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(158, 31)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Asignaturas"
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(578, 57)
+        Me.Panel1.TabIndex = 7
         '
         'AsignaturasGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 561)
+        Me.ClientSize = New System.Drawing.Size(578, 368)
         Me.Controls.Add(Me.MenuAsig)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "AsignaturasGrid"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -163,6 +185,9 @@ Partial Class AsignaturasGrid
         CType(Me.AsignaturasCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuAsig.ResumeLayout(False)
         Me.MenuAsig.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -176,9 +201,10 @@ Partial Class AsignaturasGrid
     Friend WithEvents IdDocenteDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MenuAsig As System.Windows.Forms.ToolStrip
     Friend WithEvents Agregar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents Eliminar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents Salir As System.Windows.Forms.ToolStripButton
     Friend WithEvents Modificar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class
