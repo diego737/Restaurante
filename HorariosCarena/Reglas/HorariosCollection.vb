@@ -39,7 +39,7 @@ Public Class HorariosCollection
 
     End Function
 
-    Private Function InsertarHorario(ByVal MiHorario As HorarioClass) As Integer
+    Public Sub InsertarHorario(ByVal MiHorario As HorarioClass)
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
@@ -66,7 +66,7 @@ Public Class HorariosCollection
 
         'Return vResultado
 
-    End Function
+    End Sub
 
     Public Sub EliminarHorario(ByVal Id As Integer)
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
