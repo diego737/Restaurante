@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.ComponentModel
+Imports System.Text
 
 Public Class AsignaturasCollection
     Inherits BindingList(Of AsignaturaClass)
@@ -43,8 +44,29 @@ Public Class AsignaturasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Asignaturas"
 
+        'Agrego MiHorario en la colección actual.
+        Me.Add(Miasignatura)
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
+
+        vSQL.Append("(Asignado")
+        vSQL.Append(",IdCarrera")
+        vSQL.Append(",IdDocente")
+        vSQL.Append(",IdModulos)")
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & Miasignatura.Asignados & "'")
+        vSQL.Append(",'" & Miasignatura.IdCarrera & "'")
+        vSQL.Append(",'" & Miasignatura.IdDocente & "'")
+        vSQL.Append(",'" & Miasignatura.Modulos & "')")
+
+        'Agrego MiHorario en la tabla horarios.
+        objBaseDatos.Insertar(vSQL.ToString)
+
+        vResultado = True
+
+        'Return vResultado
         'Agrego MiHOrario en la tabla asignatura.
-        objBaseDatos.Insertar(Miasignatura)
+        objBaseDatos.Insertar(vSQL.ToString)
 
         'Agrego MiHorario en la colección actual.
         Me.Add(Miasignatura)
