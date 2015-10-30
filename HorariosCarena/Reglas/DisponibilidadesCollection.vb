@@ -1,5 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.SqlClient
+Imports System.Text
+
 Public Class DisponibilidadesCollection
     Inherits BindingList(Of DisponibilidadClass)
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
@@ -45,7 +47,7 @@ Public Class DisponibilidadesCollection
         vSQL.Append(" VALUES ")
         vSQL.Append("('" & MiDisponibilidad.IdDocente & "'")
         vSQL.Append(",'" & MiDisponibilidad.IdModulo & "'")
-        
+
 
         'Agrego MiHorario en la tabla horarios.
         objBaseDatos.Insertar(vSQL.ToString)

@@ -52,7 +52,7 @@ Public Class HorariosCollection
         vSQL.Append("(IdAsignatura")
         vSQL.Append(",IdCarrera")
         vSQL.Append(",IdDia")
-        vSQL.Append(",IdModulos)")
+        vSQL.Append(",IdModulo)")
         vSQL.Append(" VALUES ")
         vSQL.Append("('" & MiHorario.IdAsignatura & "'")
         vSQL.Append(",'" & MiHorario.IdCarrera & "'")

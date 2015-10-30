@@ -14,6 +14,7 @@ Module ModuloPrincipal
         docentes_list = New DocentesCollection
         disponibilidades_list = New DisponibilidadesCollection
         horarios_list = New HorariosCollection
+        horarios_list.TraerHorarios()
         modulos_list = New ModuloCollection
         carreras_list = New CarrerasCollection
 
