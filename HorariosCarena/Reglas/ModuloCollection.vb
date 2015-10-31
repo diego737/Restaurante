@@ -82,7 +82,7 @@ Public Class ModuloCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
 
-        objBaseDatos.Actualizar(MiModulo, Id)
+        'CORREGIR objBaseDatos.Actualizar(MiModulo, Id)
 
 
         Me.Item(Id).Id = MiModulo.Id

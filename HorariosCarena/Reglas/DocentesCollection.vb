@@ -87,7 +87,7 @@ Public Class DocentesCollection
         objBaseDatos.objTabla = "docentes"
 
         'Actualizo la tabla horarios con el Id.
-        objBaseDatos.Actualizar(MiDocente, Id)
+        'CORREGIR objBaseDatos.Actualizar(MiDocente, Id)
 
         Me.Item(Id).Apellidos = MiDocente.Apellidos
         Me.Item(Id).Correo = MiDocente.Correo

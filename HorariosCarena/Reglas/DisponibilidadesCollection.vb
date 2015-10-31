@@ -74,7 +74,7 @@ Public Class DisponibilidadesCollection
 
         Dim objBaseDatos As New BaseDatosClass
 
-        objBaseDatos.Actualizar(MiDisponibilidad, Id)
+        'CORREGIR objBaseDatos.Actualizar(MiDisponibilidad, Id)
 
         Me.RemoveAt(Id)
 

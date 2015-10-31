@@ -11,6 +11,10 @@ Public Class HorariosCollection
 
     End Sub
 
+    Public Sub New()
+        Me.TraerHorarios()
+    End Sub
+
     Public Function TraerHorarios() As HorariosCollection
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
@@ -44,8 +48,6 @@ Public Class HorariosCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
 
-        'Agrego MiHorario en la colección actual.
-        Me.Add(MiHorario)
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
@@ -62,14 +64,13 @@ Public Class HorariosCollection
         'Agrego MiHorario en la tabla horarios.
         objBaseDatos.Insertar(vSQL.ToString)
 
-        vResultado = True
-
-        'Return vResultado
+        'Agrego MiHorario en la colección actual.
+        Me.Add(MiHorario)
 
     End Sub
 
     Public Sub EliminarHorario(ByVal Id As Integer)
-        'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
+        'Instancio el el Objeto BaseDatosClass para acceder al la base horarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
 
@@ -83,13 +84,27 @@ Public Class HorariosCollection
 
     Public Sub ActualizarHorario(ByVal MiHorario As HorarioClass, ByVal Id As Integer)
 
-        'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
+        'Instancio el el Objeto BaseDatosClass para acceder al la base horarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
 
-        'Actualizo la tabla horarios con el Id.
-        objBaseDatos.Actualizar(MiHorario, Id)
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
 
+        vSQL.Append("(IdAsignatura")
+        vSQL.Append(",IdCarrera")
+        vSQL.Append(",IdDia")
+        vSQL.Append(",IdModulo)")
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & MiHorario.IdAsignatura & "'")
+        vSQL.Append(",'" & MiHorario.IdCarrera & "'")
+        vSQL.Append(",'" & MiHorario.IdDia & "'")
+        vSQL.Append(",'" & MiHorario.IdModulo & "')")
+
+        'Actualizo la tabla horarios con el Id.
+        objBaseDatos.Actualizar(vSQL.ToString, Id)
+
+        'Actualizo la colección.
         Me.Item(Id).IdDia = MiHorario.IdDia
         Me.Item(Id).IdCarrera = MiHorario.IdCarrera
         Me.Item(Id).IdAsignatura = MiHorario.IdAsignatura

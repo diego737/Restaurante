@@ -65,32 +65,26 @@ Public Class BaseDatosClass
         Using objConexion As New SqlConnection(CadenaConexion)
             Dim cmd As New SqlCommand(objComando, objConexion)
 
-            'cmd.Parameters.AddWithValue("@ID", Id)
-
+            'Abrimos la conexión a la base de datos con control de excepciones (errores).
             objConexion.Open()
 
-            cmd.ExecuteNonQuery()
+            Try
+                cmd.ExecuteNonQuery()
+
+            Catch ex1 As InvalidOperationException
+                MessageBox.Show(ex1.Message)
+
+            Catch ex2 As SqlException
+                MessageBox.Show(ex2.Message)
+
+            Finally
+                'Cerramos la conexión.
+                objConexion.Close()
+
+            End Try
 
             objConexion.Close()
         End Using
-
-        ''Declaramos el objeto DataAdapter
-        'Dim objDataAdapter As New SqlDataAdapter(objComando, objConexion)
-
-        ''Instanciamos un objeto DataTable
-        'Dim objDataTable As New DataTable
-
-        'Dim objCommandBuilder As New SqlCommandBuilder(objDataAdapter)
-
-        'objDataAdapter.Fill(objDataTable)
-
-        'Dim dr As DataRow = objDataTable.NewRow
-
-        'objDataTable.Rows.Add(objDataAdapter)
-
-        'objDataAdapter.Update(objDataTable)
-
-        'Return CInt(dr("ID"))
 
     End Function
 
@@ -111,22 +105,34 @@ Public Class BaseDatosClass
         End Using
     End Sub
 
-    Public Sub Actualizar(ByVal fila As Object, ByVal Id As Integer)
+    Public Sub Actualizar(ByVal comandosql As String, ByVal Id As Integer)
+
         'Comando SQL
-        Dim objComando As String = "SELECT * FROM " & objTabla_ & " WHERE ID = @ID"
+        Dim objComando As String = "UPDATE " & objTabla_ & " SET " & comandosql & " WHERE ID = @ID"
 
-        'Declaramos el objeto DataAdapter
-        Dim objDataAdapter As New SqlDataAdapter(objComando, objConexion)
+        Using objConexion As New SqlConnection(CadenaConexion)
+            Dim cmd As New SqlCommand(objComando, objConexion)
 
-        'Instanciamos un objeto DataTable
-        Dim objDataTable As New DataTable
+            'Abrimos la conexión a la base de datos con control de excepciones (errores).
+            objConexion.Open()
 
-        Dim sCon As String = CadenaConexion
-        Dim sel As String
+            Try
+                cmd.ExecuteNonQuery()
 
-        sel = "UPDATE " & objTabla_ & _
-            " SET Nombre = @Nombre, Apellidos = @Apellidos, Email = @Email, Fecha = @Fecha" & _
-            " WHERE ID = @ID"
+            Catch ex1 As InvalidOperationException
+                MessageBox.Show(ex1.Message)
+
+            Catch ex2 As SqlException
+                MessageBox.Show(ex2.Message)
+
+            Finally
+                'Cerramos la conexión.
+                objConexion.Close()
+
+            End Try
+
+            objConexion.Close()
+        End Using
 
     End Sub
 

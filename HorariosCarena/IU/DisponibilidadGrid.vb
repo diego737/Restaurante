@@ -38,7 +38,6 @@
     End Sub
 
     Private Sub DisponibilidadGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        disponibilidades_list.TraerDisponibilidad()
         DataGridView1.DataSource = disponibilidades_list
 
     End Sub

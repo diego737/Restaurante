@@ -32,10 +32,11 @@
     End Sub
 
     Private Sub Horarios_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Horarios.Click
-
+        MenuStrip1.Enabled = False
         Dim frmhorarios As New HorariosGrid
         frmhorarios.MdiParent = Me
         frmhorarios.Show()
+        MenuStrip1.Enabled = True
 
     End Sub
 

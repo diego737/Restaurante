@@ -87,7 +87,7 @@ Public Class CarrerasCollection
         objBaseDatos.objTabla = "Carrera"
 
         'Actualizo la tabla horarios con el Id.
-        objBaseDatos.Actualizar(MiCarrera, Id)
+        'CORREGIR objBaseDatos.Actualizar(MiCarrera, Id)
 
         Me.Item(Id).id = MiCarrera.id
         Me.Item(Id).curso = MiCarrera.curso

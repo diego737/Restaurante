@@ -131,6 +131,7 @@ Partial Class CarrerasGrid
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "CarrerasGrid"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CarrerasGrid"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CarrerasCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

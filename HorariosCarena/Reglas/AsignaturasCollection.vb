@@ -93,7 +93,7 @@ Public Class AsignaturasCollection
         objBaseDatos.objTabla = "Asignatura"
 
         'Actualizo la tabla horarios con el Id.
-        objBaseDatos.Actualizar(Miasignatura, Id)
+        'CORREGIR objBaseDatos.Actualizar(Miasignatura, Id)
 
         Me.Item(Id).IdDocente = Miasignatura.IdDocente
         Me.Item(Id).IdCarrera = Miasignatura.IdCarrera

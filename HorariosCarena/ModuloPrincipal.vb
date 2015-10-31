@@ -11,7 +11,6 @@ Module ModuloPrincipal
 
     Sub Main()
         asignaturas_list = New AsignaturasCollection
-        docentes_list = New DocentesCollection
         disponibilidades_list = New DisponibilidadesCollection
         horarios_list = New HorariosCollection
         horarios_list.TraerHorarios()

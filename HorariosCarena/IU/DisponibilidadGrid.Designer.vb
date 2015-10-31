@@ -32,8 +32,8 @@ Partial Class DisponibilidadGrid
         Me.Salir = New System.Windows.Forms.ToolStripButton
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Label1 = New System.Windows.Forms.Label
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
@@ -106,14 +106,6 @@ Partial Class DisponibilidadGrid
         Me.Panel1.Size = New System.Drawing.Size(461, 50)
         Me.Panel1.TabIndex = 2
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(197, 44)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -122,6 +114,14 @@ Partial Class DisponibilidadGrid
         Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Label1"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(197, 44)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'DisponibilidadGrid
         '
@@ -132,6 +132,7 @@ Partial Class DisponibilidadGrid
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "DisponibilidadGrid"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DisponibilidadGrid"
         CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
