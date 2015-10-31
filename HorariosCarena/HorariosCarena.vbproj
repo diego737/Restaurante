@@ -370,6 +370,7 @@
     <None Include="Resources\carreras grid.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\DataSources\CarrerasCollection.datasource" />
     <None Include="Resources\carreras grid2.jpg" />
   </ItemGroup>
   <ItemGroup>

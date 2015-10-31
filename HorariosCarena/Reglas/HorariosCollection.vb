@@ -11,7 +11,10 @@ Public Class HorariosCollection
 
     End Sub
 
+    'Este método se ejecuta cuando se crea el objeto.
+    'Es el método constructor de la clase.
     Public Sub New()
+        'Llena la instancia del objeto list con datos provenientes de Horarios.
         Me.TraerHorarios()
     End Sub
 

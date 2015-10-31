@@ -30,22 +30,22 @@
 
         Select Case operacion_
             Case "Alta"
-                'If ComboBox1.SelectedItem Is Nothing Then Exit Sub
+                If ComboBox1.SelectedItem Is Nothing Then Exit Sub
 
-                'If ComboBox2.SelectedItem Is Nothing Then Exit Sub
+                If ComboBox2.SelectedItem Is Nothing Then Exit Sub
 
-                'If ComboBox3.SelectedItem Is Nothing Then Exit Sub
+                If ComboBox3.SelectedItem Is Nothing Then Exit Sub
 
-                'If ComboBox4.SelectedItem Is Nothing Then Exit Sub
+                If ComboBox4.SelectedItem Is Nothing Then Exit Sub
 
                 horarios_list.InsertarHorario(MiHorario)
 
             Case "Elimina"
-                If horarios_list.Count = 0 Then Exit Sub
-
+                If indice_ = 0 Then Exit Sub
                 horarios_list.EliminarHorario(indice_)
 
             Case "Modifica"
+                If indice_ = 0 Then Exit Sub
                 horarios_list.ActualizarHorario(MiHorario, indice_)
                 HorariosGrid.DataGridView1.Refresh()
 

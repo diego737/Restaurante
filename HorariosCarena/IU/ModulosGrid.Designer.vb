@@ -23,26 +23,25 @@ Partial Class ModulosGrid
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ModulosGrid))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ModuloCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
         Me.Editar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ModuloCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label2 = New System.Windows.Forms.Label
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ModuloCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ModuloCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -56,75 +55,12 @@ Partial Class ModulosGrid
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Default
         Me.DataGridView1.DataSource = Me.ModuloCollectionBindingSource
         Me.DataGridView1.GridColor = System.Drawing.Color.Red
-        Me.DataGridView1.Location = New System.Drawing.Point(-2, 42)
+        Me.DataGridView1.Location = New System.Drawing.Point(-2, 108)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(550, 345)
+        Me.DataGridView1.Size = New System.Drawing.Size(550, 279)
         Me.DataGridView1.TabIndex = 45
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.BackColor = System.Drawing.Color.Lime
-        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(48, 48)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Editar, Me.Eliminar, Me.Salir})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 50)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(548, 55)
-        Me.ToolStrip1.TabIndex = 43
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'Agregar
-        '
-        Me.Agregar.Image = CType(resources.GetObject("Agregar.Image"), System.Drawing.Image)
-        Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Agregar.Name = "Agregar"
-        Me.Agregar.Size = New System.Drawing.Size(101, 52)
-        Me.Agregar.Text = "Agregar"
-        '
-        'Editar
-        '
-        Me.Editar.Image = CType(resources.GetObject("Editar.Image"), System.Drawing.Image)
-        Me.Editar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Editar.Name = "Editar"
-        Me.Editar.Size = New System.Drawing.Size(89, 52)
-        Me.Editar.Text = "Editar"
-        '
-        'Eliminar
-        '
-        Me.Eliminar.Image = CType(resources.GetObject("Eliminar.Image"), System.Drawing.Image)
-        Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(102, 52)
-        Me.Eliminar.Text = "Eliminar"
-        '
-        'Salir
-        '
-        Me.Salir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.Salir.Image = CType(resources.GetObject("Salir.Image"), System.Drawing.Image)
-        Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(81, 52)
-        Me.Salir.Text = "Salir"
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(548, 50)
-        Me.Panel1.TabIndex = 50
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Modulo48
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(48, 48)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'DataGridViewTextBoxColumn1
         '
@@ -158,16 +94,81 @@ Partial Class ModulosGrid
         '
         Me.ModuloCollectionBindingSource.DataSource = GetType(WindowsApplication1.ModuloCollection)
         '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.Silver
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(48, 48)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Editar, Me.Eliminar, Me.Salir})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 50)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(548, 55)
+        Me.ToolStrip1.TabIndex = 43
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'Agregar
+        '
+        Me.Agregar.Image = Global.WindowsApplication1.My.Resources.Resources.Agregar48
+        Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Agregar.Name = "Agregar"
+        Me.Agregar.Size = New System.Drawing.Size(101, 52)
+        Me.Agregar.Text = "Agregar"
+        '
+        'Editar
+        '
+        Me.Editar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
+        Me.Editar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Editar.Name = "Editar"
+        Me.Editar.Size = New System.Drawing.Size(89, 52)
+        Me.Editar.Text = "Editar"
+        '
+        'Eliminar
+        '
+        Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48b
+        Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.Size = New System.Drawing.Size(102, 52)
+        Me.Eliminar.Text = "Eliminar"
+        '
+        'Salir
+        '
+        Me.Salir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.Salir.Image = Global.WindowsApplication1.My.Resources.Resources.Salir48
+        Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Salir.Name = "Salir"
+        Me.Salir.Size = New System.Drawing.Size(81, 52)
+        Me.Salir.Text = "Salir"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(548, 50)
+        Me.Panel1.TabIndex = 50
+        '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(90, 8)
+        Me.Label2.Location = New System.Drawing.Point(66, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(116, 31)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Modulos"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Modulo48
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(48, 48)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'ModulosGrid
         '
@@ -181,12 +182,12 @@ Partial Class ModulosGrid
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ModulosGrid"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ModuloCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ModuloCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

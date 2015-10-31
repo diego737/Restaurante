@@ -23,9 +23,12 @@ Partial Class DisponibilidadGrid
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DisponibilidadGrid))
         Me.DisponibilidadesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DisponibilidadesCollectionBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Agregar = New System.Windows.Forms.ToolStripButton
         Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
@@ -36,6 +39,7 @@ Partial Class DisponibilidadGrid
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DisponibilidadesCollectionBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,16 +51,43 @@ Partial Class DisponibilidadGrid
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.DataSource = Me.DisponibilidadesCollectionBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 104)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3})
+        Me.DataGridView1.DataSource = Me.DisponibilidadesCollectionBindingSource1
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 113)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(460, 175)
+        Me.DataGridView1.Size = New System.Drawing.Size(460, 196)
         Me.DataGridView1.TabIndex = 0
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "IdDocente"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "IdDocente"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "IdModulo"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "IdModulo"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DisponibilidadesCollectionBindingSource1
+        '
+        Me.DisponibilidadesCollectionBindingSource1.DataSource = GetType(WindowsApplication1.DisponibilidadesCollection)
         '
         'Agregar
         '
-        Me.Agregar.Image = CType(resources.GetObject("Agregar.Image"), System.Drawing.Image)
+        Me.Agregar.Image = Global.WindowsApplication1.My.Resources.Resources.Agregar48
         Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Agregar.Name = "Agregar"
         Me.Agregar.Size = New System.Drawing.Size(101, 52)
@@ -64,7 +95,7 @@ Partial Class DisponibilidadGrid
         '
         'Modificar
         '
-        Me.Modificar.Image = CType(resources.GetObject("Modificar.Image"), System.Drawing.Image)
+        Me.Modificar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
         Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Modificar.Name = "Modificar"
         Me.Modificar.Size = New System.Drawing.Size(110, 52)
@@ -72,7 +103,7 @@ Partial Class DisponibilidadGrid
         '
         'Eliminar
         '
-        Me.Eliminar.Image = CType(resources.GetObject("Eliminar.Image"), System.Drawing.Image)
+        Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48b
         Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.Size = New System.Drawing.Size(102, 52)
@@ -80,7 +111,8 @@ Partial Class DisponibilidadGrid
         '
         'Salir
         '
-        Me.Salir.Image = CType(resources.GetObject("Salir.Image"), System.Drawing.Image)
+        Me.Salir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.Salir.Image = Global.WindowsApplication1.My.Resources.Resources.Salir48
         Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Salir.Name = "Salir"
         Me.Salir.Size = New System.Drawing.Size(81, 52)
@@ -88,38 +120,42 @@ Partial Class DisponibilidadGrid
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.Silver
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(48, 48)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 50)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 55)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(461, 55)
+        Me.ToolStrip1.Size = New System.Drawing.Size(487, 55)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(461, 50)
+        Me.Panel1.Size = New System.Drawing.Size(487, 55)
         Me.Panel1.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(249, 16)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(76, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(183, 31)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Disponibilidad"
         '
         'PictureBox1
         '
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Disponibilidad48
         Me.PictureBox1.Location = New System.Drawing.Point(14, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(197, 44)
+        Me.PictureBox1.Size = New System.Drawing.Size(48, 48)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -127,7 +163,7 @@ Partial Class DisponibilidadGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(461, 291)
+        Me.ClientSize = New System.Drawing.Size(487, 321)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
@@ -136,6 +172,7 @@ Partial Class DisponibilidadGrid
         Me.Text = "DisponibilidadGrid"
         CType(Me.DisponibilidadesCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DisponibilidadesCollectionBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -158,4 +195,8 @@ Partial Class DisponibilidadGrid
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DisponibilidadesCollectionBindingSource1 As System.Windows.Forms.BindingSource
 End Class

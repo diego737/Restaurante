@@ -49,15 +49,19 @@ Partial Class MenuForm
         Me.ModulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.HorariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CarreraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Label1 = New System.Windows.Forms.Label
         Me.MenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.Silver
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tablas, Me.Procesos, Me.Salir})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 50)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(804, 56)
+        Me.MenuStrip1.Size = New System.Drawing.Size(809, 56)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -75,7 +79,7 @@ Partial Class MenuForm
         Me.Asignaturas.Image = Global.WindowsApplication1.My.Resources.Resources.Asignatura48
         Me.Asignaturas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Asignaturas.Name = "Asignaturas"
-        Me.Asignaturas.Size = New System.Drawing.Size(230, 102)
+        Me.Asignaturas.Size = New System.Drawing.Size(182, 54)
         Me.Asignaturas.Text = "Asignaturas"
         '
         'Carreras
@@ -83,7 +87,7 @@ Partial Class MenuForm
         Me.Carreras.Image = Global.WindowsApplication1.My.Resources.Resources.Carrera48
         Me.Carreras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Carreras.Name = "Carreras"
-        Me.Carreras.Size = New System.Drawing.Size(230, 102)
+        Me.Carreras.Size = New System.Drawing.Size(182, 54)
         Me.Carreras.Text = "Carreras"
         '
         'Disponibilidad
@@ -91,7 +95,7 @@ Partial Class MenuForm
         Me.Disponibilidad.Image = Global.WindowsApplication1.My.Resources.Resources.Disponibilidad48
         Me.Disponibilidad.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Disponibilidad.Name = "Disponibilidad"
-        Me.Disponibilidad.Size = New System.Drawing.Size(230, 102)
+        Me.Disponibilidad.Size = New System.Drawing.Size(182, 54)
         Me.Disponibilidad.Text = "Disponibilidad"
         '
         'Docentes
@@ -99,7 +103,7 @@ Partial Class MenuForm
         Me.Docentes.Image = Global.WindowsApplication1.My.Resources.Resources.Docente48a
         Me.Docentes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Docentes.Name = "Docentes"
-        Me.Docentes.Size = New System.Drawing.Size(230, 102)
+        Me.Docentes.Size = New System.Drawing.Size(182, 54)
         Me.Docentes.Text = "Docentes"
         '
         'Horarios
@@ -107,7 +111,7 @@ Partial Class MenuForm
         Me.Horarios.Image = Global.WindowsApplication1.My.Resources.Resources.Horarios48
         Me.Horarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Horarios.Name = "Horarios"
-        Me.Horarios.Size = New System.Drawing.Size(230, 102)
+        Me.Horarios.Size = New System.Drawing.Size(182, 54)
         Me.Horarios.Text = "Horarios"
         '
         'Modulos
@@ -115,7 +119,7 @@ Partial Class MenuForm
         Me.Modulos.Image = Global.WindowsApplication1.My.Resources.Resources.Modulo48
         Me.Modulos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Modulos.Name = "Modulos"
-        Me.Modulos.Size = New System.Drawing.Size(230, 102)
+        Me.Modulos.Size = New System.Drawing.Size(182, 54)
         Me.Modulos.Text = "Módulos"
         '
         'Procesos
@@ -241,13 +245,34 @@ Partial Class MenuForm
         Me.CarreraToolStripMenuItem.Size = New System.Drawing.Size(232, 102)
         Me.CarreraToolStripMenuItem.Text = "Carrera"
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(809, 50)
+        Me.Panel1.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(224, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(356, 31)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Generador horarios de clase"
+        '
         'MenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(804, 531)
+        Me.ClientSize = New System.Drawing.Size(809, 565)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Panel1)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MenuForm"
@@ -255,6 +280,8 @@ Partial Class MenuForm
         Me.Text = "MenuForm"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -285,4 +312,6 @@ Partial Class MenuForm
     Friend WithEvents Docentes As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Horarios As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Modulos As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

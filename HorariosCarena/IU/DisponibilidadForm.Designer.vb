@@ -114,6 +114,7 @@ Partial Class DisponibilidadForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "DisponibilidadForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DisponibilidadForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()

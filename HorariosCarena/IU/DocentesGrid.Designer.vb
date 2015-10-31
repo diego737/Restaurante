@@ -32,13 +32,13 @@ Partial Class DocentesGrid
         Me.DocentesCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MenuDocente = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
-        Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Modificar = New System.Windows.Forms.ToolStripButton
+        Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.Label1 = New System.Windows.Forms.Label
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocentesCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuDocente.SuspendLayout()
@@ -56,6 +56,7 @@ Partial Class DocentesGrid
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NombresDataGridViewTextBoxColumn, Me.ApellidosDataGridViewTextBoxColumn, Me.CorreoDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.DocentesCollectionBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(3, 122)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(578, 251)
@@ -95,9 +96,10 @@ Partial Class DocentesGrid
         '
         'MenuDocente
         '
+        Me.MenuDocente.BackColor = System.Drawing.Color.Silver
         Me.MenuDocente.ImageScalingSize = New System.Drawing.Size(48, 48)
         Me.MenuDocente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
-        Me.MenuDocente.Location = New System.Drawing.Point(0, 54)
+        Me.MenuDocente.Location = New System.Drawing.Point(0, 50)
         Me.MenuDocente.Name = "MenuDocente"
         Me.MenuDocente.Size = New System.Drawing.Size(578, 55)
         Me.MenuDocente.TabIndex = 1
@@ -111,14 +113,6 @@ Partial Class DocentesGrid
         Me.Agregar.Size = New System.Drawing.Size(101, 52)
         Me.Agregar.Text = "Agregar"
         '
-        'Eliminar
-        '
-        Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48b
-        Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(102, 52)
-        Me.Eliminar.Text = "Eliminar"
-        '
         'Modificar
         '
         Me.Modificar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
@@ -127,8 +121,17 @@ Partial Class DocentesGrid
         Me.Modificar.Size = New System.Drawing.Size(110, 52)
         Me.Modificar.Text = "Modificar"
         '
+        'Eliminar
+        '
+        Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48b
+        Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.Size = New System.Drawing.Size(102, 52)
+        Me.Eliminar.Text = "Eliminar"
+        '
         'Salir
         '
+        Me.Salir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.Salir.Image = Global.WindowsApplication1.My.Resources.Resources.Salir48
         Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Salir.Name = "Salir"
@@ -146,13 +149,25 @@ Partial Class DocentesGrid
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonShadow
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(578, 54)
+        Me.Panel1.Size = New System.Drawing.Size(578, 50)
         Me.Panel1.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(57, 7)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(130, 31)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Docentes"
         '
         'PictureBox2
         '
@@ -163,17 +178,6 @@ Partial Class DocentesGrid
         Me.PictureBox2.Size = New System.Drawing.Size(48, 48)
         Me.PictureBox2.TabIndex = 0
         Me.PictureBox2.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(57, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(130, 31)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Docentes"
         '
         'DocentesGrid
         '

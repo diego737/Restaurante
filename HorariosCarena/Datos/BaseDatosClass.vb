@@ -5,7 +5,7 @@ Imports System.Data.SqlClient
 
 Public Class BaseDatosClass
 
-    'Declaramos el string de conexión.
+    'Inicializamos el string de la cadena de conexión.
     Dim CadenaConexion As String = "Data Source=.\SQLEXPRESS; DataBase=horarios; User=sa; Password=carena"
 
     'Instaciamos un objeto SqlConnection pasando como parámetro la cadena
@@ -34,10 +34,9 @@ Public Class BaseDatosClass
         'Instanciamos un objeto DataTable
         Dim objDataTable As New DataTable
 
-        'Abrimos la conexión a la base de datos con control de excepciones (errores).
+        'Intento abrir la conexión a la base de datos con control de excepciones (errores).
         Try
             objConexion.Open()
-            'MessageBox.Show("Conexión correcta.")
 
         Catch ex1 As InvalidOperationException
             MessageBox.Show(ex1.Message)
@@ -55,19 +54,21 @@ Public Class BaseDatosClass
         End Try
 
         Return objDataTable
+
     End Function
 
     Public Function Insertar(ByVal comandoSQL As String) As Integer
 
         'Comando SQL
-        Dim objComando As String = "INSERT INTO " & objTabla_ & comandoSQL
+        Dim objComando As String = "INSERT INTO " & objTabla_ & " " & comandoSQL
 
         Using objConexion As New SqlConnection(CadenaConexion)
             Dim cmd As New SqlCommand(objComando, objConexion)
 
-            'Abrimos la conexión a la base de datos con control de excepciones (errores).
+            'Abrimos la conexión a la base de datos.
             objConexion.Open()
 
+            'Intentamos ejecutar el comando SQL.
             Try
                 cmd.ExecuteNonQuery()
 
@@ -90,32 +91,18 @@ Public Class BaseDatosClass
 
     Public Sub Eliminar(ByVal Id As Integer)
         'Comando SQL
-        Dim objComando As String = "DELETE FROM " & objTabla_ & " WHERE ID = @ID"
+        Dim objComando As String = "DELETE FROM " & objTabla_ & " WHERE ID = @Id"
 
         Using objConexion As New SqlConnection(CadenaConexion)
             Dim cmd As New SqlCommand(objComando, objConexion)
 
+            'Esto reemplaza el valor de Id en el parametro @ID
             cmd.Parameters.AddWithValue("@ID", Id)
 
+            'Abrimos la conexión a la base de datos.
             objConexion.Open()
 
-            cmd.ExecuteNonQuery()
-
-            objConexion.Close()
-        End Using
-    End Sub
-
-    Public Sub Actualizar(ByVal comandosql As String, ByVal Id As Integer)
-
-        'Comando SQL
-        Dim objComando As String = "UPDATE " & objTabla_ & " SET " & comandosql & " WHERE ID = @ID"
-
-        Using objConexion As New SqlConnection(CadenaConexion)
-            Dim cmd As New SqlCommand(objComando, objConexion)
-
-            'Abrimos la conexión a la base de datos con control de excepciones (errores).
-            objConexion.Open()
-
+            'Intentamos ejecutar el comando SQL.
             Try
                 cmd.ExecuteNonQuery()
 
@@ -131,7 +118,40 @@ Public Class BaseDatosClass
 
             End Try
 
-            objConexion.Close()
+        End Using
+    End Sub
+
+    Public Sub Actualizar(ByVal comandosql As String, ByVal Id As Integer)
+
+        'Comando SQL
+        Dim objComando As String = "UPDATE " & objTabla_ & " SET " & comandosql & " WHERE ID = @ID"
+
+        Using objConexion As New SqlConnection(CadenaConexion)
+
+            Dim cmd As New SqlCommand(objComando, objConexion)
+
+            'Esto reemplaza el valor de Id en el parametro @ID
+            cmd.Parameters.AddWithValue("@ID", Id)
+
+            'Abrimos la conexión a la base de datos.
+            objConexion.Open()
+
+            'Intentamos ejecutar el comando SQL.
+            Try
+                cmd.ExecuteNonQuery()
+
+            Catch ex1 As InvalidOperationException
+                MessageBox.Show(ex1.Message)
+
+            Catch ex2 As SqlException
+                MessageBox.Show(ex2.Message)
+
+            Finally
+                'Cerramos la conexión.
+                objConexion.Close()
+
+            End Try
+
         End Using
 
     End Sub

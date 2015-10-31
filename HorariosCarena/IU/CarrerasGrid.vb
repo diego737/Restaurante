@@ -1,7 +1,7 @@
 ﻿Public Class CarrerasGrid
     Dim carreras_list As CarrerasCollection
 
-    Private Sub Alta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Alta.Click
+    Private Sub Alta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         carreras_list = New CarrerasCollection()
         DataGridView1.DataSource = carreras_list
@@ -9,16 +9,16 @@
         CarreraForm.Show()
     End Sub
 
-    Private Sub Baja_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Baja.Click
+    Private Sub Baja_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         CarreraForm.operacion = "Baja"
-        CarreraForm.indice = DataGridView1.CurrentRow.Index
+        CarreraForm.indice = CInt(DataGridView1.CurrentRow.Cells(0).Value)
         llenarform1()
         CarreraForm.Show()
     End Sub
 
-    Private Sub Modifica_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modifica.Click
+    Private Sub Modifica_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         CarreraForm.operacion = "Modificar"
-        CarreraForm.indice = DataGridView1.CurrentRow.Index
+        CarreraForm.indice = CInt(DataGridView1.CurrentRow.Cells(0).Value)
         llenarform1()
         CarreraForm.Show()
     End Sub
@@ -37,8 +37,6 @@
     Private Sub CarrerasGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         DataGridView1.DataSource = carreras_list
     End Sub
-
-
 
 End Class
 

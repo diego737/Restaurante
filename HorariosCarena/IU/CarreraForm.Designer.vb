@@ -133,6 +133,7 @@ Partial Class CarreraForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "CarreraForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CarreraForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()
