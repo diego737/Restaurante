@@ -25,7 +25,6 @@
     
     Private Sub Aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Aceptar.Click
 
-
         MiModulo.IdDia = ComboBox1.SelectedIndex + 1
         MiModulo.inicio = ComboBox2.SelectedIndex + 1
         MiModulo.fin = ComboBox3.SelectedIndex + 1

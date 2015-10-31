@@ -10,8 +10,8 @@
 
     Private Sub Agregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Agregar.Click
         HorarioForm.operacion = "Alta"
-        HorarioForm.ShowDialog(Me)
 
+        HorarioForm.ShowDialog(Me)
     End Sub
 
     Private Sub Modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modificar.Click

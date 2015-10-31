@@ -58,4 +58,14 @@
     Private Sub Cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar.Click
         Me.Close()
     End Sub
+
+    Private Sub HorarioForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'Cargamos los ComboBox.
+        ComboBox1.DataSource = carreras_list.TraerCarreras
+        Dim dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"}
+        ComboBox2.Items.AddRange(dias)
+        ComboBox3.DataSource = asignaturas_list.TraerAsignatura
+        ComboBox4.DataSource = modulos_list.TraerModulo
+
+    End Sub
 End Class
