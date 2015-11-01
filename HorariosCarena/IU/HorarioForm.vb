@@ -65,7 +65,7 @@
         Dim dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"}
         ComboBox2.Items.AddRange(dias)
         ComboBox3.DataSource = asignaturas_list.TraerAsignatura
-        ComboBox4.DataSource = modulos_list.TraerModulo
+        ComboBox4.DataSource = modulos_list.TraerModulos
 
     End Sub
 End Class

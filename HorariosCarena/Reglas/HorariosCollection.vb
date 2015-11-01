@@ -130,6 +130,7 @@ Public Class HorariosCollection
             Me.Item(Id).IdCarrera = MiHorario.IdCarrera
             Me.Item(Id).IdAsignatura = MiHorario.IdAsignatura
             Me.Item(Id).IdModulo = MiHorario.IdModulo
+
         Catch ex1 As InvalidOperationException
             MessageBox.Show(ex1.Message)
 

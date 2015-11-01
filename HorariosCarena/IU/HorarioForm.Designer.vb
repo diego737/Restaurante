@@ -96,6 +96,7 @@ Partial Class HorarioForm
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(148, 65)
         Me.ComboBox1.Name = "ComboBox1"
@@ -104,6 +105,7 @@ Partial Class HorarioForm
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(148, 104)
         Me.ComboBox2.Name = "ComboBox2"
@@ -112,6 +114,7 @@ Partial Class HorarioForm
         '
         'ComboBox3
         '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Location = New System.Drawing.Point(148, 140)
         Me.ComboBox3.Name = "ComboBox3"
@@ -120,6 +123,7 @@ Partial Class HorarioForm
         '
         'ComboBox4
         '
+        Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Location = New System.Drawing.Point(148, 173)
         Me.ComboBox4.Name = "ComboBox4"

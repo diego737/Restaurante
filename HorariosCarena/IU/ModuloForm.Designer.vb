@@ -107,6 +107,7 @@ Partial Class ModuloForm
         'ComboBox1
         '
         Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes"})
         Me.ComboBox1.Location = New System.Drawing.Point(151, 66)
@@ -117,6 +118,7 @@ Partial Class ModuloForm
         'ComboBox2
         '
         Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"17:05", "17:45", "18:25", "19:05", "19:50", "20:30", "21:15", "21:50", "22:35"})
         Me.ComboBox2.Location = New System.Drawing.Point(151, 100)
@@ -127,6 +129,7 @@ Partial Class ModuloForm
         'ComboBox3
         '
         Me.ComboBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"17:05", "17:45", "18:25", "19:05", "19:50", "20:30", "21:15", "21:50", "22:35"})
         Me.ComboBox3.Location = New System.Drawing.Point(151, 135)

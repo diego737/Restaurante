@@ -46,9 +46,10 @@
                 modulos_list.EliminarModulo(indicemodulo_)
 
             Case "Modifica"
-                modulos_list.Item(indicemodulo_).IdDia = MiModulo.IdDia
-                modulos_list.Item(indicemodulo_).inicio = MiModulo.inicio
-                modulos_list.Item(indicemodulo_).fin = MiModulo.fin
+                'Esto no es necesario porque ya se hace en el método ActualizarModulo.
+                'modulos_list.Item(indicemodulo_).IdDia = MiModulo.IdDia
+                'modulos_list.Item(indicemodulo_).inicio = MiModulo.inicio
+                'modulos_list.Item(indicemodulo_).fin = MiModulo.fin
 
                 modulos_list.ActualizarModulo(MiModulo, indicemodulo_)
                 ModulosGrid.DataGridView1.Refresh()

@@ -12,7 +12,11 @@ Public Class ModuloCollection
 
     End Sub
 
-    Public Function TraerModulo() As ModuloCollection
+    Public Sub New()
+        Me.TraerModulos()
+    End Sub
+
+    Public Function TraerModulos() As ModuloCollection
 
         Dim objBaseDatos As New BaseDatosClass
 
