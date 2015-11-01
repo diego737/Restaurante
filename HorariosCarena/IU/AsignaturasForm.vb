@@ -18,6 +18,7 @@
             indice_ = value
         End Set
     End Property
+
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         If TextBox2.Text = "" Then Exit Sub
         If TextBox3.Text = "" Then Exit Sub
@@ -41,18 +42,15 @@
                 asignaturas_list.EliminarAsignatura(indice_)
             Case "Modificar"
 
-                asignaturas_list.Item(indice_).Modulos = MiAsignatura.Modulos
-                asignaturas_list.Item(indice_).IdCarrera = MiAsignatura.IdCarrera
-                asignaturas_list.Item(indice_).Asignados = MiAsignatura.Asignados
-                asignaturas_list.Item(indice_).IdDocente = MiAsignatura.IdDocente
-                'AsignaturasGrid.DataGridView1.Refresh()
-                'asignaturas_list.ActualizarAsignatura(MiAsignatura, indice_)
-                'AsignaturasGrid.DataGridView1.Refresh()
+                'asignaturas_list.Item(indice_).Modulos = MiAsignatura.Modulos
+                'asignaturas_list.Item(indice_).IdCarrera = MiAsignatura.IdCarrera
+                'asignaturas_list.Item(indice_).Asignados = MiAsignatura.Asignados
+                'asignaturas_list.Item(indice_).IdDocente = MiAsignatura.IdDocente
+                asignaturas_list.ActualizarAsignatura(MiAsignatura, indice_)
+                AsignaturasGrid.DataGridView1.Refresh()
         End Select
+
         Me.Close()
-        'Me.Refresh()
-        'AsignaturasGrid.DataGridView1.RefreshEdit()
-        AsignaturasGrid.DataGridView1.Refresh()
     End Sub
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Me.Close()

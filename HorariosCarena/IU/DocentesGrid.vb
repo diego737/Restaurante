@@ -7,7 +7,7 @@
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
         If docentes_list.Count = 0 Then Exit Sub
         DocentesForm.operacion = "Eliminar"
-        DocentesForm.indice = CInt(DataGridView1.CurrentRow.Index)
+        DocentesForm.indice = CInt(DataGridView1.CurrentRow.Cells(0).Value)
         llenarForm()
         DocentesForm.Show()
     End Sub
@@ -15,7 +15,7 @@
     Private Sub Modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modificar.Click
         If docentes_list.Count = 0 Then Exit Sub
         DocentesForm.operacion = "Modificar"
-        DocentesForm.indice = CInt(DataGridView1.CurrentRow.Index)
+        DocentesForm.indice = CInt(DataGridView1.CurrentRow.Cells(0).Value)
         llenarForm()
         DocentesForm.Show()
     End Sub

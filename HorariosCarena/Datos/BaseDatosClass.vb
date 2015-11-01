@@ -34,9 +34,12 @@ Public Class BaseDatosClass
         'Instanciamos un objeto DataTable
         Dim objDataTable As New DataTable
 
-        'Intento abrir la conexión a la base de datos con control de excepciones (errores).
+        'Abrimos la conexión a la base de datos.
+        objConexion.Open()
+
         Try
-            objConexion.Open()
+            'Intentamos llenar el datatable con el DataAdapter.
+            objDataAdapter.Fill(objDataTable)
 
         Catch ex1 As InvalidOperationException
             MessageBox.Show(ex1.Message)
@@ -45,9 +48,6 @@ Public Class BaseDatosClass
             MessageBox.Show(ex2.Message)
 
         Finally
-            'Llenamos el datatable con el DataAdapter.
-            objDataAdapter.Fill(objDataTable)
-
             'Cerramos la conexión.
             objConexion.Close()
 
@@ -60,7 +60,8 @@ Public Class BaseDatosClass
     Public Function Insertar(ByVal comandoSQL As String) As Integer
 
         'Comando SQL
-        Dim objComando As String = "INSERT INTO " & objTabla_ & " " & comandoSQL
+        Dim objComando As String = "INSERT INTO " & objTabla_ & " " & comandoSQL & "; SELECT SCOPE_IDENTITY()"
+        Dim Id As Integer
 
         Using objConexion As New SqlConnection(CadenaConexion)
             Dim cmd As New SqlCommand(objComando, objConexion)
@@ -68,9 +69,16 @@ Public Class BaseDatosClass
             'Abrimos la conexión a la base de datos.
             objConexion.Open()
 
-            'Intentamos ejecutar el comando SQL.
+            'Dim valorRetorno As New SqlParameter("ID", SqlDbType.Int)
+            'valorRetorno.Direction = ParameterDirection.ReturnValue
+            'cmd.Transaction = MGlobales._transa
+
             Try
+                'Intentamos ejecutar el comando SQL.
                 cmd.ExecuteNonQuery()
+
+                'Obtenemos el Id del úñltimo registro insertado el la tabla.
+                Id = CInt(cmd.ExecuteScalar())
 
             Catch ex1 As InvalidOperationException
                 MessageBox.Show(ex1.Message)
@@ -87,6 +95,8 @@ Public Class BaseDatosClass
             objConexion.Close()
         End Using
 
+        Return Id
+
     End Function
 
     Public Sub Eliminar(ByVal Id As Integer)
@@ -102,8 +112,8 @@ Public Class BaseDatosClass
             'Abrimos la conexión a la base de datos.
             objConexion.Open()
 
-            'Intentamos ejecutar el comando SQL.
             Try
+                'Intentamos ejecutar el comando SQL.
                 cmd.ExecuteNonQuery()
 
             Catch ex1 As InvalidOperationException
@@ -136,8 +146,8 @@ Public Class BaseDatosClass
             'Abrimos la conexión a la base de datos.
             objConexion.Open()
 
-            'Intentamos ejecutar el comando SQL.
             Try
+                'Intentamos ejecutar el comando SQL.
                 cmd.ExecuteNonQuery()
 
             Catch ex1 As InvalidOperationException
@@ -156,16 +166,4 @@ Public Class BaseDatosClass
 
     End Sub
 
-End Class
-
-Public Class BaseDatosException
-    Inherits ApplicationException
-
-    Public Sub New(ByVal mensaje As String, ByVal original As Exception)
-        MyBase.New(mensaje, original)
-    End Sub
-
-    Public Sub New(ByVal mensaje As String)
-        MyBase.New(mensaje)
-    End Sub
 End Class

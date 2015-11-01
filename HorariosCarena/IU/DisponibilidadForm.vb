@@ -29,21 +29,22 @@
             Case "alta"
                 'disponibilidad_list.Add(MiDisponibilidad)
                 disponibilidades_list.InsertarDisponibilidad(MiDisponibilidad)
+
             Case "elimina"
                 If disponibilidades_list.Count = 0 Then Exit Sub
 
                 'horarios_list.RemoveAt(indice_)
                 disponibilidades_list.EliminarDisponibilidad(indice_)
+
             Case "modifica"
                 disponibilidades_list.ActualizarDisponibilidad(MiDisponibilidad, indice_)
                 DisponibilidadGrid.DataGridView1.Refresh()
         End Select
 
-
-
-
-
         Me.Close()
     End Sub
 
+    Private Sub cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cancelar.Click
+        Me.Close()
+    End Sub
 End Class

@@ -5,11 +5,16 @@
     Dim Modulos_ As Integer
     Dim Asignados_ As Integer
     Dim IdDocente_ As Integer
-    Public ReadOnly Property Id() As Integer
+
+    Public Property Id() As Integer
         Get
             Return Id_
         End Get
+        Set(ByVal value As Integer)
+            Id_ = value
+        End Set
     End Property
+
     Public Property IdCarrera() As Integer
         Get
             Return IdCarrera_
@@ -18,6 +23,7 @@
             IdCarrera_ = value
         End Set
     End Property
+
     Public Property Modulos() As Integer
         Get
             Return Modulos_
@@ -26,6 +32,7 @@
             Modulos_ = value
         End Set
     End Property
+
     Public Property Asignados() As Integer
         Get
             Return Asignados_
@@ -34,6 +41,7 @@
             Asignados_ = value
         End Set
     End Property
+
     Public Property IdDocente() As Integer
         Get
             Return IdDocente_

@@ -5,11 +5,15 @@
     Dim Apellidos_ As String
     Dim Correo_ As String
 
-    Public ReadOnly Property Id() As Integer
+    Public Property Id() As Integer
         Get
             Return Id_
         End Get
+        Set(ByVal value As Integer)
+            Id_ = value
+        End Set
     End Property
+
     Public Property Nombres() As String
         Get
             Return Nombres_
@@ -18,6 +22,7 @@
             Nombres_ = value
         End Set
     End Property
+
     Public Property Apellidos() As String
         Get
             Return Apellidos_
@@ -26,6 +31,7 @@
             Apellidos_ = value
         End Set
     End Property
+
     Public Property Correo() As String
         Get
             Return Correo_
@@ -34,4 +40,5 @@
             Correo_ = value
         End Set
     End Property
+
 End Class

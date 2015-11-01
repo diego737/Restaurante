@@ -4,9 +4,11 @@ Imports System.Text
 Public Class DocentesCollection
 
     Inherits BindingList(Of DocenteClass)
+
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
         e.NewObject = New DocenteClass 'DocenteCollection ?
     End Sub
+
     Public Function TraerDocentes() As DocentesCollection
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
@@ -22,7 +24,7 @@ Public Class DocentesCollection
         For Each dr As DataRow In MiDataTable.Rows
             Midocente = New DocenteClass
 
-            ' Midocente.Id = CInt(dr("Id"))
+            Midocente.Id = CInt(dr("Id"))
             Midocente.Apellidos = CStr(dr("Apellidos"))
             Midocente.Nombres = CStr(dr("IdAsignatura"))
             Midocente.Correo = CStr(dr("IdModulo"))

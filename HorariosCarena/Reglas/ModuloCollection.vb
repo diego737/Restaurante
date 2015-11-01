@@ -48,22 +48,18 @@ Public Class ModuloCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(Id")
-        vSQL.Append(",IdDia")
+        vSQL.Append("(IdDia")
         vSQL.Append(",Inicio")
         vSQL.Append(",Fin)")
         vSQL.Append(" VALUES ")
-        vSQL.Append("('" & MiModulo.Id & "'")
-        vSQL.Append(",'" & MiModulo.IdDia & "'")
+        vSQL.Append("('" & MiModulo.IdDia & "'")
         vSQL.Append(",'" & MiModulo.inicio & "'")
         vSQL.Append(",'" & MiModulo.fin & "')")
-
 
         objBaseDatos.Insertar(vSQL.ToString)
 
         vResultado = True
 
-       
     End Sub
 
     Public Sub EliminarModulo(ByVal Id As Integer)
@@ -83,7 +79,6 @@ Public Class ModuloCollection
         objBaseDatos.objTabla = "Modulos"
 
         'CORREGIR objBaseDatos.Actualizar(MiModulo, Id)
-
 
         Me.Item(Id).Id = MiModulo.Id
         Me.Item(Id).IdDia = MiModulo.IdDia

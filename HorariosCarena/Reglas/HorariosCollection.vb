@@ -64,11 +64,20 @@ Public Class HorariosCollection
         vSQL.Append(",'" & MiHorario.IdDia & "'")
         vSQL.Append(",'" & MiHorario.IdModulo & "')")
 
-        'Agrego MiHorario en la tabla horarios.
-        objBaseDatos.Insertar(vSQL.ToString)
+        Try
+            'Agrego MiHorario en la tabla horarios.
+            objBaseDatos.Insertar(vSQL.ToString)
 
-        'Agrego MiHorario en la colección actual.
-        Me.Add(MiHorario)
+            'Agrego MiHorario en la colección actual.
+            Me.Add(MiHorario)
+
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+
+        End Try
 
     End Sub
 
@@ -77,11 +86,19 @@ Public Class HorariosCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
 
-        'Lo elimino en de la tabla horarios en la base horarios.
-        objBaseDatos.Eliminar(Id)
+        Try
+            'Lo elimino en de la tabla horarios en la base horarios.
+            objBaseDatos.Eliminar(Id)
 
-        'Elimino MiHorario con el Id en la colección actual.
-        Me.RemoveAt(Id)
+            'Elimino MiHorario con el Id en la colección actual.
+            Me.RemoveAt(Id)
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+
+        End Try
 
     End Sub
 
@@ -104,14 +121,22 @@ Public Class HorariosCollection
         vSQL.Append(",'" & MiHorario.IdDia & "'")
         vSQL.Append(",'" & MiHorario.IdModulo & "')")
 
-        'Actualizo la tabla horarios con el Id.
-        objBaseDatos.Actualizar(vSQL.ToString, Id)
+        Try
+            'Actualizo la tabla horarios con el Id.
+            objBaseDatos.Actualizar(vSQL.ToString, Id)
 
-        'Actualizo la colección.
-        Me.Item(Id).IdDia = MiHorario.IdDia
-        Me.Item(Id).IdCarrera = MiHorario.IdCarrera
-        Me.Item(Id).IdAsignatura = MiHorario.IdAsignatura
-        Me.Item(Id).IdModulo = MiHorario.IdModulo
+            'Actualizo la colección.
+            Me.Item(Id).IdDia = MiHorario.IdDia
+            Me.Item(Id).IdCarrera = MiHorario.IdCarrera
+            Me.Item(Id).IdAsignatura = MiHorario.IdAsignatura
+            Me.Item(Id).IdModulo = MiHorario.IdModulo
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+
+        End Try
 
     End Sub
 

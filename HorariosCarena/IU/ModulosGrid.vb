@@ -9,7 +9,7 @@
 
     Private Sub Editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar.Click
         ModuloForm.accion = "Modifica"
-        ModuloForm.accion = CStr(DataGridView1.CurrentRow.Index)
+        ModuloForm.indicemodulo = CInt(DataGridView1.CurrentRow.Cells(0).Value)
 
         llenarform1()
 
@@ -21,7 +21,7 @@
         If modulos_list.Count = 0 Then Exit Sub
 
         ModuloForm.accion = "Elimina"
-        ModuloForm.indicemodulo = CInt(DataGridView1.CurrentRow.Index)
+        ModuloForm.indicemodulo = CInt(DataGridView1.CurrentRow.Cells(0).Value)
 
         llenarform1()
 
@@ -41,7 +41,6 @@
         ModuloForm.ComboBox3.SelectedItem = CInt(DataGridView1.CurrentRow.Cells(3).Value) - 1
 
     End Sub
-
 
     Private Sub ModulosGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 

@@ -37,13 +37,13 @@
 
                 If ComboBox3.SelectedItem Is Nothing Then Exit Sub
 
-                Modulos_list.Add(MiModulo)
+                modulos_list.InsertarModulo(MiModulo)
 
             Case "Elimina"
 
                 If modulos_list.Count = 0 Then Exit Sub
 
-                modulos_list.RemoveAt(indicemodulo_)
+                modulos_list.EliminarModulo(indicemodulo_)
 
             Case "Modifica"
                 modulos_list.Item(indicemodulo_).IdDia = MiModulo.IdDia

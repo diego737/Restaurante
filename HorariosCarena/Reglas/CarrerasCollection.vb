@@ -49,12 +49,10 @@ Public Class CarrerasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(Id")
-        vSQL.Append(",Carrera")
+        vSQL.Append("(Carrera")
         vSQL.Append(",Curso")
         vSQL.Append(" VALUES ")
-        vSQL.Append("('" & Micarrera.id & "'")
-        vSQL.Append(",'" & Micarrera.carrera & "'")
+        vSQL.Append("('" & Micarrera.carrera & "'")
         vSQL.Append(",'" & Micarrera.curso & "'")
 
         'Agrego MiHorario en la tabla horarios.

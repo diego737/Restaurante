@@ -26,7 +26,7 @@ Public Class AsignaturasCollection
         For Each dr As DataRow In MiDataTable.Rows
             Miasignatura = New AsignaturaClass
 
-            'Miasignatura.Id = CInt(dr("Id"))
+            Miasignatura.Id = CInt(dr("Id"))
             Miasignatura.IdCarrera = CInt(dr("IdCarrera"))
             Miasignatura.Modulos = CInt(dr("Modulos"))
             Miasignatura.Asignados = CInt(dr("IdAsignados"))

@@ -72,7 +72,7 @@ Partial Class DisponibilidadForm
         Me.aceptar.Name = "aceptar"
         Me.aceptar.Size = New System.Drawing.Size(75, 23)
         Me.aceptar.TabIndex = 6
-        Me.aceptar.Text = "aceptar"
+        Me.aceptar.Text = "Aceptar"
         Me.aceptar.UseVisualStyleBackColor = True
         '
         'cancelar
@@ -81,7 +81,7 @@ Partial Class DisponibilidadForm
         Me.cancelar.Name = "cancelar"
         Me.cancelar.Size = New System.Drawing.Size(75, 23)
         Me.cancelar.TabIndex = 7
-        Me.cancelar.Text = "cancelar"
+        Me.cancelar.Text = "Cancelar"
         Me.cancelar.UseVisualStyleBackColor = True
         '
         'ComboBox1
