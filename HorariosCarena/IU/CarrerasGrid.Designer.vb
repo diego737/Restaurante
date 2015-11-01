@@ -29,9 +29,9 @@ Partial Class CarrerasGrid
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CarrerasCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
+        Me.Agregar = New System.Windows.Forms.ToolStripButton
+        Me.Modificar = New System.Windows.Forms.ToolStripButton
+        Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripLabel
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CarrerasCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,36 +81,36 @@ Partial Class CarrerasGrid
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.Silver
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(48, 48)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3, Me.Salir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(553, 55)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton1
+        'Agregar
         '
-        Me.ToolStripButton1.Image = Global.WindowsApplication1.My.Resources.Resources.Agregar48
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(101, 52)
-        Me.ToolStripButton1.Text = "Agregar"
+        Me.Agregar.Image = Global.WindowsApplication1.My.Resources.Resources.Agregar48
+        Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Agregar.Name = "Agregar"
+        Me.Agregar.Size = New System.Drawing.Size(101, 52)
+        Me.Agregar.Text = "Agregar"
         '
-        'ToolStripButton2
+        'Modificar
         '
-        Me.ToolStripButton2.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(110, 52)
-        Me.ToolStripButton2.Text = "Modificar"
+        Me.Modificar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48
+        Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Modificar.Name = "Modificar"
+        Me.Modificar.Size = New System.Drawing.Size(110, 52)
+        Me.Modificar.Text = "Modificar"
         '
-        'ToolStripButton3
+        'Eliminar
         '
-        Me.ToolStripButton3.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(102, 52)
-        Me.ToolStripButton3.Text = "Eliminar"
+        Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
+        Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.Size = New System.Drawing.Size(102, 52)
+        Me.Eliminar.Text = "Eliminar"
         '
         'Salir
         '
@@ -144,9 +144,9 @@ Partial Class CarrerasGrid
     Friend WithEvents CarreraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CursoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Agregar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Modificar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents Eliminar As System.Windows.Forms.ToolStripButton
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
