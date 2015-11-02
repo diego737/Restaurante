@@ -24,27 +24,40 @@
 
         MiDisponibilidad.IdDocente = ComboBox1.SelectedIndex + 1
         MiDisponibilidad.IdModulo = ComboBox2.SelectedIndex + 1
-
+        
         Select Case operacion_
-            Case "alta"
-                'disponibilidad_list.Add(MiDisponibilidad)
+            Case "Alta"
+                If ComboBox1.SelectedItem Is Nothing Then Exit Sub
+
+                If ComboBox2.SelectedItem Is Nothing Then Exit Sub
+
+
+
                 disponibilidades_list.InsertarDisponibilidad(MiDisponibilidad)
 
-            Case "elimina"
-                If disponibilidades_list.Count = 0 Then Exit Sub
-
-                'horarios_list.RemoveAt(indice_)
+            Case "Elimina"
+                If indice_ = 0 Then Exit Sub
                 disponibilidades_list.EliminarDisponibilidad(indice_)
 
-            Case "modifica"
+            Case "Modifica"
+                If indice_ = 0 Then Exit Sub
                 disponibilidades_list.ActualizarDisponibilidad(MiDisponibilidad, indice_)
                 DisponibilidadGrid.DataGridView1.Refresh()
+
         End Select
 
         Me.Close()
+
     End Sub
 
     Private Sub cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cancelar.Click
         Me.Close()
+    End Sub
+
+    Private Sub DisponibilidadForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ComboBox1.DataSource = docentes_list.TraerDocentes
+        ComboBox2.DataSource = modulos_list.TraerModulos
+
+
     End Sub
 End Class

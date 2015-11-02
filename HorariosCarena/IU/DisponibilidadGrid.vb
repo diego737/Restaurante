@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub Modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modificar.Click
-        DisponibilidadForm.operacion = "Modifica"
+        DisponibilidadForm.operacion = "Modificar"
         DisponibilidadForm.indice = CByte(DataGridView1.CurrentRow.Cells(0).Value)
 
         llenarForm1()
@@ -24,7 +24,7 @@
     End Sub
 
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
-        DisponibilidadForm.operacion = "Elimina"
+        DisponibilidadForm.operacion = "Eliminar"
         DisponibilidadForm.indice = CByte(DataGridView1.CurrentRow.Cells(0).Value)
 
         LlenarForm1()
