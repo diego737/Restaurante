@@ -37,6 +37,11 @@
         Me.Close()
     End Sub
 
+    Private Sub DisponibilidadGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        MenuForm.MenuStrip1.Enabled = True
+    End Sub
+
+
     Private Sub DisponibilidadGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DataGridView1.DataSource = disponibilidades_list
 
