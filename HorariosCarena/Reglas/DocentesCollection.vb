@@ -1,4 +1,5 @@
-﻿Imports System.ComponentModel
+﻿Imports System.Data.SqlClient
+Imports System.ComponentModel
 Imports System.Text
 
 Public Class DocentesCollection
@@ -8,9 +9,15 @@ Public Class DocentesCollection
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
         e.NewObject = New DocenteClass 'DocenteCollection ?
     End Sub
+    'Este método se ejecuta cuando se crea el objeto.
+    'Es el método constructor de la clase.
+    Public Sub New()
+        'Llena la instancia del objeto list con datos provenientes de Docentes.
+        Me.TraerDocentes()
 
+    End Sub
     Public Function TraerDocentes() As DocentesCollection
-        'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
+        'Instancio el el Objeto BaseDatosClass para acceder al la base docentes.
         Dim objBaseDatos As New BaseDatosClass
 
         'Instancio un DataTable
@@ -25,9 +32,9 @@ Public Class DocentesCollection
             Midocente = New DocenteClass
 
             Midocente.Id = CInt(dr("Id"))
-            Midocente.Apellidos = CStr(dr("Apellidos"))
-            Midocente.Nombres = CStr(dr("IdAsignatura"))
-            Midocente.Correo = CStr(dr("IdModulo"))
+            Midocente.Apellidos = CStr(dr("Apellido"))
+            Midocente.Nombres = CStr(dr("Nombre"))
+            Midocente.Correo = CStr(dr("Correo"))
 
             Me.Add(Midocente)
         Next
@@ -37,14 +44,71 @@ Public Class DocentesCollection
     End Function
 
     Public Sub InsertarDocentes(ByVal MiDocente As DocenteClass)
-        'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
+        'Instancio el el Objeto BaseDatosClass para acceder al la base docentes.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "docentes"
 
-        Me.Add(MiDocente)
-        'objBaseDatos.Insertar(MiHorario)
-        'Agrego MiHorario en la colección actual.
-        Me.Add(MiDocente)
+       
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
+
+        vSQL.Append("(ID")
+        vSQL.Append(",(Nombre")
+        vSQL.Append(",Apellido")
+        vSQL.Append(",Correo")
+
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & MiDocente.Id & "'")
+        vSQL.Append("('" & MiDocente.Nombres & "'")
+        vSQL.Append(",'" & MiDocente.Apellidos & "'")
+        vSQL.Append(",'" & MiDocente.Correo & "'")
+
+
+        Try
+            'Agrego MiDocente en la tabla horarios.
+            objBaseDatos.Insertar(vSQL.ToString)
+
+            'Agrego MiDocente en la colección actual.
+            Me.Add(MiDocente)
+
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+
+        End Try
+
+    End Sub
+
+    Public Sub EliminarDocente(ByVal Id As Integer)
+        'Instancio el el Objeto BaseDatosClass para acceder al la base docentes.
+        Dim objBaseDatos As New BaseDatosClass
+        objBaseDatos.objTabla = "docentes"
+
+        Try
+            'Lo elimino en de la tabla docentes en la base docentes.
+            objBaseDatos.Eliminar(Id)
+
+            'Elimino MiDocente con el Id en la colección actual.
+            Me.RemoveAt(Id)
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+
+        End Try
+
+
+    End Sub
+
+    Public Sub ActualizarDocente(ByVal MiDocente As DocenteClass, ByVal Id As Integer)
+
+        'Instancio el el Objeto BaseDatosClass para acceder al la base docentes.
+        Dim objBaseDatos As New BaseDatosClass
+        objBaseDatos.objTabla = "docentes"
+
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
@@ -59,45 +123,23 @@ Public Class DocentesCollection
         vSQL.Append(",'" & MiDocente.Apellidos & "'")
         vSQL.Append(",'" & MiDocente.Correo & "'")
 
+        Try
+            'Actualizo la tabla docentes con el Id.
+            objBaseDatos.Actualizar(vSQL.ToString, Id)
 
-        'Agrego MiHorario en la tabla horarios.
-        objBaseDatos.Insertar(vSQL.ToString)
+            'Actualizo la colección.
+            Me.Item(Id).Id = MiDocente.Id
+            Me.Item(Id).Apellidos = MiDocente.Apellidos
+            Me.Item(Id).Nombres = MiDocente.Nombres
+            Me.Item(Id).Correo = MiDocente.Correo
 
-        vResultado = True
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
 
-        'Return vResultado
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
 
-    End Sub
-
-    Public Sub EliminarDocente(ByVal Id As Integer)
-        'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
-        Dim objBaseDatos As New BaseDatosClass
-        objBaseDatos.objTabla = "docentes"
-
-        'Lo elimino en de la tabla horarios en la base horarios.
-        objBaseDatos.Eliminar(Id)
-
-        'Elimino MiHorario con el Id en la colección actual.
-        Me.RemoveAt(Id)
-
-    End Sub
-
-    Public Sub ActualizarDocente(ByVal MiDocente As DocenteClass, ByVal Id As Integer)
-
-        'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
-        Dim objBaseDatos As New BaseDatosClass
-        objBaseDatos.objTabla = "docentes"
-
-        'Actualizo la tabla horarios con el Id.
-        'CORREGIR objBaseDatos.Actualizar(MiDocente, Id)
-
-        Me.Item(Id).Apellidos = MiDocente.Apellidos
-        Me.Item(Id).Correo = MiDocente.Correo
-        Me.Item(Id).Nombres = MiDocente.Nombres
-
-        'Elimino MiHorario con el Id en la colección actual.
-        'docentes_list.Item(indice_) = MiDocente
-        'Me.RemoveAt(Id)
+        End Try
     End Sub
 
 

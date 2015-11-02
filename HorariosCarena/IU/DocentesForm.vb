@@ -1,7 +1,7 @@
 ﻿Public Class DocentesForm
     Dim operacion_ As String
     Dim MiDocente As New DocenteClass
-    Dim indice_ As Integer
+    Dim indice_ As Byte
     Public Property operacion() As String
         Get
             Return operacion_
@@ -10,33 +10,44 @@
             operacion_ = value
         End Set
     End Property
-    Public Property indice() As Integer
+    Public Property indice() As Byte
         Get
             Return indice_
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Byte)
             indice_ = value
         End Set
     End Property
  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If NOMBRE.Text = "" Then Exit Sub
-        If APELLIDO.Text = "" Then Exit Sub
-        If CORREO_STR.Text = "" Then Exit Sub
+        'MiDocente.Id = CInt(TextBox1.Text)
         MiDocente.Nombres = NOMBRE.Text
         MiDocente.Apellidos = APELLIDO.Text
         MiDocente.Correo = CORREO_STR.Text
+
         Select Case operacion_
-            Case "Agregar"
-                docentes_list.Add(MiDocente)
-            Case "Eliminar"
-                docentes_list.RemoveAt(indice_)
-            Case "Modificar"
-                docentes_list.Item(indice_).Nombres = MiDocente.Nombres
-                docentes_list.Item(indice_).Apellidos = MiDocente.Apellidos
-                docentes_list.Item(indice_).Correo = MiDocente.Correo
+            Case "Alta"
+                If TextBox1.Text Is Nothing Then Exit Sub
+
+                If NOMBRE.Text Is Nothing Then Exit Sub
+
+                If APELLIDO.Text Is Nothing Then Exit Sub
+
+                If CORREO_STR.Text Is Nothing Then Exit Sub
+
+                docentes_list.InsertarDocentes(MiDocente)
+
+            Case "Elimina"
+                If indice_ = 0 Then Exit Sub
+                docentes_list.EliminarDocente(indice_)
+
+            Case "Modifica"
+                If indice_ = 0 Then Exit Sub
+                docentes_list.ActualizarDocente(MiDocente, indice_)
                 DocentesGrid.DataGridView1.Refresh()
+
         End Select
+
         Me.Close()
     End Sub
 
