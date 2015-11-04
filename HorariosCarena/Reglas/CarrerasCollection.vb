@@ -10,6 +10,13 @@ Public Class CarrerasCollection
         e.NewObject = New CarreraClass()
 
     End Sub
+    'Este método se ejecuta cuando se crea el objeto.
+    'Es el método constructor de la clase.
+    Public Sub New()
+        'Llena la instancia del objeto list con datos provenientes de Clases.
+        Me.TraerCarreras()
+
+    End Sub
 
     Public Function TraerCarreras() As CarrerasCollection
         'Instancio el el Objeto BaseDatosClass para acceder al la base carreras.
@@ -44,8 +51,7 @@ Public Class CarrerasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Carreras"
 
-        'Agrego MiCarrera en la colección actual.
-        Me.Add(Micarrera)
+        
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
@@ -55,12 +61,23 @@ Public Class CarrerasCollection
         vSQL.Append("('" & Micarrera.carrera & "'")
         vSQL.Append(",'" & Micarrera.curso & "'")
 
-        'Agrego MiHorario en la tabla horarios.
-        objBaseDatos.Insertar(vSQL.ToString)
+        Try
+            'Agrego MiHorario en la tabla horarios.
+            objBaseDatos.Insertar(vSQL.ToString)
+            'Agrego MiCarrera en la colección actual.
+            Me.Add(Micarrera)
 
-        vResultado = True
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
 
-        'Return vResultado
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+
+        End Try
+
+        'vResultado = True
+
+        ''Return vResultado
 
 
     End Sub
@@ -70,11 +87,24 @@ Public Class CarrerasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Carreras"
 
-        'Lo elimino en de la tabla horarios en la base horarios.
-        objBaseDatos.Eliminar(Id)
+        Try
 
-        'Elimino MiCarrera con el Id en la colección actual.
-        Me.RemoveAt(Id)
+
+            'Lo elimino en de la tabla horarios en la base horarios.
+            objBaseDatos.Eliminar(Id)
+
+            'Elimino MiCarrera con el Id en la colección actual.
+
+            Me.RemoveAt(Id)
+
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+
+        End Try
+
 
     End Sub
 
@@ -87,10 +117,34 @@ Public Class CarrerasCollection
         'Actualizo la tabla horarios con el Id.
         'CORREGIR objBaseDatos.Actualizar(MiCarrera, Id)
 
-        Me.Item(Id).id = MiCarrera.id
-        Me.Item(Id).curso = MiCarrera.curso
-        Me.Item(Id).carrera = MiCarrera.carrera
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
 
+
+        vSQL.Append("(Carrera")
+        vSQL.Append(",Curso")
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & MiCarrera.id & "'")
+        vSQL.Append(",'" & MiCarrera.carrera & "'")
+        vSQL.Append(",'" & MiCarrera.curso & "')")
+
+        Try
+            'Actualizo la tabla horarios con el Id.
+            objBaseDatos.Actualizar(vSQL.ToString, Id)
+
+            'Actualizo la colección.
+            Me.Item(Id).id = MiCarrera.id
+            Me.Item(Id).curso = MiCarrera.curso
+            Me.Item(Id).carrera = MiCarrera.carrera
+
+
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+
+        End Try
 
 
     End Sub
