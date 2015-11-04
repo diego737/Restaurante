@@ -8,8 +8,9 @@
     End Sub
 
     Private Sub Editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar.Click
+        If modulos_list.Count = 0 Then Exit Sub
+
         ModuloForm.accion = "Modifica"
-        ModuloForm.indicemodulo = CInt(DataGridView1.CurrentRow.Cells(0).Value)
 
         llenarform1()
 
@@ -21,7 +22,6 @@
         If modulos_list.Count = 0 Then Exit Sub
 
         ModuloForm.accion = "Elimina"
-        ModuloForm.indicemodulo = CInt(DataGridView1.CurrentRow.Cells(0).Value)
 
         llenarform1()
 
@@ -30,8 +30,8 @@
     End Sub
 
     Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
-
-        Me.Close()
+        MenuForm.MenuStrip1.Enabled = True
+        Me.Dispose()
     End Sub
 
     Private Sub llenarform1()
@@ -44,7 +44,7 @@
 
     Private Sub ModulosGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         MenuForm.MenuStrip1.Enabled = True
-        Me.Close()
+        Me.Dispose()
     End Sub
 
     Private Sub ModulosGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load

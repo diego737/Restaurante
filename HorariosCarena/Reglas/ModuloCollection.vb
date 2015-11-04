@@ -5,12 +5,29 @@ Imports System.Text
 Public Class ModuloCollection
     Inherits BindingList(Of ModuloClass)
 
-
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
-
-        e.NewObject = New ModuloClass
-
+        e.NewObject = New ModuloClass()
     End Sub
+
+    Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
+        Get
+            Return True
+        End Get
+    End Property
+
+    Protected Overrides Function FindCore(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer
+        For Each modulo In Me
+            If prop.GetValue(modulo).Equals(key) Then
+                Return Me.IndexOf(modulo)
+            End If
+        Next
+
+        Return -1
+    End Function
+
+    'Private Function Find(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer Implements IBindingList.Find
+
+    'End Function
 
     Public Sub New()
         Me.TraerModulos()
@@ -36,7 +53,6 @@ Public Class ModuloCollection
             MiModulo.fin = CInt(dr("fin"))
 
             Me.Add(MiModulo)
-
         Next
 
         Return Me
@@ -59,6 +75,7 @@ Public Class ModuloCollection
         vSQL.Append("('" & MiModulo.IdDia & "'")
         vSQL.Append(",'" & MiModulo.inicio & "'")
         vSQL.Append(",'" & MiModulo.fin & "')")
+
         Try
             objBaseDatos.Insertar(vSQL.ToString)
 
@@ -74,15 +91,16 @@ Public Class ModuloCollection
 
     End Sub
 
-    Public Sub EliminarModulo(ByVal Id As Integer)
+    Public Sub EliminarModulo(ByVal OModulo As ModuloClass)
 
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
 
         Try
-            objBaseDatos.Eliminar(Id)
+            objBaseDatos.Eliminar(OModulo.Id)
 
-            Me.RemoveAt(Id)
+            Me.Remove(OModulo)
+
         Catch ex As InvalidOperationException
             MessageBox.Show(ex.Message)
 
@@ -93,7 +111,7 @@ Public Class ModuloCollection
 
     End Sub
 
-    Public Sub ActualizarModulo(ByVal MiModulo As ModuloClass, ByVal Id As Integer)
+    Public Sub ActualizarModulo(ByVal MiModulo As ModuloClass)
 
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
@@ -110,13 +128,9 @@ Public Class ModuloCollection
         vSQL.Append(",'" & MiModulo.fin & "')")
 
         Try
+            objBaseDatos.Actualizar(vSQL.ToString, MiModulo.Id)
 
-            objBaseDatos.Actualizar(vSQL.ToString, Id)
-
-            Me.Item(Id).Id = MiModulo.Id
-            Me.Item(Id).IdDia = MiModulo.IdDia
-            Me.Item(Id).inicio = MiModulo.inicio
-            Me.Item(Id).fin = MiModulo.fin
+            Me.Items.Item(Me.FindCore(MiModulo.Id, MiModulo.Id)) = MiModulo
 
         Catch ex As InvalidOperationException
             MessageBox.Show(ex.Message)
@@ -125,7 +139,7 @@ Public Class ModuloCollection
             MessageBox.Show(ex1.Message)
 
         End Try
-      
+
     End Sub
 
 End Class

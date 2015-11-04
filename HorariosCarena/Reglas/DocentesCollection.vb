@@ -16,6 +16,7 @@ Public Class DocentesCollection
         Me.TraerDocentes()
 
     End Sub
+
     Public Function TraerDocentes() As DocentesCollection
         'Instancio el el Objeto BaseDatosClass para acceder al la base docentes.
         Dim objBaseDatos As New BaseDatosClass
@@ -141,7 +142,5 @@ Public Class DocentesCollection
 
         End Try
     End Sub
-
-
 
 End Class

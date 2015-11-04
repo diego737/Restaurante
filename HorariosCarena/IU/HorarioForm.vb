@@ -12,16 +12,6 @@
         End Set
     End Property
 
-    Dim indice_ As Byte
-    Public Property indice() As Byte
-        Get
-            Return indice_
-        End Get
-        Set(ByVal value As Byte)
-            indice_ = value
-        End Set
-    End Property
-
     Private Sub Aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Aceptar.Click
         MiHorario.IdCarrera = ComboBox1.SelectedIndex + 1
         MiHorario.IdDia = ComboBox2.SelectedIndex + 1
@@ -41,12 +31,10 @@
                 horarios_list.InsertarHorario(MiHorario)
 
             Case "Elimina"
-                If indice_ = 0 Then Exit Sub
-                horarios_list.EliminarHorario(indice_)
+                horarios_list.EliminarHorario(MiHorario)
 
             Case "Modifica"
-                If indice_ = 0 Then Exit Sub
-                horarios_list.ActualizarHorario(MiHorario, indice_)
+                horarios_list.ActualizarHorario(MiHorario)
                 HorariosGrid.DataGridView1.Refresh()
 
         End Select

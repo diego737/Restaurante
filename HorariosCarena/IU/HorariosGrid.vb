@@ -19,7 +19,6 @@
         If DataGridView1.SelectedRows.Count = 0 Then Exit Sub
 
         HorarioForm.operacion = "Modifica"
-        HorarioForm.indice = CByte(DataGridView1.CurrentRow.Cells(0).Value)
 
         LlenarForm1()
         HorarioForm.ShowDialog(Me)
@@ -28,7 +27,6 @@
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
         If DataGridView1.SelectedRows.Count = 0 Then Exit Sub
         HorarioForm.operacion = "Elimina"
-        HorarioForm.indice = CByte(DataGridView1.CurrentRow.Cells(0).Value)
 
         LlenarForm1()
         HorarioForm.ShowDialog(Me)
@@ -36,7 +34,7 @@
 
     Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
         MenuForm.MenuStrip1.Enabled = True
-        Me.Close()
+        Me.Dispose()
     End Sub
 
     Private Sub HorariosGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -45,7 +43,7 @@
 
     Private Sub HorariosGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DataGridView1.DataSource = horarios_list
-
+        Me.Dispose()
     End Sub
 
 End Class

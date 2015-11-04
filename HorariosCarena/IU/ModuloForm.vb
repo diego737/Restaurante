@@ -1,35 +1,25 @@
 ﻿Public Class ModuloForm
 
-    Dim Accion_ As String
-    Dim indicemodulo_ As Integer
+    Dim accion_ As String
     Dim MiModulo As New ModuloClass
 
     Public Property accion() As String
         Get
-            Return Accion_
+            Return accion_
         End Get
+
         Set(ByVal value As String)
-            Accion_ = value
+            accion_ = value
         End Set
     End Property
 
-    Public Property indicemodulo() As Integer
-        Get
-            Return indicemodulo_
-        End Get
-        Set(ByVal value As Integer)
-            indicemodulo_ = value
-        End Set
-    End Property
-
-    
     Private Sub Aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Aceptar.Click
 
         MiModulo.IdDia = ComboBox1.SelectedIndex + 1
         MiModulo.inicio = ComboBox2.SelectedIndex + 1
         MiModulo.fin = ComboBox3.SelectedIndex + 1
 
-        Select Case Accion_
+        Select Case accion_
             Case "Alta"
                 If ComboBox1.SelectedItem Is Nothing Then Exit Sub
 
@@ -40,18 +30,10 @@
                 modulos_list.InsertarModulo(MiModulo)
 
             Case "Elimina"
-
-                If modulos_list.Count = 0 Then Exit Sub
-
-                modulos_list.EliminarModulo(indicemodulo_)
+                modulos_list.EliminarModulo(MiModulo)
 
             Case "Modifica"
-                'Esto no es necesario porque ya se hace en el método ActualizarModulo.
-                'modulos_list.Item(indicemodulo_).IdDia = MiModulo.IdDia
-                'modulos_list.Item(indicemodulo_).inicio = MiModulo.inicio
-                'modulos_list.Item(indicemodulo_).fin = MiModulo.fin
-
-                modulos_list.ActualizarModulo(MiModulo, indicemodulo_)
+                modulos_list.ActualizarModulo(MiModulo)
                 ModulosGrid.DataGridView1.Refresh()
 
         End Select
@@ -60,9 +42,18 @@
 
     End Sub
 
-    Private Sub Cancelar_Click(ByVal sender As system.Object, ByVal e As System.EventArgs) Handles Cancelar.Click
+    Private Sub Cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar.Click
 
         Me.Close()
 
     End Sub
+
+    Private Sub ModuloForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        OModulo.IdDia = ComboBox1.SelectedIndex + 1
+        OModulo.inicio = ComboBox2.SelectedIndex + 1
+        OModulo.fin = ComboBox3.SelectedIndex + 1
+
+        MiModulo = OModulo
+    End Sub
+
 End Class

@@ -81,17 +81,18 @@ Public Class HorariosCollection
 
     End Sub
 
-    Public Sub EliminarHorario(ByVal Id As Integer)
+    Public Sub EliminarHorario(ByVal MiHorario As HorarioClass)
         'Instancio el el Objeto BaseDatosClass para acceder al la base horarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
 
         Try
             'Lo elimino en de la tabla horarios en la base horarios.
-            objBaseDatos.Eliminar(Id)
+            objBaseDatos.Eliminar(MiHorario.Id)
 
-            'Elimino MiHorario con el Id en la colección actual.
-            Me.RemoveAt(Id)
+            'Elimino MiHorario.
+            Me.Remove(MiHorario)
+
         Catch ex1 As InvalidOperationException
             MessageBox.Show(ex1.Message)
 
@@ -102,7 +103,7 @@ Public Class HorariosCollection
 
     End Sub
 
-    Public Sub ActualizarHorario(ByVal MiHorario As HorarioClass, ByVal Id As Integer)
+    Public Sub ActualizarHorario(ByVal MiHorario As HorarioClass)
 
         'Instancio el el Objeto BaseDatosClass para acceder al la base horarios.
         Dim objBaseDatos As New BaseDatosClass
@@ -123,13 +124,10 @@ Public Class HorariosCollection
 
         Try
             'Actualizo la tabla horarios con el Id.
-            objBaseDatos.Actualizar(vSQL.ToString, Id)
+            objBaseDatos.Actualizar(vSQL.ToString, MiHorario.Id)
 
             'Actualizo la colección.
-            Me.Item(Id).IdDia = MiHorario.IdDia
-            Me.Item(Id).IdCarrera = MiHorario.IdCarrera
-            Me.Item(Id).IdAsignatura = MiHorario.IdAsignatura
-            Me.Item(Id).IdModulo = MiHorario.IdModulo
+            Me.Items.Item(Me.IndexOf(MiHorario)) = MiHorario
 
         Catch ex1 As InvalidOperationException
             MessageBox.Show(ex1.Message)

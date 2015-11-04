@@ -13,12 +13,10 @@ Module ModuloPrincipal
         asignaturas_list = New AsignaturasCollection
         disponibilidades_list = New DisponibilidadesCollection
         horarios_list = New HorariosCollection
-        horarios_list.TraerHorarios()
         modulos_list = New ModuloCollection
         carreras_list = New CarrerasCollection
         docentes_list = New DocentesCollection
 
-        'Application.EnableVisuadocentes_listyles()
         Application.Run(MenuForm)
     End Sub
 
