@@ -59,10 +59,18 @@ Public Class ModuloCollection
         vSQL.Append("('" & MiModulo.IdDia & "'")
         vSQL.Append(",'" & MiModulo.inicio & "'")
         vSQL.Append(",'" & MiModulo.fin & "')")
+        Try
+            objBaseDatos.Insertar(vSQL.ToString)
 
-        objBaseDatos.Insertar(vSQL.ToString)
+            Me.Add(MiModulo)
 
-        vResultado = True
+        Catch ex As InvalidOperationException
+            MessageBox.Show(ex.Message)
+
+        Catch ex1 As SqlException
+            MessageBox.Show(ex1.Message)
+        End Try
+
 
     End Sub
 
@@ -71,9 +79,17 @@ Public Class ModuloCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
 
-        objBaseDatos.Eliminar(Id)
+        Try
+            objBaseDatos.Eliminar(Id)
 
-        Me.RemoveAt(Id)
+            Me.RemoveAt(Id)
+        Catch ex As InvalidOperationException
+            MessageBox.Show(ex.Message)
+
+        Catch ex1 As SqlException
+            MessageBox.Show(ex1.Message)
+
+        End Try
 
     End Sub
 
@@ -82,13 +98,34 @@ Public Class ModuloCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
 
-        'CORREGIR objBaseDatos.Actualizar(MiModulo, Id)
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
 
-        Me.Item(Id).Id = MiModulo.Id
-        Me.Item(Id).IdDia = MiModulo.IdDia
-        Me.Item(Id).inicio = MiModulo.inicio
-        Me.Item(Id).fin = MiModulo.fin
+        vSQL.Append("(IdDia")
+        vSQL.Append(",Inicio")
+        vSQL.Append(",Fin)")
+        vSQL.Append(" VALUES ")
+        vSQL.Append("('" & MiModulo.IdDia & "'")
+        vSQL.Append(",'" & MiModulo.inicio & "'")
+        vSQL.Append(",'" & MiModulo.fin & "')")
 
+        Try
+
+            objBaseDatos.Actualizar(vSQL.ToString, Id)
+
+            Me.Item(Id).Id = MiModulo.Id
+            Me.Item(Id).IdDia = MiModulo.IdDia
+            Me.Item(Id).inicio = MiModulo.inicio
+            Me.Item(Id).fin = MiModulo.fin
+
+        Catch ex As InvalidOperationException
+            MessageBox.Show(ex.Message)
+
+        Catch ex1 As SqlException
+            MessageBox.Show(ex1.Message)
+
+        End Try
+      
     End Sub
 
 End Class

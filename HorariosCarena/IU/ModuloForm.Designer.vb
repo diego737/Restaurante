@@ -59,6 +59,7 @@ Partial Class ModuloForm
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(151, 32)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(121, 20)

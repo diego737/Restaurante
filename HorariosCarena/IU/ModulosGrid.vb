@@ -44,6 +44,7 @@
 
     Private Sub ModulosGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         MenuForm.MenuStrip1.Enabled = True
+        Me.Close()
     End Sub
 
     Private Sub ModulosGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
