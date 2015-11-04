@@ -32,9 +32,9 @@ Public Class DocentesCollection
             Midocente = New DocenteClass
 
             Midocente.Id = CInt(dr("Id"))
-            Midocente.Apellidos = CStr(dr("Apellido"))
-            Midocente.Nombres = CStr(dr("Nombre"))
-            Midocente.Correo = CStr(dr("Correo"))
+            Midocente.Apellidos = CStr(dr("Apellidos"))
+            Midocente.Nombres = CStr(dr("Nombres"))
+            Midocente.Correo = CStr(dr("Correos"))
 
             Me.Add(Midocente)
         Next
@@ -52,16 +52,16 @@ Public Class DocentesCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(ID")
-        vSQL.Append(",(Nombre")
-        vSQL.Append(",Apellido")
-        vSQL.Append(",Correo")
+        'vSQL.Append("(Id")
+        vSQL.Append("(Nombres")
+        vSQL.Append(",Apellidos")
+        vSQL.Append(",Correos)")
 
         vSQL.Append(" VALUES ")
-        vSQL.Append("('" & MiDocente.Id & "'")
+        ' vSQL.Append("('" & MiDocente.Id & "'")
         vSQL.Append("('" & MiDocente.Nombres & "'")
         vSQL.Append(",'" & MiDocente.Apellidos & "'")
-        vSQL.Append(",'" & MiDocente.Correo & "'")
+        vSQL.Append(",'" & MiDocente.Correo & "')")
 
 
         Try
@@ -112,16 +112,16 @@ Public Class DocentesCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(ID")
-        vSQL.Append(",(Nombres")
+        'vSQL.Append("(ID")
+        vSQL.Append("(Nombres")
         vSQL.Append(",Apellidos")
-        vSQL.Append(",Correo")
+        vSQL.Append(",Correos)")
 
         vSQL.Append(" VALUES ")
-        vSQL.Append("('" & MiDocente.Id & "'")
-        vSQL.Append("('" & MiDocente.Nombres & "'")
+        'vSQL.Append("('" & MiDocente.Id & "'")
+        vSQL.Append("'(" & MiDocente.Nombres & "'")
         vSQL.Append(",'" & MiDocente.Apellidos & "'")
-        vSQL.Append(",'" & MiDocente.Correo & "'")
+        vSQL.Append(",'" & MiDocente.Correo & "')")
 
         Try
             'Actualizo la tabla docentes con el Id.
