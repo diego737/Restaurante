@@ -119,7 +119,7 @@ Public Class DocentesCollection
 
         vSQL.Append(" VALUES ")
         'vSQL.Append("('" & MiDocente.Id & "'")
-        vSQL.Append("'(" & MiDocente.Nombres & "'")
+        vSQL.Append("('" & MiDocente.Nombres & "'")
         vSQL.Append(",'" & MiDocente.Apellidos & "'")
         vSQL.Append(",'" & MiDocente.Correo & "')")
 
