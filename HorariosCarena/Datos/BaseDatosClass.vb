@@ -69,10 +69,6 @@ Public Class BaseDatosClass
             'Abrimos la conexión a la base de datos.
             objConexion.Open()
 
-            'Dim valorRetorno As New SqlParameter("ID", SqlDbType.Int)
-            'valorRetorno.Direction = ParameterDirection.ReturnValue
-            'cmd.Transaction = MGlobales._transa
-
             Try
                 'Intentamos ejecutar el comando SQL.
                 cmd.ExecuteNonQuery()

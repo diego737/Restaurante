@@ -1,9 +1,11 @@
-﻿Imports System.Data.SqlClient
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 Imports System.Text
 
 Public Class ModuloCollection
     Inherits BindingList(Of ModuloClass)
+
+    'Este array es solo para módulos.
+    Public dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"}
 
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
         e.NewObject = New ModuloClass()
@@ -25,10 +27,6 @@ Public Class ModuloCollection
         Return -1
     End Function
 
-    'Private Function Find(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer Implements IBindingList.Find
-
-    'End Function
-
     Public Sub New()
         Me.TraerModulos()
     End Sub
@@ -49,8 +47,9 @@ Public Class ModuloCollection
 
             MiModulo.Id = CInt(dr("Id"))
             MiModulo.IdDia = CInt(dr("IdDia"))
-            MiModulo.inicio = CInt(dr("Inicio"))
-            MiModulo.fin = CInt(dr("fin"))
+            MiModulo.Dia = dias(CInt(dr("IdDIa")) - 1)
+            MiModulo.Inicio = CStr(dr("Inicio"))
+            MiModulo.Fin = CStr(dr("Fin"))
 
             Me.Add(MiModulo)
         Next
@@ -64,7 +63,6 @@ Public Class ModuloCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
 
-        Me.Add(MiModulo)
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
@@ -73,41 +71,32 @@ Public Class ModuloCollection
         vSQL.Append(",Fin)")
         vSQL.Append(" VALUES ")
         vSQL.Append("('" & MiModulo.IdDia & "'")
-        vSQL.Append(",'" & MiModulo.inicio & "'")
-        vSQL.Append(",'" & MiModulo.fin & "')")
+        vSQL.Append(",'" & MiModulo.Inicio & "'")
+        vSQL.Append(",'" & MiModulo.Fin & "')")
 
-        Try
-            objBaseDatos.Insertar(vSQL.ToString)
+        'El método insertar me devuelve el Id de la fila insertada.
+        MiModulo.Id = objBaseDatos.Insertar(vSQL.ToString)
 
-            Me.Add(MiModulo)
-
-        Catch ex As InvalidOperationException
-            MessageBox.Show(ex.Message)
-
-        Catch ex1 As SqlException
-            MessageBox.Show(ex1.Message)
-        End Try
-
+        MiModulo.Dia = dias(MiModulo.IdDia - 1)
+        Me.Add(MiModulo)
 
     End Sub
 
-    Public Sub EliminarModulo(ByVal OModulo As ModuloClass)
+    Public Sub EliminarModulo(ByVal MiModulo As ModuloClass)
 
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
 
-        Try
-            objBaseDatos.Eliminar(OModulo.Id)
+        objBaseDatos.Eliminar(MiModulo.Id)
 
-            Me.Remove(OModulo)
+        ' Creates a new collection and assign it the properties for modulo.
+        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiModulo)
 
-        Catch ex As InvalidOperationException
-            MessageBox.Show(ex.Message)
+        'Sets an PropertyDescriptor to the specific property Id.
+        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
-        Catch ex1 As SqlException
-            MessageBox.Show(ex1.Message)
-
-        End Try
+        MiModulo.Dia = dias(MiModulo.IdDia - 1)
+        Me.RemoveAt(Me.FindCore(myProperty, MiModulo.Id))
 
     End Sub
 
@@ -119,26 +108,20 @@ Public Class ModuloCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(IdDia")
-        vSQL.Append(",Inicio")
-        vSQL.Append(",Fin)")
-        vSQL.Append(" VALUES ")
-        vSQL.Append("('" & MiModulo.IdDia & "'")
-        vSQL.Append(",'" & MiModulo.inicio & "'")
-        vSQL.Append(",'" & MiModulo.fin & "')")
+        vSQL.Append("IdDia=" & MiModulo.IdDia.ToString)
+        vSQL.Append(",Inicio='" & MiModulo.Inicio.ToString)
+        vSQL.Append("',Fin='" & MiModulo.Fin.ToString & "'")
 
-        Try
-            objBaseDatos.Actualizar(vSQL.ToString, MiModulo.Id)
+        objBaseDatos.Actualizar(vSQL.ToString, MiModulo.Id)
 
-            Me.Items.Item(Me.FindCore(MiModulo.Id, MiModulo.Id)) = MiModulo
+        ' Creates a new collection and assign it the properties for modulo.
+        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiModulo)
 
-        Catch ex As InvalidOperationException
-            MessageBox.Show(ex.Message)
+        'Sets an PropertyDescriptor to the specific property Id.
+        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
-        Catch ex1 As SqlException
-            MessageBox.Show(ex1.Message)
-
-        End Try
+        MiModulo.Dia = dias(MiModulo.IdDia - 1)
+        Me.Items.Item(Me.FindCore(myProperty, MiModulo.Id)) = MiModulo
 
     End Sub
 

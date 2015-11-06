@@ -36,9 +36,9 @@
 
     Private Sub llenarform1()
         ModuloForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
-        ModuloForm.ComboBox1.SelectedItem = CInt(DataGridView1.CurrentRow.Cells(1).Value) - 1
-        ModuloForm.ComboBox2.SelectedItem = CInt(DataGridView1.CurrentRow.Cells(2).Value) - 1
-        ModuloForm.ComboBox3.SelectedItem = CInt(DataGridView1.CurrentRow.Cells(3).Value) - 1
+        ModuloForm.ComboBox1.SelectedItem = DataGridView1.CurrentRow.Cells(1).Value.ToString
+        ModuloForm.ComboBox2.SelectedItem = DataGridView1.CurrentRow.Cells(2).Value.ToString
+        ModuloForm.ComboBox3.SelectedItem = DataGridView1.CurrentRow.Cells(3).ToString
 
     End Sub
 
@@ -52,4 +52,5 @@
         DataGridView1.DataSource = modulos_list
 
     End Sub
+
 End Class

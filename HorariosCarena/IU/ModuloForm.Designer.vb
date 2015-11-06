@@ -38,7 +38,7 @@ Partial Class ModuloForm
         '
         Me.Aceptar.BackColor = System.Drawing.Color.Khaki
         Me.Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Aceptar.Location = New System.Drawing.Point(16, 208)
+        Me.Aceptar.Location = New System.Drawing.Point(12, 159)
         Me.Aceptar.Name = "Aceptar"
         Me.Aceptar.Size = New System.Drawing.Size(117, 31)
         Me.Aceptar.TabIndex = 0
@@ -49,7 +49,7 @@ Partial Class ModuloForm
         '
         Me.Cancelar.BackColor = System.Drawing.Color.Khaki
         Me.Cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cancelar.Location = New System.Drawing.Point(155, 208)
+        Me.Cancelar.Location = New System.Drawing.Point(151, 159)
         Me.Cancelar.Name = "Cancelar"
         Me.Cancelar.Size = New System.Drawing.Size(117, 31)
         Me.Cancelar.TabIndex = 5
@@ -79,7 +79,7 @@ Partial Class ModuloForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(30, 66)
+        Me.Label2.Location = New System.Drawing.Point(30, 56)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(33, 20)
         Me.Label2.TabIndex = 8
@@ -89,7 +89,7 @@ Partial Class ModuloForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(30, 100)
+        Me.Label3.Location = New System.Drawing.Point(30, 83)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(46, 20)
         Me.Label3.TabIndex = 9
@@ -99,7 +99,7 @@ Partial Class ModuloForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(30, 135)
+        Me.Label4.Location = New System.Drawing.Point(30, 110)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(31, 20)
         Me.Label4.TabIndex = 10
@@ -110,8 +110,8 @@ Partial Class ModuloForm
         Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes"})
-        Me.ComboBox1.Location = New System.Drawing.Point(151, 66)
+        Me.ComboBox1.Items.AddRange(New Object() {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"})
+        Me.ComboBox1.Location = New System.Drawing.Point(151, 58)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 11
@@ -121,8 +121,8 @@ Partial Class ModuloForm
         Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"17:05", "17:45", "18:25", "19:05", "19:50", "20:30", "21:15", "21:50", "22:35"})
-        Me.ComboBox2.Location = New System.Drawing.Point(151, 100)
+        Me.ComboBox2.Items.AddRange(New Object() {"17:05", "17:45", "18:25", "19:10", "19:50", "20:35", "21:15", "21:55"})
+        Me.ComboBox2.Location = New System.Drawing.Point(151, 85)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox2.TabIndex = 12
@@ -131,9 +131,10 @@ Partial Class ModuloForm
         '
         Me.ComboBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.Enabled = False
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"17:05", "17:45", "18:25", "19:05", "19:50", "20:30", "21:15", "21:50", "22:35"})
-        Me.ComboBox3.Location = New System.Drawing.Point(151, 135)
+        Me.ComboBox3.Items.AddRange(New Object() {"17:45", "18:25", "19:05", "19:50", "20:30", "21:15", "21:55", "22:35"})
+        Me.ComboBox3.Location = New System.Drawing.Point(151, 112)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox3.TabIndex = 13
@@ -143,7 +144,7 @@ Partial Class ModuloForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DeepSkyBlue
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(284, 214)
         Me.Controls.Add(Me.ComboBox3)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.ComboBox1)

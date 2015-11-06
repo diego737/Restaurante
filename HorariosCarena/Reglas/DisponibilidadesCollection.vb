@@ -1,15 +1,14 @@
 ﻿Imports System.ComponentModel
-Imports System.Data.SqlClient
 Imports System.Text
 
 Public Class DisponibilidadesCollection
     Inherits BindingList(Of DisponibilidadClass)
+
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
         e.NewObject = New DisponibilidadClass
 
-
-
     End Sub
+
     Public Function TraerDisponibilidad() As DisponibilidadesCollection
         Dim objBaseDatos As New BaseDatosClass
         Dim MiDataTable As New DataTable
@@ -30,6 +29,7 @@ Public Class DisponibilidadesCollection
         Return Me
 
     End Function
+
     Public Sub InsertarDisponibilidad(ByVal MiDisponibilidad As DisponibilidadClass)
 
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.

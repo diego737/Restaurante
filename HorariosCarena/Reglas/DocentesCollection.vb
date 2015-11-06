@@ -1,5 +1,4 @@
-﻿Imports System.Data.SqlClient
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 Imports System.Text
 
 Public Class DocentesCollection
@@ -9,6 +8,7 @@ Public Class DocentesCollection
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
         e.NewObject = New DocenteClass 'DocenteCollection ?
     End Sub
+
     'Este método se ejecuta cuando se crea el objeto.
     'Es el método constructor de la clase.
     Public Sub New()
@@ -65,20 +65,11 @@ Public Class DocentesCollection
         vSQL.Append(",'" & MiDocente.Correo & "')")
 
 
-        Try
-            'Agrego MiDocente en la tabla horarios.
-            objBaseDatos.Insertar(vSQL.ToString)
+        'Agrego MiDocente en la tabla horarios.
+        objBaseDatos.Insertar(vSQL.ToString)
 
-            'Agrego MiDocente en la colección actual.
-            Me.Add(MiDocente)
-
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
+        'Agrego MiDocente en la colección actual.
+        Me.Add(MiDocente)
 
     End Sub
 
@@ -87,20 +78,11 @@ Public Class DocentesCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "docentes"
 
-        Try
-            'Lo elimino en de la tabla docentes en la base docentes.
-            objBaseDatos.Eliminar(Id)
+        'Lo elimino en de la tabla docentes en la base docentes.
+        objBaseDatos.Eliminar(Id)
 
-            'Elimino MiDocente con el Id en la colección actual.
-            Me.RemoveAt(Id)
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
-
+        'Elimino MiDocente con el Id en la colección actual.
+        Me.RemoveAt(Id)
 
     End Sub
 
@@ -124,23 +106,15 @@ Public Class DocentesCollection
         vSQL.Append(",'" & MiDocente.Apellidos & "'")
         vSQL.Append(",'" & MiDocente.Correo & "')")
 
-        Try
-            'Actualizo la tabla docentes con el Id.
-            objBaseDatos.Actualizar(vSQL.ToString, Id)
+        'Actualizo la tabla docentes con el Id.
+        objBaseDatos.Actualizar(vSQL.ToString, Id)
 
-            'Actualizo la colección.
-            Me.Item(Id).Id = MiDocente.Id
-            Me.Item(Id).Apellidos = MiDocente.Apellidos
-            Me.Item(Id).Nombres = MiDocente.Nombres
-            Me.Item(Id).Correo = MiDocente.Correo
+        'Actualizo la colección.
+        Me.Item(Id).Id = MiDocente.Id
+        Me.Item(Id).Apellidos = MiDocente.Apellidos
+        Me.Item(Id).Nombres = MiDocente.Nombres
+        Me.Item(Id).Correo = MiDocente.Correo
 
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
     End Sub
 
 End Class

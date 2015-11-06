@@ -1,4 +1,3 @@
-Imports System.Data.SqlClient
 Imports System.ComponentModel
 Imports System.Text
 
@@ -64,20 +63,11 @@ Public Class HorariosCollection
         vSQL.Append(",'" & MiHorario.IdDia & "'")
         vSQL.Append(",'" & MiHorario.IdModulo & "')")
 
-        Try
-            'Agrego MiHorario en la tabla horarios.
-            objBaseDatos.Insertar(vSQL.ToString)
+        'Agrego MiHorario en la tabla horarios.
+        objBaseDatos.Insertar(vSQL.ToString)
 
-            'Agrego MiHorario en la colección actual.
-            Me.Add(MiHorario)
-
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
+        'Agrego MiHorario en la colección actual.
+        Me.Add(MiHorario)
 
     End Sub
 
@@ -86,20 +76,11 @@ Public Class HorariosCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "horarios"
 
-        Try
-            'Lo elimino en de la tabla horarios en la base horarios.
-            objBaseDatos.Eliminar(MiHorario.Id)
+        'Lo elimino en de la tabla horarios en la base horarios.
+        objBaseDatos.Eliminar(MiHorario.Id)
 
-            'Elimino MiHorario.
-            Me.Remove(MiHorario)
-
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
+        'Elimino MiHorario.
+        Me.Remove(MiHorario)
 
     End Sub
 
@@ -122,20 +103,11 @@ Public Class HorariosCollection
         vSQL.Append(",'" & MiHorario.IdDia & "'")
         vSQL.Append(",'" & MiHorario.IdModulo & "')")
 
-        Try
-            'Actualizo la tabla horarios con el Id.
-            objBaseDatos.Actualizar(vSQL.ToString, MiHorario.Id)
+        'Actualizo la tabla horarios con el Id.
+        objBaseDatos.Actualizar(vSQL.ToString, MiHorario.Id)
 
-            'Actualizo la colección.
-            Me.Items.Item(Me.IndexOf(MiHorario)) = MiHorario
-
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
+        'Actualizo la colección.
+        Me.Items.Item(Me.IndexOf(MiHorario)) = MiHorario
 
     End Sub
 

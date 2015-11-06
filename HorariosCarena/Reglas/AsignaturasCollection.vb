@@ -1,5 +1,4 @@
-﻿Imports System.Data.SqlClient
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 Imports System.Text
 
 Public Class AsignaturasCollection

@@ -1,5 +1,4 @@
-﻿Imports System.Data.SqlClient
-Imports System.ComponentModel
+﻿Imports System.ComponentModel
 Imports System.Text
 
 Public Class CarrerasCollection
@@ -61,24 +60,14 @@ Public Class CarrerasCollection
         vSQL.Append("('" & Micarrera.carrera & "'")
         vSQL.Append(",'" & Micarrera.curso & "'")
 
-        Try
-            'Agrego MiHorario en la tabla horarios.
-            objBaseDatos.Insertar(vSQL.ToString)
-            'Agrego MiCarrera en la colección actual.
-            Me.Add(Micarrera)
-
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
+        'Agrego MiHorario en la tabla horarios.
+        objBaseDatos.Insertar(vSQL.ToString)
+        'Agrego MiCarrera en la colección actual.
+        Me.Add(Micarrera)
 
         'vResultado = True
 
         ''Return vResultado
-
 
     End Sub
 
@@ -87,24 +76,12 @@ Public Class CarrerasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Carreras"
 
-        Try
+        'Lo elimino en de la tabla horarios en la base horarios.
+        objBaseDatos.Eliminar(Id)
 
+        'Elimino MiCarrera con el Id en la colección actual.
 
-            'Lo elimino en de la tabla horarios en la base horarios.
-            objBaseDatos.Eliminar(Id)
-
-            'Elimino MiCarrera con el Id en la colección actual.
-
-            Me.RemoveAt(Id)
-
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
-
+        Me.RemoveAt(Id)
 
     End Sub
 
@@ -128,24 +105,13 @@ Public Class CarrerasCollection
         vSQL.Append(",'" & MiCarrera.carrera & "'")
         vSQL.Append(",'" & MiCarrera.curso & "')")
 
-        Try
-            'Actualizo la tabla horarios con el Id.
-            objBaseDatos.Actualizar(vSQL.ToString, Id)
+        'Actualizo la tabla horarios con el Id.
+        objBaseDatos.Actualizar(vSQL.ToString, Id)
 
-            'Actualizo la colección.
-            Me.Item(Id).id = MiCarrera.id
-            Me.Item(Id).curso = MiCarrera.curso
-            Me.Item(Id).carrera = MiCarrera.carrera
-
-
-        Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
-
-        Catch ex2 As SqlException
-            MessageBox.Show(ex2.Message)
-
-        End Try
-
+        'Actualizo la colección.
+        Me.Item(Id).id = MiCarrera.id
+        Me.Item(Id).curso = MiCarrera.curso
+        Me.Item(Id).carrera = MiCarrera.carrera
 
     End Sub
 

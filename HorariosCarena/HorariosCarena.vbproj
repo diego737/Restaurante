@@ -166,10 +166,6 @@
     </Compile>
     <Compile Include="ModuloPrincipal.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -254,16 +250,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="My Project\Application.myapp">
-      <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="My Project\DataSources\AsignaturasCollection.datasource" />
-    <None Include="My Project\DataSources\DocentesCollection.datasource" />
-    <None Include="My Project\DataSources\DocentesForm.datasource" />
-    <None Include="My Project\DataSources\DocentesGrid.datasource" />
-    <None Include="My Project\DataSources\HorariosCollection.datasource" />
-    <None Include="My Project\DataSources\ModuloCollection.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -360,7 +346,6 @@
     <None Include="Resources\Salir48b.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="My Project\DataSources\DisponibilidadesCollection.datasource" />
     <None Include="Resources\Tablas.png" />
   </ItemGroup>
   <ItemGroup>
@@ -370,7 +355,7 @@
     <None Include="Resources\carreras grid.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="My Project\DataSources\CarrerasCollection.datasource" />
+    <None Include="My Project\DataSources\ModuloCollection.datasource" />
     <None Include="Resources\carreras grid2.jpg" />
   </ItemGroup>
   <ItemGroup>

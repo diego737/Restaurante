@@ -1,8 +1,9 @@
 ﻿Public Class ModuloClass
     Dim Id_ As Integer
     Dim IdDia_ As Integer
-    Dim Inicio_ As Integer
-    Dim Fin_ As Integer
+    Dim dia_ As String
+    Dim Inicio_ As String
+    Dim Fin_ As String
 
     Public Property Id() As Integer
 
@@ -29,27 +30,42 @@
         End Set
     End Property
 
-    Public Property inicio() As Integer
+    Public Property Inicio() As String
         Get
             Return Inicio_
 
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
 
             Inicio_ = value
 
         End Set
     End Property
 
-    Public Property fin() As Integer
+    Public Property Fin() As String
         Get
             Return Fin_
 
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As String)
 
             Fin_ = value
 
         End Set
     End Property
+
+    Public Property Dia() As String
+        Get
+
+            Return dia_
+
+        End Get
+
+        Set(ByVal value As String)
+
+            dia_ = value
+
+        End Set
+    End Property
+
 End Class
