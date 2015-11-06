@@ -11,11 +11,13 @@ Public Class ModuloCollection
         e.NewObject = New ModuloClass()
     End Sub
 
+
     Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
         Get
             Return True
         End Get
     End Property
+
 
     Protected Overrides Function FindCore(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer
         For Each modulo In Me

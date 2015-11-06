@@ -16,32 +16,33 @@
     End Sub
 
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
-        If DataGridView1.SelectedRows.Count = 0 Then Exit Sub
-        DocentesForm.operacion = "Elimina"
-        DocentesForm.indice = CByte(DataGridView1.CurrentRow.Cells(0).Value)
+        If docentes_list.Count = 0 Then Exit Sub
+
+        ModuloForm.accion = "Elimina"
 
         LlenarForm1()
-        DocentesForm.ShowDialog(Me)
+
+        DocentesForm.Show()
     End Sub
 
     Private Sub Modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modificar.Click
-        'Si no hay fila seleccionada salimos.
-        If DataGridView1.SelectedRows.Count = 0 Then Exit Sub
+        If docentes_list.Count = 0 Then Exit Sub
 
         DocentesForm.operacion = "Modifica"
-        DocentesForm.indice = CByte(DataGridView1.CurrentRow.Cells(0).Value)
 
         LlenarForm1()
-        DocentesForm.ShowDialog(Me)
+
+        DocentesForm.Show()
     End Sub
 
     Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
         MenuForm.MenuStrip1.Enabled = True
-        Me.Close()
+        Me.Dispose()
     End Sub
 
     Private Sub DocentesGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         MenuForm.MenuStrip1.Enabled = True
+        Me.Dispose()
     End Sub
     
 

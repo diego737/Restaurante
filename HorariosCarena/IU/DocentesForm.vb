@@ -1,7 +1,7 @@
 ﻿Public Class DocentesForm
     Dim operacion_ As String
     Dim MiDocente As New DocenteClass
-    Dim indice_ As Byte
+
     Public Property operacion() As String
         Get
             Return operacion_
@@ -10,15 +10,8 @@
             operacion_ = value
         End Set
     End Property
-    Public Property indice() As Byte
-        Get
-            Return indice_
-        End Get
-        Set(ByVal value As Byte)
-            indice_ = value
-        End Set
-    End Property
- 
+  
+
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         'MiDocente.Id = CInt(TextBox1.Text)
         MiDocente.Nombres = NOMBRE.Text
@@ -38,12 +31,12 @@
                 docentes_list.InsertarDocentes(MiDocente)
 
             Case "Elimina"
-                If indice_ = 0 Then Exit Sub
-                docentes_list.EliminarDocente(indice_)
+
+                docentes_list.EliminarDocente(MiDocente)
 
             Case "Modifica"
-                If indice_ = 0 Then Exit Sub
-                docentes_list.ActualizarDocente(MiDocente, indice_)
+
+                docentes_list.ActualizarDocente(MiDocente)
                 DocentesGrid.DataGridView1.Refresh()
 
         End Select
