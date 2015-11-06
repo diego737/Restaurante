@@ -2,7 +2,7 @@
 
     Private Sub Agregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Agregar.Click
 
-        ModuloForm.accion = "Alta"
+        ModuloForm.operacion = "Alta"
         ModuloForm.Show()
 
     End Sub
@@ -10,7 +10,7 @@
     Private Sub Editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar.Click
         If modulos_list.Count = 0 Then Exit Sub
 
-        ModuloForm.accion = "Modifica"
+        ModuloForm.operacion = "Modifica"
 
         llenarform1()
 
@@ -21,7 +21,7 @@
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
         If modulos_list.Count = 0 Then Exit Sub
 
-        ModuloForm.accion = "Elimina"
+        ModuloForm.operacion = "Elimina"
 
         llenarform1()
 
