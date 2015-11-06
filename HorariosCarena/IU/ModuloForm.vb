@@ -1,15 +1,33 @@
 ﻿Public Class ModuloForm
 
+<<<<<<< .mine
+    Dim Operacion_ As String
+||||||| .r166
+    Dim accion_ As String
+=======
     Dim operacion_ As String
+>>>>>>> .r169
     Dim MiModulo As New ModuloClass
 
     Public Property operacion() As String
         Get
+<<<<<<< .mine
+            Return Operacion_
+||||||| .r166
+            Return accion_
+=======
             Return operacion_
+>>>>>>> .r169
         End Get
 
         Set(ByVal value As String)
+<<<<<<< .mine
+            Operacion_ = value
+||||||| .r166
+            accion_ = value
+=======
             operacion_ = value
+>>>>>>> .r169
         End Set
     End Property
 
@@ -19,7 +37,13 @@
         MiModulo.Inicio = ComboBox2.SelectedItem.ToString
         MiModulo.Fin = ComboBox3.SelectedItem.ToString
 
+<<<<<<< .mine
+        Select Case Operacion_
+||||||| .r166
+        Select Case accion_
+=======
         Select Case operacion_
+>>>>>>> .r169
             Case "Alta"
                 If ComboBox1.SelectedIndex = -1 Then Exit Sub
 
@@ -58,7 +82,13 @@
         'ComboBox2.DataSource = desde
         'ComboBox3.DataSource = hasta
 
+<<<<<<< .mine
+        If Operacion_ <> "Alta" Then
+||||||| .r166
+        If accion_ <> "Alta" Then
+=======
         If operacion_ <> "Alta" Then
+>>>>>>> .r169
             MiModulo.Id = CInt(TextBox1.Text)
             MiModulo.IdDia = ComboBox1.SelectedIndex + 1
             MiModulo.Inicio = ComboBox2.SelectedText
