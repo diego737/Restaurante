@@ -10,6 +10,21 @@ Public Class HorariosCollection
 
     End Sub
 
+    Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
+        Get
+            Return True
+        End Get
+    End Property
+    Protected Overrides Function FindCore(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer
+        For Each modulo In Me
+            If prop.GetValue(modulo).Equals(key) Then
+                Return Me.IndexOf(modulo)
+            End If
+        Next
+
+        Return -1
+    End Function
+
     'Este método se ejecuta cuando se crea el objeto.
     'Es el método constructor de la clase.
     Public Sub New()
@@ -64,7 +79,7 @@ Public Class HorariosCollection
         vSQL.Append(",'" & MiHorario.IdModulo & "')")
 
         'Agrego MiHorario en la tabla horarios.
-        objBaseDatos.Insertar(vSQL.ToString)
+        MiHorario.Id = objBaseDatos.Insertar(vSQL.ToString)
 
         'Agrego MiHorario en la colección actual.
         Me.Add(MiHorario)
@@ -74,13 +89,17 @@ Public Class HorariosCollection
     Public Sub EliminarHorario(ByVal MiHorario As HorarioClass)
         'Instancio el el Objeto BaseDatosClass para acceder al la base horarios.
         Dim objBaseDatos As New BaseDatosClass
-        objBaseDatos.objTabla = "horarios"
+        objBaseDatos.objTabla = "Horarios"
 
-        'Lo elimino en de la tabla horarios en la base horarios.
         objBaseDatos.Eliminar(MiHorario.Id)
 
-        'Elimino MiHorario.
-        Me.Remove(MiHorario)
+        ' Creates a new collection and assign it the properties for modulo.
+        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
+
+        'Sets an PropertyDescriptor to the specific property Id.
+        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
+        Me.RemoveAt(Me.FindCore(myProperty, MiHorario.Id))
 
     End Sub
 
@@ -106,8 +125,13 @@ Public Class HorariosCollection
         'Actualizo la tabla horarios con el Id.
         objBaseDatos.Actualizar(vSQL.ToString, MiHorario.Id)
 
-        'Actualizo la colección.
-        Me.Items.Item(Me.IndexOf(MiHorario)) = MiHorario
+        ' Creates a new collection and assign it the properties for modulo.
+        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
+
+        'Sets an PropertyDescriptor to the specific property Id.
+        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
+        Me.Items.Item(Me.FindCore(myProperty, MiHorario.Id)) = MiHorario
 
     End Sub
 
