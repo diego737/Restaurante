@@ -7,7 +7,9 @@
 
     End Sub
 
-    Private Sub Editar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Editar.click
+    Private Sub Modificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Modificar.Click
+
+
         If horarios_list.Count = 0 Then Exit Sub
 
         HorarioForm.operacion = "Modifica"
