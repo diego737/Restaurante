@@ -1,15 +1,15 @@
 ﻿Public Class ModuloForm
 
-    Dim accion_ As String
+    Dim operacion_ As String
     Dim MiModulo As New ModuloClass
 
-    Public Property accion() As String
+    Public Property operacion() As String
         Get
-            Return accion_
+            Return operacion_
         End Get
 
         Set(ByVal value As String)
-            accion_ = value
+            operacion_ = value
         End Set
     End Property
 
@@ -19,7 +19,7 @@
         MiModulo.Inicio = ComboBox2.SelectedItem.ToString
         MiModulo.Fin = ComboBox3.SelectedItem.ToString
 
-        Select Case accion_
+        Select Case operacion_
             Case "Alta"
                 If ComboBox1.SelectedIndex = -1 Then Exit Sub
 
@@ -58,7 +58,7 @@
         'ComboBox2.DataSource = desde
         'ComboBox3.DataSource = hasta
 
-        If accion_ <> "Alta" Then
+        If operacion_ <> "Alta" Then
             MiModulo.Id = CInt(TextBox1.Text)
             MiModulo.IdDia = ComboBox1.SelectedIndex + 1
             MiModulo.Inicio = ComboBox2.SelectedText
