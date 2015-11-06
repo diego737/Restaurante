@@ -8,10 +8,30 @@ Public Class DisponibilidadesCollection
         e.NewObject = New DisponibilidadClass
 
     End Sub
+    Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
+        Get
+            Return True
+        End Get
+    End Property
 
+    Protected Overrides Function FindCore(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer
+        For Each disponibilidad In Me
+            If prop.GetValue(disponibilidad).Equals(key) Then
+                Return Me.IndexOf(disponibilidad)
+            End If
+        Next
+
+        Return -1
+    End Function
+    Public Sub New()
+        Me.TraerDisponibilidad()
+    End Sub
     Public Function TraerDisponibilidad() As DisponibilidadesCollection
+
         Dim objBaseDatos As New BaseDatosClass
+
         Dim MiDataTable As New DataTable
+
         Dim MiDisponibilidad As DisponibilidadClass
 
         objBaseDatos.objTabla = "Disponibilidades"
@@ -37,7 +57,7 @@ Public Class DisponibilidadesCollection
         objBaseDatos.objTabla = "Disponibilidades"
 
         'Agrego MiHorario en la colección actual.
-        Me.Add(MiDisponibilidad)
+
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
@@ -48,35 +68,54 @@ Public Class DisponibilidadesCollection
         vSQL.Append("('" & MiDisponibilidad.IdDocente & "'")
         vSQL.Append(",'" & MiDisponibilidad.IdModulo & "'")
 
-
         'Agrego MiHorario en la tabla horarios.
-        objBaseDatos.Insertar(vSQL.ToString)
-
-        vResultado = True
-
-        'Return vResultado
+        MiDisponibilidad.Id = objBaseDatos.Insertar(vSQL.ToString)
+        Me.Add(MiDisponibilidad)
 
     End Sub
 
-    Public Sub EliminarDisponibilidad(ByVal Id As Integer)
+    Public Sub EliminarDisponibilidad(ByVal MiDisponibilidad As DisponibilidadClass)
 
         Dim objBaseDatos As New BaseDatosClass
+        objBaseDatos.objTabla = "Disponibilidades"
+
+        objBaseDatos.Eliminar(MiDisponibilidad.Id)
+
+        ' Creates a new collection and assign it the properties for modulo.
+        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDisponibilidad)
+
+        'Sets an PropertyDescriptor to the specific property Id.
+        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
+        Me.RemoveAt(Me.FindCore(myProperty, MiDisponibilidad.Id))
 
 
-        objBaseDatos.Eliminar(Id)
 
-
-        Me.RemoveAt(Id)
 
     End Sub
 
-    Public Sub ActualizarDisponibilidad(ByVal MiDisponibilidad As DisponibilidadClass, ByVal Id As Integer)
+    Public Sub ActualizarDisponibilidad(ByVal MiDisponibilidad As DisponibilidadClass)
 
         Dim objBaseDatos As New BaseDatosClass
+        objBaseDatos.objTabla = "Disponibilidades"
 
-        'CORREGIR objBaseDatos.Actualizar(MiDisponibilidad, Id)
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
 
-        Me.RemoveAt(Id)
+
+        vSQL.Append(",IdDocente='" & MiDisponibilidad.IdDocente.ToString)
+        vSQL.Append("',IdModulo='" & MiDisponibilidad.IdModulo.ToString & "'")
+
+        objBaseDatos.Actualizar(vSQL.ToString, MiDisponibilidad.Id)
+
+        ' Creates a new collection and assign it the properties for modulo.
+        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDisponibilidad)
+
+        'Sets an PropertyDescriptor to the specific property Id.
+        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
+
+        Me.Items.Item(Me.FindCore(myProperty, MiDisponibilidad.Id)) = MiDisponibilidad
 
     End Sub
 

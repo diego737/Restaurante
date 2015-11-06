@@ -36,12 +36,12 @@
                 disponibilidades_list.InsertarDisponibilidad(MiDisponibilidad)
 
             Case "Elimina"
-                If indice_ = 0 Then Exit Sub
-                disponibilidades_list.EliminarDisponibilidad(indice_)
+
+                disponibilidades_list.EliminarDisponibilidad(MiDisponibilidad)
 
             Case "Modifica"
-                If indice_ = 0 Then Exit Sub
-                disponibilidades_list.ActualizarDisponibilidad(MiDisponibilidad, indice_)
+
+                disponibilidades_list.ActualizarDisponibilidad(MiDisponibilidad)
                 DisponibilidadGrid.DataGridView1.Refresh()
 
         End Select
