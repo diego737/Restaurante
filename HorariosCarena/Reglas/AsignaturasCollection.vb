@@ -10,6 +10,26 @@ Public Class AsignaturasCollection
 
     End Sub
 
+    Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
+        Get
+            Return True
+        End Get
+    End Property
+
+    Protected Overrides Function FindCore(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer
+        For Each asignatura In Me
+            If prop.GetValue(asignatura).Equals(key) Then
+                Return Me.IndexOf(asignatura)
+            End If
+        Next
+
+        Return -1
+    End Function
+
+    Public Sub New()
+        Me.TraerAsignatura()
+    End Sub
+
     Public Function TraerAsignatura() As AsignaturasCollection
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
@@ -44,7 +64,8 @@ Public Class AsignaturasCollection
         objBaseDatos.objTabla = "Asignaturas"
 
         'Agrego MiHorario en la colección actual.
-        Me.Add(Miasignatura)
+        'Me.Add(Miasignatura)
+
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
@@ -58,10 +79,14 @@ Public Class AsignaturasCollection
         vSQL.Append(",'" & Miasignatura.IdDocente & "'")
         vSQL.Append(",'" & Miasignatura.Modulos & "')")
 
-        'Agrego MiHorario en la tabla horarios.
-        objBaseDatos.Insertar(vSQL.ToString)
+        Miasignatura.Id = objBaseDatos.Insertar(vSQL.ToString)
 
-        vResultado = True
+        Me.Add(Miasignatura)
+
+        'Agrego MiHorario en la tabla horarios.
+        'objBaseDatos.Insertar(vSQL.ToString)
+
+        'vResultado = True
 
         'Return vResultado
         'Agrego MiHOrario en la tabla asignatura.
@@ -72,16 +97,21 @@ Public Class AsignaturasCollection
 
     End Sub
 
-    Public Sub EliminarAsignatura(ByVal Id As Integer)
+    Public Sub EliminarAsignatura(ByVal MiAsignatura As AsignaturaClass)
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Asignaturas"
 
         'Lo elimino en de la tabla horarios en la base horarios.
-        objBaseDatos.Eliminar(Id)
+        objBaseDatos.Eliminar(MiAsignatura.Id)
 
         'Elimino Miasignatura con el Id en la colección actual.
-        Me.RemoveAt(Id)
+        ' Creates a new collection and assign it the properties for modulo.
+        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiAsignatura)
+
+        'Sets an PropertyDescriptor to the specific property Id.
+        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
 
     End Sub
 

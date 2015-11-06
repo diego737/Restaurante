@@ -39,7 +39,7 @@
             Case "Eliminar"
 
                 'asignaturas_list.RemoveAt(indice_)
-                asignaturas_list.EliminarAsignatura(indice_)
+                asignaturas_list.EliminarAsignatura(MiAsignatura)
             Case "Modificar"
 
                 'asignaturas_list.Item(indice_).Modulos = MiAsignatura.Modulos
