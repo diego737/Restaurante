@@ -70,9 +70,6 @@ Public Class BaseDatosClass
             objConexion.Open()
 
             Try
-                'Intentamos ejecutar el comando SQL.
-                cmd.ExecuteNonQuery()
-
                 'Obtenemos el Id del úñltimo registro insertado el la tabla.
                 Id = CInt(cmd.ExecuteScalar())
 

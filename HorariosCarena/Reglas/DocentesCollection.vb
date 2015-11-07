@@ -59,12 +59,12 @@ Public Class DocentesCollection
 
     End Function
 
-    Public Sub InsertarDocentes(ByVal MiDocente As DocenteClass)
+    Public Sub InsertarDocente(ByVal MiDocente As DocenteClass)
         'Instancio el el Objeto BaseDatosClass para acceder al la base docentes.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "docentes"
 
-       
+
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 

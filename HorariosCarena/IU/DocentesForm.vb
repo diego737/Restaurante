@@ -28,7 +28,7 @@
 
                 If CORREO_STR.Text Is Nothing Then Exit Sub
 
-                docentes_list.InsertarDocentes(MiDocente)
+                docentes_list.InsertarDocente(MiDocente)
 
             Case "Elimina"
 
@@ -118,8 +118,6 @@
         End Select
 
     End Sub
-
-
 
     Private Sub CORREO_STR_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles CORREO_STR.LostFocus
         
@@ -211,6 +209,10 @@
         End If
 
 
+
+    End Sub
+
+    Private Sub DocentesForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
 End Class

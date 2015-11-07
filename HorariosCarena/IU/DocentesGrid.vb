@@ -18,7 +18,7 @@
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
         If docentes_list.Count = 0 Then Exit Sub
 
-        ModuloForm.accion = "Elimina"
+        DocentesForm.operacion = "Elimina"
 
         LlenarForm1()
 
