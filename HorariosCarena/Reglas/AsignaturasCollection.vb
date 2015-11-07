@@ -48,7 +48,7 @@ Public Class AsignaturasCollection
             Miasignatura.Id = CInt(dr("Id"))
             Miasignatura.IdCarrera = CInt(dr("IdCarrera"))
             Miasignatura.Modulos = CInt(dr("Modulos"))
-            Miasignatura.Asignados = CInt(dr("IdAsignados"))
+            ' Miasignatura.Asignados = CInt(dr("IdAsignados"))
             Miasignatura.IdDocente = CInt(dr("IdDocente"))
 
             Me.Add(Miasignatura)

@@ -213,6 +213,11 @@
     End Sub
 
     Private Sub DocentesForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        If operacion_ <> "Alta" Then
+            MiDocente.Id = CInt(TextBox1.Text)
+            MiDocente.Nombres = NOMBRE.SelectedText
+            MiDocente.Apellidos = APELLIDO.SelectedText
+            MiDocente.Correo = CORREO_STR.SelectedText
+        End If
     End Sub
 End Class
