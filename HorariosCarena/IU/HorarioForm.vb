@@ -50,18 +50,21 @@
     End Sub
 
     Private Sub HorarioForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'Cargamos los ComboBox.
-        'Dim desde() As String = {"17:05", "17:45", "18:25", "19:10", "19:50", "20:35", "21:15", "21:55"}
-        'Dim hasta() As String = {"17:45", "18:25", "19:05", "19:50", "20:35", "21:15", "21:55", "22:35"}
 
-        'ComboBox1.DataSource = modulos_list.dias
-        'ComboBox2.DataSource = desde
-        'ComboBox3.DataSource = hasta
-        ComboBox1.DataSource = carreras_list.TraerCarreras
+        ComboBox1.DataSource = carreras_list
+        ComboBox1.DisplayMember = "carrera"
+        ComboBox1.ValueMember = "id"
+
         Dim dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"}
-        ComboBox2.Items.AddRange(dias)
-        ComboBox3.DataSource = asignaturas_list.TraerAsignatura
-        ComboBox4.DataSource = modulos_list.TraerModulos
+        ComboBox2.DataSource = dias
+
+        ComboBox3.DataSource = asignaturas_list
+        ComboBox4.DisplayMember = "Inicio"
+        ComboBox4.ValueMember = "Id"
+
+        ComboBox4.DataSource = modulos_list
+        ComboBox4.DisplayMember = "Inicio"
+        ComboBox4.ValueMember = "Id"
 
         If operacion_ <> "Alta" Then
             MiHorario.IdCarrera = CInt(TextBox1.Text)
