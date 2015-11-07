@@ -3,6 +3,12 @@
     Dim operacion_ As String
     Dim MiHorario As New HorarioClass
 
+    ''' <summary>
+    ''' Identifica el tipo de operación CRUD que se realiza.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Property operacion() As String
         Get
             Return operacion_
@@ -22,6 +28,7 @@
 
         Select Case operacion_
             Case "Alta"
+                'Si falta seleccionar algún dato en los combos termina sin cargar.
                 If ComboBox1.SelectedIndex = -1 Then Exit Sub
 
                 If ComboBox2.SelectedIndex = -1 Then Exit Sub
@@ -51,26 +58,38 @@
 
     Private Sub HorarioForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        'Fuente de datos la coleccion carreras_list.
         ComboBox1.DataSource = carreras_list
+        'El miembro a mostrar de la lista es carrera en minúscula porque Diego no las distingue.
         ComboBox1.DisplayMember = "carrera"
+        'El miembro de valor es siempre el id.
         ComboBox1.ValueMember = "id"
 
-        Dim dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"}
-        ComboBox2.DataSource = dias
+        'Fuente de datos es la propiedad dias de la colección modulos_list
+        ComboBox2.DataSource = modulos_list.dias
 
+        'Fuente de datos asignaturas_list
         ComboBox3.DataSource = asignaturas_list
+        'Miembro para mostrar Inicio
         ComboBox4.DisplayMember = "Inicio"
+        'Miembro de valor Id.
         ComboBox4.ValueMember = "Id"
 
+        'Fuente de datos modulos_list.
         ComboBox4.DataSource = modulos_list
+        'Miembro para mostrar Inicio.
         ComboBox4.DisplayMember = "Inicio"
+        'Miembro de valor Id.
         ComboBox4.ValueMember = "Id"
 
+        'Al cargar el formulario incializo MiHorario para tener el Id que necesito modificar o eleminar.
         If operacion_ <> "Alta" Then
             MiHorario.IdCarrera = CInt(TextBox1.Text)
             MiHorario.IdDia = ComboBox1.SelectedIndex + 1
             MiHorario.IdAsignatura = ComboBox2.SelectedIndex + 1
             MiHorario.IdModulo = ComboBox3.SelectedIndex + 1
         End If
+
     End Sub
+
 End Class

@@ -13,6 +13,7 @@
         End If
 
     End Sub
+
     Public Property operacion() As String
         Get
             Return operacion_
@@ -21,6 +22,7 @@
             operacion_ = value
         End Set
     End Property
+
     Public Property indice() As Integer
         Get
             Return indice_
@@ -33,36 +35,27 @@
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
         MiCarrera.carrera = CStr(TextBox2.Text)
-        MiCarrera.curso = ComboBox1.SelectedIndex + 1
 
         Select Case operacion_
             Case "Agregar"
-
-
-                carreras_list.add(MiCarrera)
+                carreras_list.Add(MiCarrera)
 
             Case "Eliminar"
-
-
                 carreras_list.RemoveAt(indice_)
 
             Case "Modificar"
-
-
                 carreras_list.Item(indice_).carrera = MiCarrera.carrera
-                carreras_list.Item(indice_).curso = MiCarrera.curso
-
 
         End Select
+
         Me.Close()
 
         CarrerasGrid.DataGridView1.Refresh()
     End Sub
+
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Me.Close()
         carreras_list.TraerCarreras()
-
-
     End Sub
 
     

@@ -48,6 +48,8 @@
     End Sub
 
     Private Sub ModulosGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'Esto solo es para módulos para cargar los combos
+        'Se hace desde aca porque deben estar cargados antes de seleccionarlos en llenarform.
 
         DataGridView1.DataSource = modulos_list
 

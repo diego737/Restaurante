@@ -36,7 +36,7 @@ Partial Class ModuloForm
         '
         'Aceptar
         '
-        Me.Aceptar.BackColor = System.Drawing.Color.Khaki
+        Me.Aceptar.BackColor = System.Drawing.Color.LightGray
         Me.Aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Aceptar.Location = New System.Drawing.Point(12, 159)
         Me.Aceptar.Name = "Aceptar"
@@ -47,7 +47,7 @@ Partial Class ModuloForm
         '
         'Cancelar
         '
-        Me.Cancelar.BackColor = System.Drawing.Color.Khaki
+        Me.Cancelar.BackColor = System.Drawing.Color.LightGray
         Me.Cancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancelar.Location = New System.Drawing.Point(151, 159)
         Me.Cancelar.Name = "Cancelar"
@@ -58,7 +58,7 @@ Partial Class ModuloForm
         '
         'TextBox1
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TextBox1.BackColor = System.Drawing.Color.LightGray
         Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(151, 32)
         Me.TextBox1.Name = "TextBox1"
@@ -107,10 +107,9 @@ Partial Class ModuloForm
         '
         'ComboBox1
         '
-        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ComboBox1.BackColor = System.Drawing.Color.LightGray
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"})
         Me.ComboBox1.Location = New System.Drawing.Point(151, 58)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
@@ -118,10 +117,9 @@ Partial Class ModuloForm
         '
         'ComboBox2
         '
-        Me.ComboBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ComboBox2.BackColor = System.Drawing.Color.LightGray
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"17:05", "17:45", "18:25", "19:10", "19:50", "20:35", "21:15", "21:55"})
         Me.ComboBox2.Location = New System.Drawing.Point(151, 85)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
@@ -129,11 +127,10 @@ Partial Class ModuloForm
         '
         'ComboBox3
         '
-        Me.ComboBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ComboBox3.BackColor = System.Drawing.Color.LightGray
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.Enabled = False
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"17:45", "18:25", "19:05", "19:50", "20:30", "21:15", "21:55", "22:35"})
         Me.ComboBox3.Location = New System.Drawing.Point(151, 112)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
@@ -143,7 +140,7 @@ Partial Class ModuloForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.DeepSkyBlue
+        Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(284, 214)
         Me.Controls.Add(Me.ComboBox3)
         Me.Controls.Add(Me.ComboBox2)

@@ -6,7 +6,7 @@ Public Class AsignaturasCollection
 
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
 
-        e.NewObject = New AsignaturaClass  'DocenteCollection ?
+        e.NewObject = New AsignaturaClass
 
     End Sub
 
@@ -79,21 +79,15 @@ Public Class AsignaturasCollection
         vSQL.Append(",'" & Miasignatura.IdDocente & "'")
         vSQL.Append(",'" & Miasignatura.Modulos & "')")
 
-        Miasignatura.Id = objBaseDatos.Insertar(vSQL.ToString)
+        Try
+            Miasignatura.Id = objBaseDatos.Insertar(vSQL.ToString)
 
-        Me.Add(Miasignatura)
+            Me.Add(Miasignatura)
 
-        'Agrego MiHorario en la tabla horarios.
-        'objBaseDatos.Insertar(vSQL.ToString)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
 
-        'vResultado = True
-
-        'Return vResultado
-        'Agrego MiHOrario en la tabla asignatura.
-        'objBaseDatos.Insertar(vSQL.ToString)
-
-        'Agrego MiHorario en la colección actual.
-        'Me.Add(Miasignatura)
+        End Try
 
     End Sub
 
@@ -102,16 +96,21 @@ Public Class AsignaturasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Asignaturas"
 
-        'Lo elimino en de la tabla horarios en la base horarios.
-        objBaseDatos.Eliminar(MiAsignatura.Id)
+        Try
+            'Lo elimino en de la tabla horarios en la base horarios.
+            objBaseDatos.Eliminar(MiAsignatura.Id)
 
-        'Elimino Miasignatura con el Id en la colección actual.
-        ' Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiAsignatura)
+            'Elimino Miasignatura con el Id en la colección actual.
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiAsignatura)
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
 
     End Sub
 
@@ -128,7 +127,6 @@ Public Class AsignaturasCollection
         Me.Item(Id).IdCarrera = Miasignatura.IdCarrera
         Me.Item(Id).Modulos = Miasignatura.Modulos
         Me.Item(Id).Asignados = Miasignatura.Asignados
-
 
         'Elimino Miasignatura con el Id en la colección actual.
         'horarios_list.Item(indice_) = Miasignatura

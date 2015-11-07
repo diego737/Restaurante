@@ -14,6 +14,12 @@ Public Class BaseDatosClass
     'Nombre de la tabla.
     Dim objTabla_ As String
 
+    ''' <summary>
+    ''' Indica la tabla con la que va a trabajar la instancia.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Property objTabla() As String
         Get
             Return objTabla_
@@ -23,6 +29,12 @@ Public Class BaseDatosClass
         End Set
     End Property
 
+    ''' <summary>
+    ''' Sirve para hacer consultas genéricas
+    ''' a utilizar en las reglas de negocio.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Function Consultar() As DataTable
 
         'Comando SQL
@@ -57,6 +69,12 @@ Public Class BaseDatosClass
 
     End Function
 
+    ''' <summary>
+    ''' Inserta un registro en la tabla especificada.
+    ''' </summary>
+    ''' <param name="comandoSQL"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Function Insertar(ByVal comandoSQL As String) As Integer
 
         'Comando SQL
@@ -70,7 +88,8 @@ Public Class BaseDatosClass
             objConexion.Open()
 
             Try
-                'Obtenemos el Id del úñltimo registro insertado el la tabla.
+                'Ejecutamos el comando objCommand y se obtiene la devolución
+                'de un escalar que representa el Id del último registro insertado.
                 Id = CInt(cmd.ExecuteScalar())
 
             Catch ex1 As InvalidOperationException
@@ -92,6 +111,11 @@ Public Class BaseDatosClass
 
     End Function
 
+    ''' <summary>
+    ''' Elimina el registro de la tabla con el Id indicado.
+    ''' </summary>
+    ''' <param name="Id"></param>
+    ''' <remarks></remarks>
     Public Sub Eliminar(ByVal Id As Integer)
         'Comando SQL
         Dim objComando As String = "DELETE FROM " & objTabla_ & " WHERE ID = @Id"
@@ -124,6 +148,12 @@ Public Class BaseDatosClass
         End Using
     End Sub
 
+    ''' <summary>
+    ''' Actualiza el registro de la tabla con el Id indicado.
+    ''' </summary>
+    ''' <param name="comandosql"></param>
+    ''' <param name="Id"></param>
+    ''' <remarks></remarks>
     Public Sub Actualizar(ByVal comandosql As String, ByVal Id As Integer)
 
         'Comando SQL

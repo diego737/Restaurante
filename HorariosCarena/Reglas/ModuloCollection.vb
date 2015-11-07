@@ -11,13 +11,11 @@ Public Class ModuloCollection
         e.NewObject = New ModuloClass()
     End Sub
 
-
     Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
         Get
             Return True
         End Get
     End Property
-
 
     Protected Overrides Function FindCore(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer
         For Each modulo In Me
@@ -76,11 +74,17 @@ Public Class ModuloCollection
         vSQL.Append(",'" & MiModulo.Inicio & "'")
         vSQL.Append(",'" & MiModulo.Fin & "')")
 
-        'El método insertar me devuelve el Id de la fila insertada.
-        MiModulo.Id = objBaseDatos.Insertar(vSQL.ToString)
+        Try
+            'El método insertar me devuelve el Id de la fila insertada.
+            MiModulo.Id = objBaseDatos.Insertar(vSQL.ToString)
 
-        MiModulo.Dia = dias(MiModulo.IdDia - 1)
-        Me.Add(MiModulo)
+            MiModulo.Dia = dias(MiModulo.IdDia - 1)
+            Me.Add(MiModulo)
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
 
     End Sub
 
@@ -89,16 +93,24 @@ Public Class ModuloCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
 
-        objBaseDatos.Eliminar(MiModulo.Id)
+        Try
+            'Lo elimino en de la tabla horarios en la base horarios.
+            objBaseDatos.Eliminar(MiModulo.Id)
 
-        ' Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiModulo)
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiModulo)
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
-        MiModulo.Dia = dias(MiModulo.IdDia - 1)
-        Me.RemoveAt(Me.FindCore(myProperty, MiModulo.Id))
+            MiModulo.Dia = dias(MiModulo.IdDia - 1)
+            Me.RemoveAt(Me.FindCore(myProperty, MiModulo.Id))
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
+
 
     End Sub
 
@@ -114,16 +126,22 @@ Public Class ModuloCollection
         vSQL.Append(",Inicio='" & MiModulo.Inicio.ToString)
         vSQL.Append("',Fin='" & MiModulo.Fin.ToString & "'")
 
-        objBaseDatos.Actualizar(vSQL.ToString, MiModulo.Id)
+        Try
+            objBaseDatos.Actualizar(vSQL.ToString, MiModulo.Id)
 
-        ' Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiModulo)
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiModulo)
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
-        MiModulo.Dia = dias(MiModulo.IdDia - 1)
-        Me.Items.Item(Me.FindCore(myProperty, MiModulo.Id)) = MiModulo
+            MiModulo.Dia = dias(MiModulo.IdDia - 1)
+            Me.Items.Item(Me.FindCore(myProperty, MiModulo.Id)) = MiModulo
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
 
     End Sub
 

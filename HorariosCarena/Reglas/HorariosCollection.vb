@@ -91,9 +91,10 @@ Public Class HorariosCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Horarios"
 
+        'Ejecuta el método base eliminar.
         objBaseDatos.Eliminar(MiHorario.Id)
 
-        ' Creates a new collection and assign it the properties for modulo.
+        'Creates a new collection and assign it the properties for modulo.
         Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
 
         'Sets an PropertyDescriptor to the specific property Id.

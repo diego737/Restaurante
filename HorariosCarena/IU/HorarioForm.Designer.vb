@@ -40,7 +40,7 @@ Partial Class HorarioForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(42, 26)
+        Me.Label1.Location = New System.Drawing.Point(42, 29)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(16, 13)
         Me.Label1.TabIndex = 0
@@ -50,7 +50,7 @@ Partial Class HorarioForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(42, 65)
+        Me.Label2.Location = New System.Drawing.Point(43, 55)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 13)
         Me.Label2.TabIndex = 1
@@ -60,7 +60,7 @@ Partial Class HorarioForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(42, 104)
+        Me.Label3.Location = New System.Drawing.Point(43, 82)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(32, 13)
         Me.Label3.TabIndex = 2
@@ -70,7 +70,7 @@ Partial Class HorarioForm
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(42, 140)
+        Me.Label4.Location = New System.Drawing.Point(42, 109)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 13)
         Me.Label4.TabIndex = 3
@@ -80,7 +80,7 @@ Partial Class HorarioForm
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(42, 181)
+        Me.Label5.Location = New System.Drawing.Point(43, 136)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(51, 13)
         Me.Label5.TabIndex = 4
@@ -98,7 +98,7 @@ Partial Class HorarioForm
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(148, 65)
+        Me.ComboBox1.Location = New System.Drawing.Point(148, 52)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 6
@@ -107,7 +107,7 @@ Partial Class HorarioForm
         '
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(148, 104)
+        Me.ComboBox2.Location = New System.Drawing.Point(148, 79)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox2.TabIndex = 7
@@ -116,7 +116,7 @@ Partial Class HorarioForm
         '
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(148, 140)
+        Me.ComboBox3.Location = New System.Drawing.Point(148, 106)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox3.TabIndex = 8
@@ -125,7 +125,7 @@ Partial Class HorarioForm
         '
         Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(148, 173)
+        Me.ComboBox4.Location = New System.Drawing.Point(148, 133)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox4.TabIndex = 9
@@ -133,7 +133,7 @@ Partial Class HorarioForm
         'Aceptar
         '
         Me.Aceptar.BackColor = System.Drawing.Color.LightGray
-        Me.Aceptar.Location = New System.Drawing.Point(35, 239)
+        Me.Aceptar.Location = New System.Drawing.Point(35, 174)
         Me.Aceptar.Name = "Aceptar"
         Me.Aceptar.Size = New System.Drawing.Size(93, 33)
         Me.Aceptar.TabIndex = 10
@@ -143,7 +143,7 @@ Partial Class HorarioForm
         'Cancelar
         '
         Me.Cancelar.BackColor = System.Drawing.Color.LightGray
-        Me.Cancelar.Location = New System.Drawing.Point(176, 239)
+        Me.Cancelar.Location = New System.Drawing.Point(176, 174)
         Me.Cancelar.Name = "Cancelar"
         Me.Cancelar.Size = New System.Drawing.Size(93, 33)
         Me.Cancelar.TabIndex = 11
@@ -155,7 +155,7 @@ Partial Class HorarioForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(305, 300)
+        Me.ClientSize = New System.Drawing.Size(305, 225)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
         Me.Controls.Add(Me.ComboBox4)

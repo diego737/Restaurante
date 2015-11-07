@@ -165,6 +165,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModuloPrincipal.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -357,6 +361,12 @@
   <ItemGroup>
     <None Include="My Project\DataSources\ModuloCollection.datasource" />
     <None Include="Resources\carreras grid2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utiles\" />

@@ -1,5 +1,5 @@
 ﻿Public Class CarreraClass
-    Dim id_, curso_ As Integer
+    Dim id_ As Integer
     Dim carrera_ As String
 
     Public Property id() As Integer
@@ -25,17 +25,5 @@
 
         End Set
     End Property
-
-    Public Property curso() As Integer
-        Get
-            Return curso_
-        End Get
-        Set(ByVal value As Integer)
-            curso_ = value
-
-        End Set
-    End Property
-
-
 
 End Class

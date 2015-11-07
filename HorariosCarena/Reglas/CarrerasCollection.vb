@@ -34,9 +34,6 @@ Public Class CarrerasCollection
 
             MiCarrera.id = CInt(dr("Id"))
             MiCarrera.carrera = CStr(dr("carrera"))
-            MiCarrera.curso = CInt(dr("curso"))
-
-            
 
             Me.Add(MiCarrera)
         Next
@@ -54,11 +51,9 @@ Public Class CarrerasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(Carrera")
-        vSQL.Append(",Curso")
+        vSQL.Append("(Carrera)")
         vSQL.Append(" VALUES ")
-        vSQL.Append("('" & Micarrera.carrera & "'")
-        vSQL.Append(",'" & Micarrera.curso & "'")
+        vSQL.Append("('" & Micarrera.carrera & "')")
 
         'Agrego MiHorario en la tabla horarios.
         objBaseDatos.Insertar(vSQL.ToString)
@@ -97,20 +92,15 @@ Public Class CarrerasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-
-        vSQL.Append("(Carrera")
-        vSQL.Append(",Curso")
+        vSQL.Append("(Carrera)")
         vSQL.Append(" VALUES ")
-        vSQL.Append("('" & MiCarrera.id & "'")
-        vSQL.Append(",'" & MiCarrera.carrera & "'")
-        vSQL.Append(",'" & MiCarrera.curso & "')")
+        vSQL.Append("(" & MiCarrera.carrera & "')")
 
         'Actualizo la tabla horarios con el Id.
         objBaseDatos.Actualizar(vSQL.ToString, Id)
 
         'Actualizo la colección.
         Me.Item(Id).id = MiCarrera.id
-        Me.Item(Id).curso = MiCarrera.curso
         Me.Item(Id).carrera = MiCarrera.carrera
 
     End Sub
