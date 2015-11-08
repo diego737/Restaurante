@@ -35,11 +35,10 @@
     End Sub
 
     Private Sub llenarform1()
-        ModuloForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
-        ModuloForm.ComboBox1.SelectedItem = DataGridView1.CurrentRow.Cells(1).Value.ToString
-        ModuloForm.ComboBox2.SelectedItem = DataGridView1.CurrentRow.Cells(2).Value.ToString
-        ModuloForm.ComboBox3.SelectedItem = DataGridView1.CurrentRow.Cells(3).ToString
-
+        ModuloForm.MiModulo.Id = CInt(DataGridView1.CurrentRow.Cells(0).Value)
+        ModuloForm.MiModulo.Dia = DataGridView1.CurrentRow.Cells(1).Value.ToString
+        ModuloForm.MiModulo.Inicio = DataGridView1.CurrentRow.Cells(2).Value.ToString
+        ModuloForm.MiModulo.Fin = DataGridView1.CurrentRow.Cells(3).Value.ToString
     End Sub
 
     Private Sub ModulosGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -48,8 +47,6 @@
     End Sub
 
     Private Sub ModulosGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'Esto solo es para módulos para cargar los combos
-        'Se hace desde aca porque deben estar cargados antes de seleccionarlos en llenarform.
 
         DataGridView1.DataSource = modulos_list
 

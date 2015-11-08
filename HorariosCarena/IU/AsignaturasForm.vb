@@ -1,7 +1,8 @@
 ﻿Public Class AsignaturasForm
     Dim operacion_ As String
-    Dim MiAsignatura As New AsignaturaClass
+    Public MiAsignatura As New AsignaturaClass
     Dim indice_ As Integer
+
     Public Property operacion() As String
         Get
             Return operacion_
@@ -10,6 +11,7 @@
             operacion_ = value
         End Set
     End Property
+
     Public Property indice() As Integer
         Get
             Return indice_

@@ -1,7 +1,7 @@
 ﻿Public Class ModuloForm
 
     Dim operacion_ As String
-    Dim MiModulo As New ModuloClass
+    Public MiModulo As New ModuloClass
 
     ''' <summary>
     ''' Identifica el tipo de operación CRUD que se realiza.
@@ -71,6 +71,11 @@
         ComboBox3.DataSource = fin
 
         If operacion_ <> "Alta" Then
+            TextBox1.Text = MiModulo.Id.ToString
+            ComboBox1.SelectedItem = MiModulo.Dia
+            ComboBox2.SelectedItem = MiModulo.Inicio
+            'ComboBox3.SelectedItem = MiModulo.Fin
+
             MiModulo.Id = CInt(TextBox1.Text)
             MiModulo.IdDia = ComboBox1.SelectedIndex + 1
             MiModulo.Inicio = ComboBox2.SelectedText

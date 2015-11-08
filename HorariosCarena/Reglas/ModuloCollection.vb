@@ -74,17 +74,15 @@ Public Class ModuloCollection
         vSQL.Append(",'" & MiModulo.Inicio & "'")
         vSQL.Append(",'" & MiModulo.Fin & "')")
 
-        Try
-            'El método insertar me devuelve el Id de la fila insertada.
-            MiModulo.Id = objBaseDatos.Insertar(vSQL.ToString)
+        'El método insertar me devuelve el Id de la fila insertada.
+        MiModulo.Id = objBaseDatos.Insertar(vSQL.ToString)
 
+        If MiModulo.Id > 0 Then
             MiModulo.Dia = dias(MiModulo.IdDia - 1)
             Me.Add(MiModulo)
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-
-        End Try
+        Else
+            MessageBox.Show("No fue posible agregar el registro.")
+        End If
 
     End Sub
 
@@ -93,10 +91,11 @@ Public Class ModuloCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Modulos"
 
-        Try
-            'Lo elimino en de la tabla horarios en la base horarios.
-            objBaseDatos.Eliminar(MiModulo.Id)
+        'Elimino el registro en de la tabla modulos.
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Eliminar(MiModulo.Id)
 
+        If resultado Then
             ' Creates a new collection and assign it the properties for modulo.
             Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiModulo)
 
@@ -105,12 +104,9 @@ Public Class ModuloCollection
 
             MiModulo.Dia = dias(MiModulo.IdDia - 1)
             Me.RemoveAt(Me.FindCore(myProperty, MiModulo.Id))
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-
-        End Try
-
+        Else
+            MessageBox.Show("No fue posible agregar el registro.")
+        End If
 
     End Sub
 
@@ -126,9 +122,11 @@ Public Class ModuloCollection
         vSQL.Append(",Inicio='" & MiModulo.Inicio.ToString)
         vSQL.Append("',Fin='" & MiModulo.Fin.ToString & "'")
 
-        Try
-            objBaseDatos.Actualizar(vSQL.ToString, MiModulo.Id)
+        'Modifico el registro en la tabla modulos.
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Actualizar(vSQL.ToString, MiModulo.Id)
 
+        If resultado Then
             ' Creates a new collection and assign it the properties for modulo.
             Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiModulo)
 
@@ -137,11 +135,9 @@ Public Class ModuloCollection
 
             MiModulo.Dia = dias(MiModulo.IdDia - 1)
             Me.Items.Item(Me.FindCore(myProperty, MiModulo.Id)) = MiModulo
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-
-        End Try
+        Else
+            MessageBox.Show("No fue posible modificar el registro.")
+        End If
 
     End Sub
 

@@ -54,7 +54,8 @@ Public Class BaseDatosClass
             objDataAdapter.Fill(objDataTable)
 
         Catch ex1 As InvalidOperationException
-            MessageBox.Show(ex1.Message)
+            'MessageBox.Show(ex1.Message)
+            Throw New System.Exception(ex1.Message)
 
         Catch ex2 As SqlException
             MessageBox.Show(ex2.Message)
@@ -116,37 +117,40 @@ Public Class BaseDatosClass
     ''' </summary>
     ''' <param name="Id"></param>
     ''' <remarks></remarks>
-    Public Sub Eliminar(ByVal Id As Integer)
+    Public Function Eliminar(ByVal Id As Integer) As Boolean
         'Comando SQL
         Dim objComando As String = "DELETE FROM " & objTabla_ & " WHERE ID = @Id"
+        Dim cmd As New SqlCommand(objComando, objConexion)
+        Dim resultado As Boolean
 
-        Using objConexion As New SqlConnection(CadenaConexion)
-            Dim cmd As New SqlCommand(objComando, objConexion)
+        'Esto reemplaza el valor de Id en el parametro @ID
+        cmd.Parameters.AddWithValue("@ID", Id)
 
-            'Esto reemplaza el valor de Id en el parametro @ID
-            cmd.Parameters.AddWithValue("@ID", Id)
+        'Abrimos la conexión a la base de datos.
+        objConexion.Open()
 
-            'Abrimos la conexión a la base de datos.
-            objConexion.Open()
+        Try
+            'Intentamos ejecutar el comando SQL.
+            cmd.ExecuteNonQuery()
+            resultado = True
 
-            Try
-                'Intentamos ejecutar el comando SQL.
-                cmd.ExecuteNonQuery()
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+            resultado = False
 
-            Catch ex1 As InvalidOperationException
-                MessageBox.Show(ex1.Message)
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+            resultado = False
 
-            Catch ex2 As SqlException
-                MessageBox.Show(ex2.Message)
+        Finally
+            'Cerramos la conexión.
+            objConexion.Close()
 
-            Finally
-                'Cerramos la conexión.
-                objConexion.Close()
+        End Try
 
-            End Try
+        Eliminar = resultado
 
-        End Using
-    End Sub
+    End Function
 
     ''' <summary>
     ''' Actualiza el registro de la tabla con el Id indicado.
@@ -154,39 +158,39 @@ Public Class BaseDatosClass
     ''' <param name="comandosql"></param>
     ''' <param name="Id"></param>
     ''' <remarks></remarks>
-    Public Sub Actualizar(ByVal comandosql As String, ByVal Id As Integer)
-
+    Public Function Actualizar(ByVal comandosql As String, ByVal Id As Integer) As Boolean
         'Comando SQL
         Dim objComando As String = "UPDATE " & objTabla_ & " SET " & comandosql & " WHERE ID = @ID"
+        Dim cmd As New SqlCommand(objComando, objConexion)
+        Dim resultado As Boolean
 
-        Using objConexion As New SqlConnection(CadenaConexion)
+        'Esto reemplaza el valor de Id en el parametro @ID
+        cmd.Parameters.AddWithValue("@ID", Id)
 
-            Dim cmd As New SqlCommand(objComando, objConexion)
+        'Abrimos la conexión a la base de datos.
+        objConexion.Open()
 
-            'Esto reemplaza el valor de Id en el parametro @ID
-            cmd.Parameters.AddWithValue("@ID", Id)
+        Try
+            'Intentamos ejecutar el comando SQL.
+            cmd.ExecuteNonQuery()
+            resultado = True
 
-            'Abrimos la conexión a la base de datos.
-            objConexion.Open()
+        Catch ex1 As InvalidOperationException
+            MessageBox.Show(ex1.Message)
+            resultado = False
 
-            Try
-                'Intentamos ejecutar el comando SQL.
-                cmd.ExecuteNonQuery()
+        Catch ex2 As SqlException
+            MessageBox.Show(ex2.Message)
+            resultado = False
 
-            Catch ex1 As InvalidOperationException
-                MessageBox.Show(ex1.Message)
+        Finally
+            'Cerramos la conexión.
+            objConexion.Close()
 
-            Catch ex2 As SqlException
-                MessageBox.Show(ex2.Message)
+        End Try
 
-            Finally
-                'Cerramos la conexión.
-                objConexion.Close()
+        Actualizar = resultado
 
-            End Try
-
-        End Using
-
-    End Sub
+    End Function
 
 End Class
