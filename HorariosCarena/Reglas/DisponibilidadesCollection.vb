@@ -70,7 +70,11 @@ Public Class DisponibilidadesCollection
 
         'Agrego MiHorario en la tabla horarios.
         MiDisponibilidad.Id = objBaseDatos.Insertar(vSQL.ToString)
-        Me.Add(MiDisponibilidad)
+        If MiDisponibilidad.Id > 0 Then
+            Me.Add(MiDisponibilidad)
+        Else
+            MessageBox.Show("no fue posible agregar el registro.")
+        End If
 
     End Sub
 
@@ -79,17 +83,22 @@ Public Class DisponibilidadesCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Disponibilidades"
 
-        objBaseDatos.Eliminar(MiDisponibilidad.Id)
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Eliminar(MiDisponibilidad.Id)
 
-        ' Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDisponibilidad)
+        If resultado Then
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDisponibilidad)
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
-        Me.RemoveAt(Me.FindCore(myProperty, MiDisponibilidad.Id))
+            Me.RemoveAt(Me.FindCore(myProperty, MiDisponibilidad.Id))
 
+        Else
+            MessageBox.Show("no fue posible agregar el registro.")
 
+        End If
 
 
     End Sub
@@ -106,17 +115,22 @@ Public Class DisponibilidadesCollection
         vSQL.Append(",IdDocente='" & MiDisponibilidad.IdDocente.ToString)
         vSQL.Append("',IdModulo='" & MiDisponibilidad.IdModulo.ToString & "'")
 
+        Dim resultado As Boolean
         objBaseDatos.Actualizar(vSQL.ToString, MiDisponibilidad.Id)
 
-        ' Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDisponibilidad)
+        If resultado Then
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDisponibilidad)
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
 
-        Me.Items.Item(Me.FindCore(myProperty, MiDisponibilidad.Id)) = MiDisponibilidad
+            Me.Items.Item(Me.FindCore(myProperty, MiDisponibilidad.Id)) = MiDisponibilidad
 
+        Else
+            MessageBox.Show("no fue posible modificar el registro.")
+        End If
     End Sub
 
 End Class
