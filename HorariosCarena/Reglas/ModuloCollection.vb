@@ -118,8 +118,8 @@ Public Class ModuloCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("IdDia=" & MiModulo.IdDia.ToString)
-        vSQL.Append(",Inicio='" & MiModulo.Inicio.ToString)
+        vSQL.Append("IdDia='" & MiModulo.IdDia.ToString & "'")
+        vSQL.Append(",Inicio='" & MiModulo.Inicio.ToString & "'")
         vSQL.Append("',Fin='" & MiModulo.Fin.ToString & "'")
 
         'Modifico el registro en la tabla modulos.
