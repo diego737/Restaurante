@@ -15,8 +15,8 @@
     End Sub
 
     Private Sub Modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modificar.Click
+        If disponibilidades_list.Count = 0 Then Exit Sub
         DisponibilidadForm.operacion = "Modificar"
-        DisponibilidadForm.indice = CByte(DataGridView1.CurrentRow.Cells(0).Value)
 
         llenarForm1()
 
@@ -24,18 +24,19 @@
     End Sub
 
     Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
+        If disponibilidades_list.Count = 0 Then Exit Sub
         DisponibilidadForm.operacion = "Eliminar"
-        DisponibilidadForm.indice = CByte(DataGridView1.CurrentRow.Cells(0).Value)
 
         LlenarForm1()
 
         DisponibilidadForm.Show()
     End Sub
 
-
     Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
-        Me.Close()
+        MenuForm.MenuStrip1.Enabled = True
+        Me.Dispose()
     End Sub
+
 
     Private Sub DisponibilidadGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         MenuForm.MenuStrip1.Enabled = True
