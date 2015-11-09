@@ -94,16 +94,22 @@ Public Class DocentesCollection
         objBaseDatos.objTabla = "docentes"
 
         'Lo elimino en de la tabla docentes en la base docentes.
-        objBaseDatos.Eliminar(MiDocente.Id)
 
-        ' Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDocente)
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Eliminar(MiDocente.Id)
+        If resultado Then
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDocente)
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
-        ' MiModulo.Dia = dias(MiModulo.IdDia - 1)
-        Me.RemoveAt(Me.FindCore(myProperty, MiDocente.Id))
+            ' MiModulo.Dia = dias(MiModulo.IdDia - 1)
+            Me.RemoveAt(Me.FindCore(myProperty, MiDocente.Id))
+        Else
+            MessageBox.Show("No fue posible Eliminar el registro.")
+        End If
+
     End Sub
 
     Public Sub ActualizarDocente(ByVal MiDocente As DocenteClass)
@@ -118,18 +124,21 @@ Public Class DocentesCollection
         vSQL.Append("Nombres=" & MiDocente.Nombres.ToString)
         vSQL.Append(",Apellidos='" & MiDocente.Apellidos.ToString)
         vSQL.Append("',Correos='" & MiDocente.Correo.ToString & "'")
+        Dim resultado As Boolean
 
-        objBaseDatos.Actualizar(vSQL.ToString, MiDocente.Id)
+        resultado = objBaseDatos.Actualizar(vSQL.ToString, MiDocente.Id)
+        If resultado Then
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDocente)
 
-        ' Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiDocente)
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
-
-        'MiModulo.Dia = dias(MiModulo.IdDia - 1)
-        Me.Items.Item(Me.FindCore(myProperty, MiDocente.Id)) = MiDocente
-
+            'MiModulo.Dia = dias(MiModulo.IdDia - 1)
+            Me.Items.Item(Me.FindCore(myProperty, MiDocente.Id)) = MiDocente
+        Else
+            MessageBox.Show("No fue posible modificar el registro.")
+        End If
     End Sub
 
 End Class

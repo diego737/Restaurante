@@ -1,6 +1,6 @@
 ﻿Public Class DocentesForm
     Dim operacion_ As String
-    Dim MiDocente As New DocenteClass
+    Public MiDocente As New DocenteClass
 
     Public Property operacion() As String
         Get

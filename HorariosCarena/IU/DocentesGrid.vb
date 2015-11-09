@@ -11,7 +11,7 @@
     Private Sub Agregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Agregar.Click
         DocentesForm.operacion = "Alta"
 
-        DocentesForm.ShowDialog(Me)
+        DocentesForm.Show()
 
     End Sub
 
