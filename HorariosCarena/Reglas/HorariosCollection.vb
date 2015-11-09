@@ -113,27 +113,26 @@ Public Class HorariosCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(IdAsignatura")
-        vSQL.Append(",IdCarrera")
-        vSQL.Append(",IdDia")
-        vSQL.Append(",IdModulo)")
-        vSQL.Append(" VALUES ")
-        vSQL.Append("('" & MiHorario.IdAsignatura & "'")
-        vSQL.Append(",'" & MiHorario.IdCarrera & "'")
-        vSQL.Append(",'" & MiHorario.IdDia & "'")
-        vSQL.Append(",'" & MiHorario.IdModulo & "')")
+        vSQL.Append("(IdAsignatura='" & MiHorario.IdAsignatura.ToString & "'")
+        vSQL.Append(",IdCarrera='" & MiHorario.IdCarrera.ToString & "'")
+        vSQL.Append(",IdDia='" & MiHorario.IdDia.ToString & "'")
+        vSQL.Append(",IdModulo='" & MiHorario.IdModulo.ToString & "'")
 
         'Actualizo la tabla horarios con el Id.
-        objBaseDatos.Actualizar(vSQL.ToString, MiHorario.Id)
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Actualizar(vSQL.ToString, MiHorario.Id)
 
-        ' Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
+        If resultado Then
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
 
-        Me.Items.Item(Me.FindCore(myProperty, MiHorario.Id)) = MiHorario
-
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            Me.Items.Item(Me.FindCore(myProperty, MiHorario.Id)) = MiHorario
+        Else
+            MessageBox.Show("No fue posible modificar el registro.")
+        End If
     End Sub
 
 End Class
