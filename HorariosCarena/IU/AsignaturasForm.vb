@@ -1,7 +1,14 @@
 ﻿Public Class AsignaturasForm
     Dim operacion_ As String
     Public MiAsignatura As New AsignaturaClass
-    Dim indice_ As Integer
+    'Dim indice_ As Integer
+
+    ''' <summary>
+    ''' Identifica el tipo de operación CRUD que se realiza.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
 
     Public Property operacion() As String
         Get
@@ -12,14 +19,14 @@
         End Set
     End Property
 
-    Public Property indice() As Integer
-        Get
-            Return indice_
-        End Get
-        Set(ByVal value As Integer)
-            indice_ = value
-        End Set
-    End Property
+    'Public Property indice() As Integer
+    '    Get
+    '        Return indice_
+    '    End Get
+    '    Set(ByVal value As Integer)
+    '        indice_ = value
+    '    End Set
+    'End Property
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         If TextBox2.Text = "" Then Exit Sub
@@ -34,6 +41,15 @@
 
         Select Case operacion_
             Case "Agregar"
+                If TextBox1.Text Is Nothing Then Exit Sub
+
+                If TextBox2.Text Is Nothing Then Exit Sub
+
+                If TextBox3.Text Is Nothing Then Exit Sub
+
+                If TextBox4.Text Is Nothing Then Exit Sub
+
+                If TextBox5.Text Is Nothing Then Exit Sub
 
                 'asignaturas_list.Add(MiAsignatura)
                 asignaturas_list.InsertarAsignatura(MiAsignatura)
@@ -48,7 +64,7 @@
                 'asignaturas_list.Item(indice_).IdCarrera = MiAsignatura.IdCarrera
                 'asignaturas_list.Item(indice_).Asignados = MiAsignatura.Asignados
                 'asignaturas_list.Item(indice_).IdDocente = MiAsignatura.IdDocente
-                asignaturas_list.ActualizarAsignatura(MiAsignatura, indice_)
+                asignaturas_list.ActualizarAsignatura(MiAsignatura)
                 AsignaturasGrid.DataGridView1.Refresh()
         End Select
 
@@ -99,6 +115,16 @@
     End Sub
 
     Private Sub AsignaturasForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        If operacion_ <> "Alta" Then
+           
+            MiAsignatura.Id = CInt(TextBox1.Text)
+            MiAsignatura.Asignados = CInt(TextBox2.SelectedText)
+            MiAsignatura.IdCarrera = CInt(TextBox3.SelectedText)
+            MiAsignatura.IdDocente = CInt(TextBox4.SelectedText)
+            MiAsignatura.Modulos = CInt(TextBox5.SelectedText)
+
+        End If
 
     End Sub
 End Class

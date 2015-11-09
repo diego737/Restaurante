@@ -48,7 +48,7 @@ Partial Class AsignaturasForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(41, 50)
+        Me.Label2.Location = New System.Drawing.Point(41, 160)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 13)
         Me.Label2.TabIndex = 1
@@ -57,7 +57,7 @@ Partial Class AsignaturasForm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(41, 87)
+        Me.Label3.Location = New System.Drawing.Point(41, 90)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 13)
         Me.Label3.TabIndex = 2
@@ -66,7 +66,7 @@ Partial Class AsignaturasForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(41, 122)
+        Me.Label4.Location = New System.Drawing.Point(41, 53)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(56, 13)
         Me.Label4.TabIndex = 3
@@ -75,7 +75,7 @@ Partial Class AsignaturasForm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(41, 157)
+        Me.Label5.Location = New System.Drawing.Point(41, 125)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(62, 13)
         Me.Label5.TabIndex = 4
