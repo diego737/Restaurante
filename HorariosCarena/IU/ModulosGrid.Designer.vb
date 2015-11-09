@@ -32,12 +32,12 @@ Partial Class ModulosGrid
         Me.Label2 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
-        Me.ModuloCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.IdDia = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DiaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ModuloCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,10 +139,6 @@ Partial Class ModulosGrid
         Me.DataGridView1.Size = New System.Drawing.Size(560, 339)
         Me.DataGridView1.TabIndex = 51
         '
-        'ModuloCollectionBindingSource
-        '
-        Me.ModuloCollectionBindingSource.DataSource = GetType(WindowsApplication1.ModuloCollection)
-        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
@@ -179,6 +175,11 @@ Partial Class ModulosGrid
         Me.DataGridViewTextBoxColumn4.HeaderText = "Fin"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'ModuloCollectionBindingSource
+        '
+        Me.ModuloCollectionBindingSource.DataSource = GetType(WindowsApplication1.ModuloCollection)
+        Me.ModuloCollectionBindingSource.Sort = "IdDia,Inicio"
         '
         'ModulosGrid
         '
