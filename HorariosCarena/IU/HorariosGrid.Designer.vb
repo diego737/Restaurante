@@ -24,6 +24,12 @@ Partial Class HorariosGrid
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdDiaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdCarreraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdAsignaturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdModuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.HorariosCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
@@ -32,17 +38,11 @@ Partial Class HorariosGrid
         Me.Modificar = New System.Windows.Forms.ToolStripButton
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripButton
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdDiaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdCarreraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdAsignaturaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IdModuloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.HorariosCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HorariosCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
-        CType(Me.HorariosCollectionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -58,8 +58,48 @@ Partial Class HorariosGrid
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(578, 251)
         Me.DataGridView1.TabIndex = 1
+        '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdDiaDataGridViewTextBoxColumn
+        '
+        Me.IdDiaDataGridViewTextBoxColumn.DataPropertyName = "IdDia"
+        Me.IdDiaDataGridViewTextBoxColumn.HeaderText = "IdDia"
+        Me.IdDiaDataGridViewTextBoxColumn.Name = "IdDiaDataGridViewTextBoxColumn"
+        Me.IdDiaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdCarreraDataGridViewTextBoxColumn
+        '
+        Me.IdCarreraDataGridViewTextBoxColumn.DataPropertyName = "IdCarrera"
+        Me.IdCarreraDataGridViewTextBoxColumn.HeaderText = "IdCarrera"
+        Me.IdCarreraDataGridViewTextBoxColumn.Name = "IdCarreraDataGridViewTextBoxColumn"
+        Me.IdCarreraDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdAsignaturaDataGridViewTextBoxColumn
+        '
+        Me.IdAsignaturaDataGridViewTextBoxColumn.DataPropertyName = "IdAsignatura"
+        Me.IdAsignaturaDataGridViewTextBoxColumn.HeaderText = "IdAsignatura"
+        Me.IdAsignaturaDataGridViewTextBoxColumn.Name = "IdAsignaturaDataGridViewTextBoxColumn"
+        Me.IdAsignaturaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'IdModuloDataGridViewTextBoxColumn
+        '
+        Me.IdModuloDataGridViewTextBoxColumn.DataPropertyName = "IdModulo"
+        Me.IdModuloDataGridViewTextBoxColumn.HeaderText = "IdModulo"
+        Me.IdModuloDataGridViewTextBoxColumn.Name = "IdModuloDataGridViewTextBoxColumn"
+        Me.IdModuloDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HorariosCollectionBindingSource
+        '
+        Me.HorariosCollectionBindingSource.DataSource = GetType(WindowsApplication1.HorariosCollection)
         '
         'PictureBox2
         '
@@ -136,45 +176,6 @@ Partial Class HorariosGrid
         Me.Salir.Size = New System.Drawing.Size(81, 52)
         Me.Salir.Text = "Salir"
         '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdDiaDataGridViewTextBoxColumn
-        '
-        Me.IdDiaDataGridViewTextBoxColumn.DataPropertyName = "IdDia"
-        Me.IdDiaDataGridViewTextBoxColumn.HeaderText = "IdDia"
-        Me.IdDiaDataGridViewTextBoxColumn.Name = "IdDiaDataGridViewTextBoxColumn"
-        Me.IdDiaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdCarreraDataGridViewTextBoxColumn
-        '
-        Me.IdCarreraDataGridViewTextBoxColumn.DataPropertyName = "IdCarrera"
-        Me.IdCarreraDataGridViewTextBoxColumn.HeaderText = "IdCarrera"
-        Me.IdCarreraDataGridViewTextBoxColumn.Name = "IdCarreraDataGridViewTextBoxColumn"
-        Me.IdCarreraDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdAsignaturaDataGridViewTextBoxColumn
-        '
-        Me.IdAsignaturaDataGridViewTextBoxColumn.DataPropertyName = "IdAsignatura"
-        Me.IdAsignaturaDataGridViewTextBoxColumn.HeaderText = "IdAsignatura"
-        Me.IdAsignaturaDataGridViewTextBoxColumn.Name = "IdAsignaturaDataGridViewTextBoxColumn"
-        Me.IdAsignaturaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'IdModuloDataGridViewTextBoxColumn
-        '
-        Me.IdModuloDataGridViewTextBoxColumn.DataPropertyName = "IdModulo"
-        Me.IdModuloDataGridViewTextBoxColumn.HeaderText = "IdModulo"
-        Me.IdModuloDataGridViewTextBoxColumn.Name = "IdModuloDataGridViewTextBoxColumn"
-        Me.IdModuloDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'HorariosCollectionBindingSource
-        '
-        Me.HorariosCollectionBindingSource.DataSource = GetType(WindowsApplication1.HorariosCollection)
-        '
         'HorariosGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,12 +188,12 @@ Partial Class HorariosGrid
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "HorariosGrid"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HorariosCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        CType(Me.HorariosCollectionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
