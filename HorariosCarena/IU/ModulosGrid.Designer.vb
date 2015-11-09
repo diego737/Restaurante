@@ -32,11 +32,12 @@ Partial Class ModulosGrid
         Me.Label2 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.ModuloCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IdDia = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DiaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ModuloCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,7 +128,7 @@ Partial Class ModulosGrid
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DiaDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.IdDia, Me.DiaDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4})
         Me.DataGridView1.DataSource = Me.ModuloCollectionBindingSource
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 105)
@@ -138,12 +139,25 @@ Partial Class ModulosGrid
         Me.DataGridView1.Size = New System.Drawing.Size(560, 339)
         Me.DataGridView1.TabIndex = 51
         '
+        'ModuloCollectionBindingSource
+        '
+        Me.ModuloCollectionBindingSource.DataSource = GetType(WindowsApplication1.ModuloCollection)
+        '
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
         Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 60
+        '
+        'IdDia
+        '
+        Me.IdDia.DataPropertyName = "IdDia"
+        Me.IdDia.HeaderText = "IdDia"
+        Me.IdDia.Name = "IdDia"
+        Me.IdDia.ReadOnly = True
+        Me.IdDia.Width = 60
         '
         'DiaDataGridViewTextBoxColumn
         '
@@ -165,10 +179,6 @@ Partial Class ModulosGrid
         Me.DataGridViewTextBoxColumn4.HeaderText = "Fin"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'ModuloCollectionBindingSource
-        '
-        Me.ModuloCollectionBindingSource.DataSource = GetType(WindowsApplication1.ModuloCollection)
         '
         'ModulosGrid
         '
@@ -208,6 +218,7 @@ Partial Class ModulosGrid
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents ModuloCollectionBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IdDia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DiaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
