@@ -8,6 +8,7 @@ Public Class DisponibilidadesCollection
         e.NewObject = New DisponibilidadClass
 
     End Sub
+
     Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
         Get
             Return True
@@ -23,6 +24,7 @@ Public Class DisponibilidadesCollection
 
         Return -1
     End Function
+
     Public Sub New()
         Me.TraerDisponibilidad()
     End Sub
@@ -116,7 +118,7 @@ Public Class DisponibilidadesCollection
         vSQL.Append("',IdModulo='" & MiDisponibilidad.IdModulo.ToString & "'")
 
         Dim resultado As Boolean
-        objBaseDatos.Actualizar(vSQL.ToString, MiDisponibilidad.Id)
+        resultado = objBaseDatos.Actualizar(vSQL.ToString, MiDisponibilidad.Id)
 
         If resultado Then
             ' Creates a new collection and assign it the properties for modulo.
@@ -131,6 +133,7 @@ Public Class DisponibilidadesCollection
         Else
             MessageBox.Show("no fue posible modificar el registro.")
         End If
+
     End Sub
 
 End Class

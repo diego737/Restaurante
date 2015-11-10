@@ -15,7 +15,7 @@
 
         End Get
         Set(ByVal value As String)
-
+            operacion_ = value
         End Set
     End Property
 
