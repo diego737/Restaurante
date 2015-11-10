@@ -78,6 +78,7 @@ Public Class HorariosCollection
         vSQL.Append(",'" & MiHorario.IdDia & "'")
         vSQL.Append(",'" & MiHorario.IdModulo & "')")
 
+
         'Agrego MiHorario en la tabla horarios.
         MiHorario.Id = objBaseDatos.Insertar(vSQL.ToString)
 
@@ -92,16 +93,21 @@ Public Class HorariosCollection
         objBaseDatos.objTabla = "Horarios"
 
         'Ejecuta el método base eliminar.
-        objBaseDatos.Eliminar(MiHorario.Id)
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Eliminar(MiHorario.Id)
+        If resultado Then
 
-        'Creates a new collection and assign it the properties for modulo.
-        Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
 
-        'Sets an PropertyDescriptor to the specific property Id.
-        Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            'Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
 
-        Me.RemoveAt(Me.FindCore(myProperty, MiHorario.Id))
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
+            Me.RemoveAt(Me.FindCore(myProperty, MiHorario.Id))
+        Else
+            MessageBox.Show("No fue posible agregar el registro.")
+        End If
     End Sub
 
     Public Sub ActualizarHorario(ByVal MiHorario As HorarioClass)
