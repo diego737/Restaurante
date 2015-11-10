@@ -121,9 +121,9 @@ Public Class DocentesCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("Nombres=" & MiDocente.Nombres.ToString)
-        vSQL.Append(",Apellidos='" & MiDocente.Apellidos.ToString)
-        vSQL.Append("',Correos='" & MiDocente.Correo.ToString & "'")
+        vSQL.Append("Nombres='" & MiDocente.Nombres.ToString & "'")
+        vSQL.Append(",Apellidos='" & MiDocente.Apellidos.ToString & "'")
+        vSQL.Append(",Correos='" & MiDocente.Correo.ToString & "'")
         Dim resultado As Boolean
 
         resultado = objBaseDatos.Actualizar(vSQL.ToString, MiDocente.Id)
