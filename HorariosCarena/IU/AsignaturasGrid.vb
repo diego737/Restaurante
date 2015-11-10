@@ -1,28 +1,39 @@
 ﻿Public Class AsignaturasGrid
+
     Private Sub Agregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Agregar.Click
+
         AsignaturasForm.operacion = "Agregar"
         AsignaturasForm.Show()
-    End Sub
 
-    Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
-        If asignaturas_list.Count = 0 Then Exit Sub
-        AsignaturasForm.operacion = "Eliminar"
-        AsignaturasForm.indice = CInt(DataGridView1.CurrentRow.Cells(0).Value)
-        llenarForm()
-        AsignaturasForm.Show()
     End Sub
 
     Private Sub Modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modificar.Click
         If asignaturas_list.Count = 0 Then Exit Sub
+
         AsignaturasForm.operacion = "Modificar"
-        AsignaturasForm.indice = CInt(DataGridView1.CurrentRow.Cells(0).Value)
+
         llenarForm()
+
         AsignaturasForm.Show()
+
     End Sub
+
+    Private Sub Eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Eliminar.Click
+        If asignaturas_list.Count = 0 Then Exit Sub
+
+        AsignaturasForm.operacion = "Eliminar"
+
+        llenarForm()
+
+        AsignaturasForm.Show()
+
+    End Sub
+
+
 
     Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
         MenuForm.MenuStrip1.Enabled = True
-        Me.Close()
+        Me.Dispose()
     End Sub
 
     Private Sub llenarForm()
@@ -34,6 +45,9 @@
     End Sub
 
     Private Sub AsignaturasGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         DataGridView1.DataSource = asignaturas_list
+
     End Sub
+
 End Class

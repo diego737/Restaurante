@@ -6,7 +6,7 @@ Public Class AsignaturasCollection
 
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
 
-        e.NewObject = New AsignaturaClass
+        e.NewObject = New AsignaturaClass()
 
     End Sub
 
@@ -46,10 +46,10 @@ Public Class AsignaturasCollection
             Miasignatura = New AsignaturaClass
 
             Miasignatura.Id = CInt(dr("Id"))
+            Miasignatura.Asignados = CInt(dr("Asignados"))
             Miasignatura.IdCarrera = CInt(dr("IdCarrera"))
-            Miasignatura.Modulos = CInt(dr("Modulos"))
-            ' Miasignatura.Asignados = CInt(dr("IdAsignados"))
             Miasignatura.IdDocente = CInt(dr("IdDocente"))
+            Miasignatura.Modulos = CInt(dr("Modulos"))
 
             Me.Add(Miasignatura)
         Next
@@ -79,15 +79,22 @@ Public Class AsignaturasCollection
         vSQL.Append(",'" & Miasignatura.IdDocente & "'")
         vSQL.Append(",'" & Miasignatura.Modulos & "')")
 
-        Try
-            Miasignatura.Id = objBaseDatos.Insertar(vSQL.ToString)
 
+        Miasignatura.Id = objBaseDatos.Insertar(vSQL.ToString)
+
+        If Miasignatura.Id > 0 Then
+            '    Miasignatura.Dia = dias(MiModulo.IdDia - 1)
             Me.Add(Miasignatura)
+        Else
+            MessageBox.Show("No fue posible agregar el registro.")
+        End If
+        ' Try
+        '    Me.Add(Miasignatura)
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
 
-        End Try
+        'End Try
 
     End Sub
 
@@ -96,21 +103,37 @@ Public Class AsignaturasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Asignaturas"
 
-        Try
-            'Lo elimino en de la tabla horarios en la base horarios.
-            objBaseDatos.Eliminar(MiAsignatura.Id)
+        'Elimino el registro en de la tabla modulos.
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Eliminar(MiAsignatura.Id)
 
-            'Elimino Miasignatura con el Id en la colección actual.
+        If resultado Then
             ' Creates a new collection and assign it the properties for modulo.
             Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiAsignatura)
 
             'Sets an PropertyDescriptor to the specific property Id.
             Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            Me.RemoveAt(Me.FindCore(myProperty, MiAsignatura.Id))
+        Else
+            MessageBox.Show("No fue posible agregar el registro.")
+        End If
 
-        End Try
+        'Try
+        '    'Lo elimino en de la tabla horarios en la base horarios.
+        '    objBaseDatos.Eliminar(MiAsignatura.Id)
+
+        '    'Elimino Miasignatura con el Id en la colección actual.
+        '    ' Creates a new collection and assign it the properties for modulo.
+        '    Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiAsignatura)
+
+        '    'Sets an PropertyDescriptor to the specific property Id.
+        '    Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.Message)
+
+        'End Try
 
     End Sub
 
@@ -120,13 +143,38 @@ Public Class AsignaturasCollection
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Asignatura"
 
+        Dim vSQL As New StringBuilder
+        Dim vResultado As Boolean = False
+
+        vSQL.Append("',Fin='" & Miasignatura.Asignados.ToString & "'")
+        vSQL.Append("IdDia='" & Miasignatura.IdCarrera.ToString & "'")
+        vSQL.Append(",Inicio='" & Miasignatura.IdDocente.ToString & "'")
+        vSQL.Append("',Fin='" & Miasignatura.Modulos.ToString & "'")
+
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Actualizar(vSQL.ToString, Miasignatura.Id)
+
+        If resultado Then
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(Miasignatura)
+
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
+            'MiAsignatura.Dia = dias(MiModulo.IdDia - 1)
+            Me.Items.Item(Me.FindCore(myProperty, Miasignatura.Id)) = Miasignatura
+        Else
+            MessageBox.Show("No fue posible modificar el registro.")
+        End If
+
+
         'Actualizo la tabla horarios con el Id.
         'CORREGIR objBaseDatos.Actualizar(Miasignatura, Id)
 
-        Me.Item(Id).IdDocente = Miasignatura.IdDocente
-        Me.Item(Id).IdCarrera = Miasignatura.IdCarrera
-        Me.Item(Id).Modulos = Miasignatura.Modulos
-        Me.Item(Id).Asignados = Miasignatura.Asignados
+        'Me.Item(Id).IdDocente = Miasignatura.IdDocente
+        'Me.Item(Id).IdCarrera = Miasignatura.IdCarrera
+        'Me.Item(Id).Modulos = Miasignatura.Modulos
+        'Me.Item(Id).Asignados = Miasignatura.Asignados
 
         'Elimino Miasignatura con el Id en la colección actual.
         'horarios_list.Item(indice_) = Miasignatura

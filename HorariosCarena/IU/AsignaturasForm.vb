@@ -29,15 +29,15 @@
     'End Property
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If TextBox2.Text = "" Then Exit Sub
-        If TextBox3.Text = "" Then Exit Sub
-        If TextBox4.Text = "" Then Exit Sub
-        If TextBox5.Text = "" Then Exit Sub
+        'If TextBox2.Text = "" Then Exit Sub
+        'If TextBox3.Text = "" Then Exit Sub
+        'If TextBox4.Text = "" Then Exit Sub
+        'If TextBox5.Text = "" Then Exit Sub
 
-        MiAsignatura.Modulos = CInt(TextBox2.Text)
+        MiAsignatura.Asignados = CInt(TextBox2.Text)
         MiAsignatura.IdCarrera = CInt(TextBox3.Text)
-        MiAsignatura.Asignados = CInt(TextBox4.Text)
-        MiAsignatura.IdDocente = CInt(TextBox5.Text)
+        MiAsignatura.IdDocente = CInt(TextBox4.Text)
+        MiAsignatura.Modulos = CInt(TextBox5.Text)
 
         Select Case operacion_
             Case "Agregar"
@@ -56,14 +56,10 @@
 
             Case "Eliminar"
 
-                'asignaturas_list.RemoveAt(indice_)
                 asignaturas_list.EliminarAsignatura(MiAsignatura)
+
             Case "Modificar"
 
-                'asignaturas_list.Item(indice_).Modulos = MiAsignatura.Modulos
-                'asignaturas_list.Item(indice_).IdCarrera = MiAsignatura.IdCarrera
-                'asignaturas_list.Item(indice_).Asignados = MiAsignatura.Asignados
-                'asignaturas_list.Item(indice_).IdDocente = MiAsignatura.IdDocente
                 asignaturas_list.ActualizarAsignatura(MiAsignatura)
                 AsignaturasGrid.DataGridView1.Refresh()
         End Select
