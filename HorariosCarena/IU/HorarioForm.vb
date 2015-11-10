@@ -92,4 +92,12 @@
 
     End Sub
 
+
+
+    Private Sub ComboBox2_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBox2.SelectedIndexChanged
+        'Cuando se selecciona un ítem en el combo2 automáticamete seleccionamos en el combo 3.
+        If ComboBox3.Items.Count > 1 Then
+            ComboBox3.SelectedIndex = ComboBox2.SelectedIndex
+        End If
+    End Sub
 End Class
