@@ -137,7 +137,7 @@ Public Class AsignaturasCollection
 
     End Sub
 
-    Public Sub ActualizarAsignatura(ByVal Miasignatura As AsignaturaClass, ByVal Id As Integer)
+    Public Sub ActualizarAsignatura(ByVal Miasignatura As AsignaturaClass)
 
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
