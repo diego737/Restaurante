@@ -20,13 +20,13 @@
 
         Select Case operacion_
             Case "Alta"
-                If TextBox1.Text Is Nothing Then Exit Sub
+                If String.IsNullOrEmpty(TextBox1.Text.Trim) Then Exit Sub
 
-                If NOMBRE.Text Is Nothing Then Exit Sub
+                If String.IsNullOrEmpty(NOMBRE.Text) Then Exit Sub
 
-                If APELLIDO.Text Is Nothing Then Exit Sub
+                If String.IsNullOrEmpty(APELLIDO.Text) Then Exit Sub
 
-                If CORREO_STR.Text Is Nothing Then Exit Sub
+                If String.IsNullOrEmpty(CORREO_STR.Text) Then Exit Sub
 
                 docentes_list.InsertarDocente(MiDocente)
 
