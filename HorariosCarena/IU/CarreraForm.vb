@@ -1,7 +1,7 @@
 ﻿Public Class CarreraForm
 
     Dim operacion_ As String
-    Dim Micarrera As New CarreraClass
+    Public Micarrera As New CarreraClass
 
     ''' <summary>
     ''' Identifica el tipo de operación CRUD que se realiza.

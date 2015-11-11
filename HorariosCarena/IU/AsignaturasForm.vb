@@ -113,7 +113,7 @@
     Private Sub AsignaturasForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         If operacion_ <> "Alta" Then
-           
+            'Esto está mal, lo que se inicializa son los controles no el objeto asignaturas.
             MiAsignatura.Id = CInt(TextBox1.Text)
             MiAsignatura.Asignados = CInt(TextBox2.SelectedText)
             MiAsignatura.IdCarrera = CInt(TextBox3.SelectedText)

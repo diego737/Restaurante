@@ -20,13 +20,14 @@
 
         Select Case operacion_
             Case "Alta"
+                'Este es el Id y siempre cuando antes de de alta esta vacío.
                 'If String.IsNullOrEmpty(TextBox1.Text.Trim) Then Exit Sub
 
-                'If String.IsNullOrEmpty(NOMBRE.Text.Trim) Then Exit Sub
+                If String.IsNullOrEmpty(NOMBRE.Text.Trim) Then Exit Sub
 
-                'If String.IsNullOrEmpty(APELLIDO.Text.Trim) Then Exit Sub
+                If String.IsNullOrEmpty(APELLIDO.Text.Trim) Then Exit Sub
 
-                'If String.IsNullOrEmpty(CORREO_STR.Text.Trim) Then Exit Sub
+                If String.IsNullOrEmpty(CORREO_STR.Text.Trim) Then Exit Sub
 
                 docentes_list.InsertarDocente(MiDocente)
 
