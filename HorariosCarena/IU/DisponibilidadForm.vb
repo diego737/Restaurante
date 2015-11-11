@@ -65,7 +65,7 @@
         ComboBox1.ValueMember = "Id"
 
         ComboBox2.DataSource = modulos_list
-        ComboBox2.DisplayMember = "Inicio"
+        ComboBox2.DisplayMember = "Dia_Inicio"
         ComboBox2.ValueMember = "Id"
 
         If operacion_ <> "Alta" Then

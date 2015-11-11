@@ -2,6 +2,7 @@
     Dim Id_ As Integer
     Dim IdDia_ As Integer
     Dim dia_ As String
+    Dim dia_inicio_ As String
     Dim Inicio_ As String
     Dim Fin_ As String
 
@@ -68,4 +69,9 @@
         End Set
     End Property
 
+    Public ReadOnly Property Dia_Inicio() As String
+        Get
+            Return dia_ + " " + Inicio_
+        End Get
+    End Property
 End Class

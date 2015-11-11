@@ -58,7 +58,9 @@
     Private Sub ModuloForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         'Fuente de datos modulos_list.
-        ComboBox1.DataSource = modulos_list.dias
+        ComboBox1.DataSource = modulos_list
+        ComboBox1.DisplayMember = "Dia"
+        ComboBox1.ValueMember = "IdDia"
         
         Dim inicio() As String = {"17:05", "17:45", "18:25", "19:10", "19:50", "20:35", "21:15", "21:55"}
         'Cargamos el combo 2 con la hora de inicio de cada módulo.
