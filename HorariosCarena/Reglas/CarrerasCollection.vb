@@ -74,7 +74,7 @@ Public Class CarrerasCollection
 
     End Sub
 
-    Public Sub EliminarModulo(ByVal MiCarrera As CarreraClass)
+    Public Sub EliminarCarrera(ByVal MiCarrera As CarreraClass)
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Carreras"

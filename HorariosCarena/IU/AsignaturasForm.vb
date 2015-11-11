@@ -60,13 +60,7 @@
 
             Case "Modificar"
 
-<<<<<<< .mine
-                'asignaturas_list.ActualizarAsignatura(MiAsignatura)
-||||||| .r194
                 asignaturas_list.ActualizarAsignatura(MiAsignatura)
-=======
-                ' asignaturas_list.ActualizarAsignatura(MiAsignatura)
->>>>>>> .r200
                 AsignaturasGrid.DataGridView1.Refresh()
         End Select
 

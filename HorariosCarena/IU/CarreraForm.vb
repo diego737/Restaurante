@@ -1,7 +1,7 @@
 ﻿Public Class CarreraForm
     Dim operacion_ As String
-    Dim MiCarrera As New CarreraClass
-    Dim indice_ As Integer
+    Public MiCarrera As New CarreraClass
+
 
     Private Sub TextBox2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox2.KeyPress
         If Char.IsLetter(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
@@ -23,14 +23,6 @@
         End Set
     End Property
 
-    Public Property indice() As Integer
-        Get
-            Return indice_
-        End Get
-        Set(ByVal value As Integer)
-            indice_ = value
-        End Set
-    End Property
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
@@ -38,13 +30,14 @@
 
         Select Case operacion_
             Case "Agregar"
-                carreras_list.Add(MiCarrera)
+                carreras_list.InsertarCarrera(MiCarrera)
 
             Case "Eliminar"
-                carreras_list.RemoveAt(indice_)
+                carreras_list.EliminarCarrera(MiCarrera)
 
             Case "Modificar"
-                carreras_list.Item(indice_).carrera = MiCarrera.carrera
+                carreras_list.ActualizarCarrera(MiCarrera)
+
 
         End Select
 
