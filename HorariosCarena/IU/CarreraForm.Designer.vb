@@ -25,11 +25,11 @@ Partial Class CarreraForm
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.TextBox2 = New System.Windows.Forms.TextBox
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
+        Me.Aceptar = New System.Windows.Forms.Button
+        Me.Cancelar = New System.Windows.Forms.Button
         Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox
+        Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.SuspendLayout()
         '
         'Label1
@@ -69,54 +69,52 @@ Partial Class CarreraForm
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Curso: "
         '
-        'TextBox1
+        'Aceptar
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(140, 45)
-        Me.TextBox1.MaxLength = 50
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(67, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.Aceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Aceptar.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Aceptar.ForeColor = System.Drawing.Color.Lime
+        Me.Aceptar.Location = New System.Drawing.Point(64, 190)
+        Me.Aceptar.Name = "Aceptar"
+        Me.Aceptar.Size = New System.Drawing.Size(103, 32)
+        Me.Aceptar.TabIndex = 6
+        Me.Aceptar.Text = "Aceptar"
+        Me.Aceptar.UseVisualStyleBackColor = False
         '
-        'TextBox2
+        'Cancelar
         '
-        Me.TextBox2.Location = New System.Drawing.Point(140, 79)
-        Me.TextBox2.MaxLength = 50
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox2.TabIndex = 4
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Lime
-        Me.Button1.Location = New System.Drawing.Point(64, 190)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(103, 32)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Aceptar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Red
-        Me.Button2.Location = New System.Drawing.Point(205, 190)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(107, 32)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Cancelar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Cancelar.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cancelar.ForeColor = System.Drawing.Color.Red
+        Me.Cancelar.Location = New System.Drawing.Point(205, 190)
+        Me.Cancelar.Name = "Cancelar"
+        Me.Cancelar.Size = New System.Drawing.Size(107, 32)
+        Me.Cancelar.TabIndex = 7
+        Me.Cancelar.Text = "Cancelar"
+        Me.Cancelar.UseVisualStyleBackColor = False
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(140, 115)
+        Me.ComboBox1.Location = New System.Drawing.Point(140, 42)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(140, 21)
         Me.ComboBox1.TabIndex = 8
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(140, 80)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(140, 21)
+        Me.ComboBox2.TabIndex = 9
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(140, 113)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(140, 20)
+        Me.TextBox1.TabIndex = 10
         '
         'CarreraForm
         '
@@ -124,11 +122,11 @@ Partial Class CarreraForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.carreras10
         Me.ClientSize = New System.Drawing.Size(384, 246)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Cancelar)
+        Me.Controls.Add(Me.Aceptar)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -142,9 +140,9 @@ Partial Class CarreraForm
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Aceptar As System.Windows.Forms.Button
+    Friend WithEvents Cancelar As System.Windows.Forms.Button
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 End Class

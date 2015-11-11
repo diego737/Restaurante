@@ -1,55 +1,73 @@
 ﻿Public Class CarreraForm
+
     Dim operacion_ As String
-    Public MiCarrera As New CarreraClass
+    Dim Micarrera As New CarreraClass
 
-
-    Private Sub TextBox2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox2.KeyPress
-        If Char.IsLetter(e.KeyChar) Or Char.IsWhiteSpace(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsNumber(e.KeyChar) Then
-
-            e.Handled = False
-        Else
-            e.Handled = True
-
-        End If
-
-    End Sub
-
+    ''' <summary>
+    ''' Identifica el tipo de operación CRUD que se realiza.
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
     Public Property operacion() As String
         Get
             Return operacion_
         End Get
+
         Set(ByVal value As String)
             operacion_ = value
         End Set
     End Property
 
+    Private Sub Aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Aceptar.Click
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Micarrera.id = ComboBox1.SelectedIndex + 1
+        Micarrera.carrera = CStr(ComboBox2.SelectedIndex + 1)
 
-        MiCarrera.carrera = CStr(TextBox2.Text)
 
         Select Case operacion_
-            Case "Agregar"
-                carreras_list.InsertarCarrera(MiCarrera)
+            Case "Alta"
+                'Si falta seleccionar algún dato en los combos termina sin cargar.
+                If ComboBox1.SelectedIndex = -1 Then Exit Sub
 
-            Case "Eliminar"
-                carreras_list.EliminarCarrera(MiCarrera)
 
-            Case "Modificar"
-                carreras_list.ActualizarCarrera(MiCarrera)
+                carreras_list.InsertarCarrera(Micarrera)
 
+            Case "Elimina"
+                carreras_list.EliminarCarrera(Micarrera)
+
+            Case "Modifica"
+                carreras_list.ActualizarCarrera(Micarrera)
+                HorariosGrid.DataGridView1.Refresh()
 
         End Select
 
         Me.Close()
 
-        CarrerasGrid.DataGridView1.Refresh()
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar.Click
         Me.Close()
-        carreras_list.TraerCarreras()
     End Sub
 
-    
+    Private Sub CarreraForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        'Fuente de datos la coleccion carreras_list.
+        ComboBox1.DataSource = carreras_list
+        'El miembro a mostrar de la lista es carrera en minúscula porque Diego no las distingue.
+        ComboBox1.DisplayMember = "carrera"
+        'El miembro de valor es siempre el id.
+        ComboBox1.ValueMember = "id"
+
+        'Fuente de datos es la propiedad dias de la colección modulos_list
+        ComboBox2.DataSource = modulos_list.dias
+
+        'Al cargar el formulario incializo MiCarrera para tener el Id que necesito modificar o eleminar.
+        If operacion_ <> "Alta" Then
+            Micarrera.id = CInt(TextBox1.Text)
+            Micarrera.carrera = CStr(ComboBox2.SelectedIndex + 1)
+
+        End If
+
+    End Sub
 End Class

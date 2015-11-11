@@ -24,8 +24,6 @@ Partial Class CarrerasGrid
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CarrerasCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.Agregar = New System.Windows.Forms.ToolStripButton
@@ -43,31 +41,12 @@ Partial Class CarrerasGrid
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
         Me.DataGridView1.DataSource = Me.CarrerasCollectionBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(30, 67)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(377, 192)
         Me.DataGridView1.TabIndex = 0
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "id"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "id"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "carrera"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "carrera"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        '
-        'CarrerasCollectionBindingSource
-        '
-        Me.CarrerasCollectionBindingSource.DataSource = GetType(WindowsApplication1.CarrerasCollection)
         '
         'ToolStrip1
         '
@@ -76,7 +55,7 @@ Partial Class CarrerasGrid
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(553, 55)
+        Me.ToolStrip1.Size = New System.Drawing.Size(456, 55)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -117,7 +96,7 @@ Partial Class CarrerasGrid
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.carreras_grid2
-        Me.ClientSize = New System.Drawing.Size(553, 270)
+        Me.ClientSize = New System.Drawing.Size(456, 270)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "CarrerasGrid"
