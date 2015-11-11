@@ -58,7 +58,13 @@
 
     Private Sub DisponibilidadForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ComboBox1.DataSource = docentes_list.TraerDocentes
+        ComboBox1.DisplayMember = "Nombre"
+        ComboBox1.ValueMember = "Id"
+
         ComboBox2.DataSource = modulos_list.TraerModulos
+        ComboBox2.DisplayMember = "Inicio"
+        ComboBox2.ValueMember = "Id"
+
 
         If operacion_ <> "Alta" Then
             TextBox1.Text = MiDisponibilidad.Id.ToString
