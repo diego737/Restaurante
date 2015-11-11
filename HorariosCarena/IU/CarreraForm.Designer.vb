@@ -27,6 +27,7 @@ Partial Class CarreraForm
         Me.Aceptar = New System.Windows.Forms.Button
         Me.Cancelar = New System.Windows.Forms.Button
         Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.SuspendLayout()
         '
         'Label1
@@ -35,10 +36,9 @@ Partial Class CarreraForm
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label1.Location = New System.Drawing.Point(125, 52)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(94, 42)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(47, 28)
+        Me.Label1.Size = New System.Drawing.Size(37, 23)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Id: "
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -49,10 +49,9 @@ Partial Class CarreraForm
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label2.Location = New System.Drawing.Point(71, 94)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(53, 76)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 28)
+        Me.Label2.Size = New System.Drawing.Size(81, 23)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Carrera:"
         '
@@ -61,10 +60,9 @@ Partial Class CarreraForm
         Me.Aceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Aceptar.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Aceptar.ForeColor = System.Drawing.Color.Lime
-        Me.Aceptar.Location = New System.Drawing.Point(85, 234)
-        Me.Aceptar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Aceptar.Location = New System.Drawing.Point(64, 190)
         Me.Aceptar.Name = "Aceptar"
-        Me.Aceptar.Size = New System.Drawing.Size(137, 39)
+        Me.Aceptar.Size = New System.Drawing.Size(103, 32)
         Me.Aceptar.TabIndex = 6
         Me.Aceptar.Text = "Aceptar"
         Me.Aceptar.UseVisualStyleBackColor = False
@@ -74,34 +72,39 @@ Partial Class CarreraForm
         Me.Cancelar.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Cancelar.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cancelar.ForeColor = System.Drawing.Color.Red
-        Me.Cancelar.Location = New System.Drawing.Point(273, 234)
-        Me.Cancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Cancelar.Location = New System.Drawing.Point(205, 190)
         Me.Cancelar.Name = "Cancelar"
-        Me.Cancelar.Size = New System.Drawing.Size(143, 39)
+        Me.Cancelar.Size = New System.Drawing.Size(107, 32)
         Me.Cancelar.TabIndex = 7
         Me.Cancelar.Text = "Cancelar"
         Me.Cancelar.UseVisualStyleBackColor = False
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(180, 58)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Location = New System.Drawing.Point(151, 45)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(185, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(140, 20)
         Me.TextBox1.TabIndex = 10
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(151, 79)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(140, 20)
+        Me.TextBox2.TabIndex = 11
         '
         'CarreraForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.carreras10
-        Me.ClientSize = New System.Drawing.Size(512, 303)
+        Me.ClientSize = New System.Drawing.Size(384, 246)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "CarreraForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CarreraForm"
@@ -114,4 +117,5 @@ Partial Class CarreraForm
     Friend WithEvents Aceptar As System.Windows.Forms.Button
     Friend WithEvents Cancelar As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
 End Class

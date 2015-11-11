@@ -37,9 +37,9 @@
     End Sub
 
     Private Sub llenarform1()
-        CarreraForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
-        CarreraForm.ComboBox1.SelectedItem = DataGridView1.CurrentRow.Cells(1).Value.ToString
-        
+        CarreraForm.Micarrera.id = CInt(DataGridView1.CurrentRow.Cells(0).Value)
+        CarreraForm.Micarrera.carrera = DataGridView1.CurrentRow.Cells(1).Value.ToString
+
     End Sub
 
     Private Sub HorariosGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
