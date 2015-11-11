@@ -60,7 +60,7 @@
 
             Case "Modificar"
 
-                asignaturas_list.ActualizarAsignatura(MiAsignatura)
+                ' asignaturas_list.ActualizarAsignatura(MiAsignatura)
                 AsignaturasGrid.DataGridView1.Refresh()
         End Select
 
