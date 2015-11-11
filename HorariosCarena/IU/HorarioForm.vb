@@ -1,7 +1,7 @@
 ﻿Public Class HorarioForm
 
     Dim operacion_ As String
-    Dim MiHorario As New HorarioClass
+    Public MiHorario As New HorarioClass
 
     ''' <summary>
     ''' Identifica el tipo de operación CRUD que se realiza.

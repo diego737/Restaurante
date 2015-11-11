@@ -19,15 +19,6 @@
         End Set
     End Property
 
-    'Public Property indice() As Integer
-    '    Get
-    '        Return indice_
-    '    End Get
-    '    Set(ByVal value As Integer)
-    '        indice_ = value
-    '    End Set
-    'End Property
-
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         'If TextBox2.Text = "" Then Exit Sub
         'If TextBox3.Text = "" Then Exit Sub
@@ -41,9 +32,12 @@
 
         Select Case operacion_
             Case "Agregar"
-                If TextBox1.Text Is Nothing Then Exit Sub
+                'El Id cuando es alta siempre va estar vacío.
+                'If TextBox1.Text Is Nothing Then Exit Sub
 
-                If TextBox2.Text Is Nothing Then Exit Sub
+                'Deben usar esta forma para verificar que el textbox no este vacío.
+                'Hacerlo en los otros.
+                If String.IsNullOrEmpty(TextBox2.Text.Trim) Then Exit Sub
 
                 If TextBox3.Text Is Nothing Then Exit Sub
 
@@ -114,11 +108,11 @@
 
         If operacion_ <> "Alta" Then
             'Esto está mal, lo que se inicializa son los controles no el objeto asignaturas.
-            MiAsignatura.Id = CInt(TextBox1.Text)
-            MiAsignatura.Asignados = CInt(TextBox2.SelectedText)
-            MiAsignatura.IdCarrera = CInt(TextBox3.SelectedText)
-            MiAsignatura.IdDocente = CInt(TextBox4.SelectedText)
-            MiAsignatura.Modulos = CInt(TextBox5.SelectedText)
+            'MiAsignatura.Id = CInt(TextBox1.Text)
+            'MiAsignatura.Asignados = CInt(TextBox2.SelectedText)
+            'MiAsignatura.IdCarrera = CInt(TextBox3.SelectedText)
+            'MiAsignatura.IdDocente = CInt(TextBox4.SelectedText)
+            'MiAsignatura.Modulos = CInt(TextBox5.SelectedText)
 
         End If
 

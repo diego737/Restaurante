@@ -58,13 +58,14 @@
 
     Private Sub DisponibilidadForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ComboBox1.DataSource = docentes_list.TraerDocentes
+        'Debe coincidir con la propiedad que guarda el nombre del docente en DocenteClass.
+        '¿Seguro se llama Nombre ?
         ComboBox1.DisplayMember = "Nombre"
         ComboBox1.ValueMember = "Id"
 
         ComboBox2.DataSource = modulos_list.TraerModulos
         ComboBox2.DisplayMember = "Inicio"
         ComboBox2.ValueMember = "Id"
-
 
         If operacion_ <> "Alta" Then
             TextBox1.Text = MiDisponibilidad.Id.ToString
@@ -79,11 +80,12 @@
         End If
     End Sub
 
-    
-    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+    'Esto solo va en modulos, para que el combo 2 se acualice cuando se selecciona el 1.
+    'Aca los combos no tiene relación.
+    'Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
 
-        If ComboBox2.Items.Count > 1 Then
-            ComboBox2.SelectedIndex = ComboBox1.SelectedIndex
-        End If
-    End Sub
+    '    If ComboBox2.Items.Count > 1 Then
+    '        ComboBox2.SelectedIndex = ComboBox1.SelectedIndex
+    '    End If
+    'End Sub
 End Class
