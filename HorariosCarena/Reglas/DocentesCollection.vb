@@ -35,7 +35,7 @@ Public Class DocentesCollection
     Public Function TraerDocentes() As DocentesCollection
         'Instancio el el Objeto BaseDatosClass para acceder al la base docentes.
         Dim objBaseDatos As New BaseDatosClass
-
+     
         'Instancio un DataTable
         Dim MiDataTable As New DataTable
 
@@ -58,6 +58,9 @@ Public Class DocentesCollection
         Return Me
 
     End Function
+
+
+
 
     Public Sub InsertarDocente(ByVal MiDocente As DocenteClass)
         'Instancio el el Objeto BaseDatosClass para acceder al la base docentes.

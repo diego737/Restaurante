@@ -9,21 +9,30 @@ Public Class CarrerasCollection
         e.NewObject = New CarreraClass()
 
     End Sub
-    'Este método se ejecuta cuando se crea el objeto.
-    'Es el método constructor de la clase.
-    Public Sub New()
-        'Llena la instancia del objeto list con datos provenientes de Clases.
-        Me.TraerCarreras()
 
+    Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
+        Get
+            Return True
+        End Get
+    End Property
+
+    Protected Overrides Function FindCore(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer
+        For Each carrera In Me
+            If prop.GetValue(carrera).Equals(key) Then
+                Return Me.IndexOf(carrera)
+            End If
+        Next
+
+        Return -1
+    End Function
+    Public Sub New()
+        Me.TraerCarreras()
     End Sub
 
+
     Public Function TraerCarreras() As CarrerasCollection
-        'Instancio el el Objeto BaseDatosClass para acceder al la base carreras.
         Dim objBaseDatos As New BaseDatosClass
-
-        'Instancio un DataTable
         Dim MiDataTable As New DataTable
-
         Dim MiCarrera As CarreraClass
 
         objBaseDatos.objTabla = "carreras"
@@ -31,7 +40,6 @@ Public Class CarrerasCollection
 
         For Each dr As DataRow In MiDataTable.Rows
             MiCarrera = New CarreraClass
-
             MiCarrera.id = CInt(dr("Id"))
             MiCarrera.carrera = CStr(dr("carrera"))
 
@@ -54,8 +62,8 @@ Public Class CarrerasCollection
         vSQL.Append("(Carrera)")
         vSQL.Append(" VALUES ")
         vSQL.Append("('" & Micarrera.carrera & "')")
+        Micarrera.id = objBaseDatos.Insertar(vSQL.ToString)
 
-        'Agrego MiHorario en la tabla horarios.
         objBaseDatos.Insertar(vSQL.ToString)
         'Agrego MiCarrera en la colección actual.
         Me.Add(Micarrera)
@@ -66,21 +74,22 @@ Public Class CarrerasCollection
 
     End Sub
 
-    Public Sub EliminarCarrera(ByVal Id As Integer)
+    Public Sub EliminarModulo(ByVal MiCarrera As CarreraClass)
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Carreras"
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Eliminar(MiCarrera.id)
+        If resultado Then
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiCarrera)
 
-        'Lo elimino en de la tabla horarios en la base horarios.
-        objBaseDatos.Eliminar(Id)
-
-        'Elimino MiCarrera con el Id en la colección actual.
-
-        Me.RemoveAt(Id)
-
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+        End If
     End Sub
-
-    Public Sub ActualizarCarrera(ByVal MiCarrera As CarreraClass, ByVal Id As Integer)
+    'Public Sub ActualizarModulo(ByVal MiModulo As ModuloClass)
+    Public Sub ActualizarCarrera(ByVal MiCarrera As CarreraClass)
 
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
@@ -92,17 +101,9 @@ Public Class CarrerasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(Carrera)")
+        vSQL.Append("Carrera='" & MiCarrera.carrera.ToString & "'")
         vSQL.Append(" VALUES ")
-        vSQL.Append("(" & MiCarrera.carrera & "')")
-
-        'Actualizo la tabla horarios con el Id.
-        objBaseDatos.Actualizar(vSQL.ToString, Id)
-
-        'Actualizo la colección.
-        Me.Item(Id).id = MiCarrera.id
-        Me.Item(Id).carrera = MiCarrera.carrera
-
+        ' vSQL.Append("(" & MiCarrera.carrera & "')")
     End Sub
 
 End Class
