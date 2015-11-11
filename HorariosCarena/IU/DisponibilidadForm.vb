@@ -57,13 +57,14 @@
     End Sub
 
     Private Sub DisponibilidadForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ComboBox1.DataSource = docentes_list.TraerDocentes
+
+        ComboBox1.DataSource = docentes_list
         'Debe coincidir con la propiedad que guarda el nombre del docente en DocenteClass.
         '¿Seguro se llama Nombre ?
         ComboBox1.DisplayMember = "Nombre"
         ComboBox1.ValueMember = "Id"
 
-        ComboBox2.DataSource = modulos_list.TraerModulos
+        ComboBox2.DataSource = modulos_list
         ComboBox2.DisplayMember = "Inicio"
         ComboBox2.ValueMember = "Id"
 

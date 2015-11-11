@@ -29,14 +29,13 @@
 
     End Sub
 
-
-
     Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
         MenuForm.MenuStrip1.Enabled = True
         Me.Dispose()
     End Sub
 
     Private Sub llenarForm()
+        'Revisen que esto ha cambiado.
         AsignaturasForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
         AsignaturasForm.TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value.ToString
         AsignaturasForm.TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value.ToString

@@ -59,9 +59,6 @@
         'El miembro de valor es siempre el id.
         ComboBox1.ValueMember = "id"
 
-        'Fuente de datos es la propiedad dias de la colección modulos_list
-        ComboBox2.DataSource = modulos_list.dias
-
         'Al cargar el formulario incializo MiCarrera para tener el Id que necesito modificar o eleminar.
         If operacion_ <> "Alta" Then
             Micarrera.id = CInt(TextBox1.Text)
