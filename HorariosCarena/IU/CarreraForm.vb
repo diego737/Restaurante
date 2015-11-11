@@ -21,9 +21,8 @@
 
     Private Sub Aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Aceptar.Click
 
-        Micarrera.id = CInt(TextBox1.Text)
 
-        Micarrera.carrera = CStr(TextBox2.Text)
+        Micarrera.carrera = TextBox2.Text
 
 
 

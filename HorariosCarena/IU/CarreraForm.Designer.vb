@@ -81,9 +81,10 @@ Partial Class CarreraForm
         '
         'TextBox1
         '
+        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(151, 45)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(140, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(49, 20)
         Me.TextBox1.TabIndex = 10
         '
         'TextBox2
