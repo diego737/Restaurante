@@ -28,7 +28,8 @@
         Select Case operacion_
             Case "Alta"
                 'Si falta seleccionar algún dato en los combos termina sin cargar.
-                If ComboBox1.SelectedIndex = -1 Then Exit Sub
+                'If ComboBox1.SelectedIndex = -1 Then Exit Sub
+                If String.IsNullOrEmpty(TextBox2.Text.Trim) Then Exit Sub
 
 
                 carreras_list.InsertarCarrera(Micarrera)
