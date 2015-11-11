@@ -146,10 +146,10 @@ Public Class AsignaturasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("',Fin='" & Miasignatura.Asignados.ToString & "'")
-        vSQL.Append("IdDia='" & Miasignatura.IdCarrera.ToString & "'")
-        vSQL.Append(",Inicio='" & Miasignatura.IdDocente.ToString & "'")
-        vSQL.Append("',Fin='" & Miasignatura.Modulos.ToString & "'")
+        vSQL.Append("Asignados='" & Miasignatura.Asignados.ToString & "'")
+        vSQL.Append(",IdCarrera='" & Miasignatura.IdCarrera.ToString & "'")
+        vSQL.Append(",IdDocente='" & Miasignatura.IdDocente.ToString & "'")
+        vSQL.Append(",Modulos='" & Miasignatura.Modulos.ToString & "'")
 
         Dim resultado As Boolean
         resultado = objBaseDatos.Actualizar(vSQL.ToString, Miasignatura.Id)
