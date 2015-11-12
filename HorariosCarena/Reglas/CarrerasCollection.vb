@@ -88,6 +88,7 @@ Public Class CarrerasCollection
             Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
         End If
     End Sub
+
     'Public Sub ActualizarModulo(ByVal MiModulo As ModuloClass)
     Public Sub ActualizarCarrera(ByVal MiCarrera As CarreraClass)
 

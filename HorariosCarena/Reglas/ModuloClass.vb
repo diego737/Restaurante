@@ -74,4 +74,5 @@
             Return dia_ + " " + Inicio_
         End Get
     End Property
+
 End Class
