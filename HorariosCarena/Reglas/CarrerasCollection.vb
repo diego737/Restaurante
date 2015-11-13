@@ -35,7 +35,7 @@ Public Class CarrerasCollection
         Dim MiDataTable As New DataTable
         Dim MiCarrera As CarreraClass
 
-        objBaseDatos.objTabla = "carreras"
+        objBaseDatos.objTabla = "Carreras"
         MiDataTable = objBaseDatos.Consultar
 
         For Each dr As DataRow In MiDataTable.Rows
@@ -59,7 +59,7 @@ Public Class CarrerasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("(Carrera)")
+        vSQL.Append("(carrera)")
         vSQL.Append(" VALUES ")
         vSQL.Append("('" & Micarrera.carrera & "')")
         Micarrera.id = objBaseDatos.Insertar(vSQL.ToString)
@@ -86,6 +86,8 @@ Public Class CarrerasCollection
 
             'Sets an PropertyDescriptor to the specific property Id.
             Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
+            Me.RemoveAt(Me.FindCore(myProperty, MiCarrera.id))
         End If
     End Sub
 
@@ -94,7 +96,7 @@ Public Class CarrerasCollection
 
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
-        objBaseDatos.objTabla = "Carrera"
+        objBaseDatos.objTabla = "Carreras"
 
         'Actualizo la tabla horarios con el Id.
         'CORREGIR objBaseDatos.Actualizar(MiCarrera, Id)
@@ -102,8 +104,8 @@ Public Class CarrerasCollection
         Dim vSQL As New StringBuilder
         Dim vResultado As Boolean = False
 
-        vSQL.Append("Carrera='" & MiCarrera.carrera.ToString & "'")
-        vSQL.Append(" VALUES ")
+        vSQL.Append("Carrera='" & MiCarrera.carrera & "'")
+
         ' vSQL.Append("(" & MiCarrera.carrera & "')")
 
 
