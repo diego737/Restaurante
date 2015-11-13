@@ -35,12 +35,26 @@
     End Sub
 
     Private Sub llenarForm()
+
+        AsignaturasForm.MiAsignatura.Id = CInt(DataGridView1.CurrentRow.Cells(0).Value)
+        AsignaturasForm.MiAsignatura.Asignados = CInt(DataGridView1.CurrentRow.Cells(1).Value.ToString)
+        AsignaturasForm.MiAsignatura.IdCarrera = CInt(DataGridView1.CurrentRow.Cells(2).Value.ToString)
+        AsignaturasForm.MiAsignatura.IdDocente = CInt(DataGridView1.CurrentRow.Cells(3).Value.ToString)
+        AsignaturasForm.MiAsignatura.Modulos = CInt(DataGridView1.CurrentRow.Cells(4).Value.ToString)
+
         'Revisen que esto ha cambiado.
-        AsignaturasForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
-        AsignaturasForm.TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value.ToString
-        AsignaturasForm.TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value.ToString
-        AsignaturasForm.TextBox4.Text = DataGridView1.CurrentRow.Cells(3).Value.ToString
-        AsignaturasForm.TextBox5.Text = DataGridView1.CurrentRow.Cells(4).Value.ToString
+        '    AsignaturasForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
+        '    AsignaturasForm.TextBox2.Text = DataGridView1.CurrentRow.Cells(1).Value.ToString
+        '    AsignaturasForm.TextBox3.Text = DataGridView1.CurrentRow.Cells(2).Value.ToString
+        '    AsignaturasForm.TextBox4.Text = DataGridView1.CurrentRow.Cells(3).Value.ToString
+        '    AsignaturasForm.TextBox5.Text = DataGridView1.CurrentRow.Cells(4).Value.ToString
+    End Sub
+
+    Private Sub AsignaturasGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+
+        MenuForm.MenuStrip1.Enabled = True
+        Me.Dispose()
+
     End Sub
 
     Private Sub AsignaturasGrid_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
