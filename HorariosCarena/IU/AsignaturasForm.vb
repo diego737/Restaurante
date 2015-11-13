@@ -25,12 +25,12 @@
         'If TextBox4.Text = "" Then Exit Sub
         'If TextBox5.Text = "" Then Exit Sub
 
-        MiAsignatura.Asignados = CInt(TextBox2.Text)
-        MiAsignatura.IdCarrera = CInt(ComboBox1.SelectedIndex.ToString)
-        MiAsignatura.IdDocente = CInt(ComboBox2.SelectedIndex.ToString)
-        MiAsignatura.Modulos = CInt(TextBox5.Text)
-        MiAsignatura.Curso = CInt(TextBox6.Text)
-        MiAsignatura.Descripcion = CStr(TextBox7.Text)
+        'MiAsignatura.Asignados = CInt(TextBox2.Text)
+        MiAsignatura.IdCarrera = ComboBox1.SelectedIndex
+        MiAsignatura.IdDocente = ComboBox2.SelectedIndex
+        'MiAsignatura.Modulos = CInt(TextBox5.Text)
+        'MiAsignatura.Curso = CInt(TextBox6.Text)
+        'MiAsignatura.Descripcion = CStr(TextBox7.Text)
 
         Select Case operacion_
             Case "Agregar"
@@ -139,20 +139,27 @@
 
         'Fuente de datos modulos_list.
         ComboBox1.DataSource = carreras_list
+        ComboBox1.DisplayMember = "Carrera"
+        ComboBox1.ValueMember = "Id"
         ComboBox2.DataSource = docentes_list
-
-        If operacion_ <> "Alta" Then
+        ComboBox2.DisplayMember = "Nombres"
+        ComboBox2.ValueMember = "Id"
+        If operacion_ <> "Agregar" Then
             'Esto está mal, lo que se inicializa son los controles no el objeto asignaturas.
             TextBox1.Text = MiAsignatura.Id.ToString
-            'ComboBox1.SelectedItem = MiAsignatura.IdCarrera
-            'ComboBox2.SelectedItem = MiModulo.Inicio
+            ComboBox1.SelectedItem = MiAsignatura.IdCarrera
+            ComboBox2.SelectedItem = MiAsignatura.IdDocente
 
 
             MiAsignatura.Id = CInt(TextBox1.Text)
             MiAsignatura.Asignados = CInt(TextBox2.SelectedText)
-            MiAsignatura.IdCarrera = CInt(ComboBox1.SelectedText)
-            MiAsignatura.IdDocente = CInt(ComboBox2.SelectedText)
+            MiAsignatura.IdCarrera = ComboBox1.SelectedIndex
+            MiAsignatura.IdDocente = ComboBox2.SelectedIndex
             MiAsignatura.Modulos = CInt(TextBox5.SelectedText)
+            MiAsignatura.Curso = CInt(TextBox6.SelectedText)
+            MiAsignatura.Descripcion = CStr(TextBox7.SelectedText)
+
+
 
         End If
 
