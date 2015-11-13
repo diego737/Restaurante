@@ -42,14 +42,14 @@
 
     End Sub
 
-    Private Sub HorariosGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub CarrerasGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         MenuForm.MenuStrip1.Enabled = True
         Me.Dispose()
     End Sub
 
-    Private Sub HorariosGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Private Sub CarrerasGrid_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        DataGridView1.DataSource = horarios_list
+        DataGridView1.DataSource = carreras_list
 
     End Sub
 

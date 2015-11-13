@@ -21,10 +21,7 @@
 
     Private Sub Aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Aceptar.Click
 
-
         Micarrera.carrera = TextBox2.Text
-
-
 
         Select Case operacion_
             Case "Alta"
@@ -40,7 +37,7 @@
 
             Case "Modifica"
                 carreras_list.ActualizarCarrera(Micarrera)
-                HorariosGrid.DataGridView1.Refresh()
+                CarrerasGrid.DataGridView1.Refresh()
 
         End Select
 
