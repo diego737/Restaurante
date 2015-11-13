@@ -2,8 +2,8 @@
 
     Dim Id_ As Integer
     Dim IdCarrera_ As Integer
-    'Dim Curso_ As Integer
-    'Dim Descripcion_ As String
+    Dim Curso_ As Integer
+    Dim Descripcion_ As String
     Dim Modulos_ As Integer
     Dim Asignados_ As Integer
     Dim IdDocente_ As Integer
@@ -25,14 +25,14 @@
             IdCarrera_ = value
         End Set
     End Property
-    'Public Property Curso() As Integer
-    '   Get
-    '      Return Curso_
-    ' End Get
-    'Set(ByVal value As Integer)
-    '   Curso_ = value
-    'End Set
-    'End Property
+    Public Property Curso() As Integer
+        Get
+            Return Curso_
+        End Get
+        Set(ByVal value As Integer)
+            Curso_ = value
+        End Set
+    End Property
 
     Public Property Modulos() As Integer
         Get
@@ -58,6 +58,15 @@
         End Get
         Set(ByVal value As Integer)
             IdDocente_ = value
+        End Set
+    End Property
+
+    Public Property Descripcion() As String
+        Get
+            Return Descripcion_
+        End Get
+        Set(ByVal value As String)
+            Descripcion_ = value
         End Set
     End Property
 
