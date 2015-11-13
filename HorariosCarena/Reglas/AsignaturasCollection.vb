@@ -50,6 +50,8 @@ Public Class AsignaturasCollection
             Miasignatura.IdCarrera = CInt(dr("IdCarrera"))
             Miasignatura.IdDocente = CInt(dr("IdDocente"))
             Miasignatura.Modulos = CInt(dr("Modulos"))
+            Miasignatura.Curso = CInt(dr("Curso"))
+            Miasignatura.Descripcion = CStr(dr("Descripcion"))
 
             Me.Add(Miasignatura)
         Next
@@ -73,12 +75,15 @@ Public Class AsignaturasCollection
         vSQL.Append(",IdCarrera")
         vSQL.Append(",IdDocente")
         vSQL.Append(",Modulos)")
+        vSQL.Append(",Curso)")
+        vSQL.Append(",Descripcion)")
         vSQL.Append(" VALUES ")
         vSQL.Append("('" & Miasignatura.Asignados & "'")
         vSQL.Append(",'" & Miasignatura.IdCarrera & "'")
         vSQL.Append(",'" & Miasignatura.IdDocente & "'")
         vSQL.Append(",'" & Miasignatura.Modulos & "')")
-
+        vSQL.Append(",'" & Miasignatura.Curso & "')")
+        vSQL.Append(",'" & Miasignatura.Descripcion & "')")
 
         Miasignatura.Id = objBaseDatos.Insertar(vSQL.ToString)
 
@@ -150,6 +155,8 @@ Public Class AsignaturasCollection
         vSQL.Append(",IdCarrera='" & Miasignatura.IdCarrera.ToString & "'")
         vSQL.Append(",IdDocente='" & Miasignatura.IdDocente.ToString & "'")
         vSQL.Append(",Modulos='" & Miasignatura.Modulos.ToString & "'")
+        vSQL.Append(",Curso='" & Miasignatura.Curso.ToString & "'")
+        vSQL.Append(",Descripcion='" & Miasignatura.Descripcion.ToString & "'")
 
         Dim resultado As Boolean
         resultado = objBaseDatos.Actualizar(vSQL.ToString, Miasignatura.Id)

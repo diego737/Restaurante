@@ -34,6 +34,10 @@ Partial Class AsignaturasForm
         Me.TextBox3 = New System.Windows.Forms.TextBox
         Me.TextBox4 = New System.Windows.Forms.TextBox
         Me.TextBox5 = New System.Windows.Forms.TextBox
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.Label7 = New System.Windows.Forms.Label
+        Me.TextBox6 = New System.Windows.Forms.TextBox
+        Me.TextBox7 = New System.Windows.Forms.TextBox
         Me.SuspendLayout()
         '
         'Label1
@@ -83,7 +87,7 @@ Partial Class AsignaturasForm
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(44, 230)
+        Me.Button1.Location = New System.Drawing.Point(44, 282)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(93, 33)
         Me.Button1.TabIndex = 5
@@ -92,7 +96,7 @@ Partial Class AsignaturasForm
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(174, 230)
+        Me.Button2.Location = New System.Drawing.Point(174, 282)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(93, 33)
         Me.Button2.TabIndex = 6
@@ -135,11 +139,47 @@ Partial Class AsignaturasForm
         Me.TextBox5.Size = New System.Drawing.Size(123, 20)
         Me.TextBox5.TabIndex = 11
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(41, 195)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(34, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Curso"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(41, 231)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(63, 13)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "Descripcion"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(144, 192)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(123, 20)
+        Me.TextBox6.TabIndex = 14
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(144, 228)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(123, 20)
+        Me.TextBox7.TabIndex = 15
+        '
         'AsignaturasForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(305, 300)
+        Me.ClientSize = New System.Drawing.Size(305, 327)
+        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.TextBox3)
@@ -171,4 +211,8 @@ Partial Class AsignaturasForm
     Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
 End Class

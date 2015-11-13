@@ -41,6 +41,8 @@
         AsignaturasForm.MiAsignatura.IdCarrera = CInt(DataGridView1.CurrentRow.Cells(2).Value.ToString)
         AsignaturasForm.MiAsignatura.IdDocente = CInt(DataGridView1.CurrentRow.Cells(3).Value.ToString)
         AsignaturasForm.MiAsignatura.Modulos = CInt(DataGridView1.CurrentRow.Cells(4).Value.ToString)
+        AsignaturasForm.MiAsignatura.Curso = CInt(DataGridView1.CurrentRow.Cells(5).Value.ToString)
+        AsignaturasForm.MiAsignatura.Descripcion = CStr(DataGridView1.CurrentRow.Cells(6).Value.ToString)
 
         'Revisen que esto ha cambiado.
         '    AsignaturasForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString

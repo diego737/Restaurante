@@ -29,6 +29,8 @@
         MiAsignatura.IdCarrera = CInt(TextBox3.Text)
         MiAsignatura.IdDocente = CInt(TextBox4.Text)
         MiAsignatura.Modulos = CInt(TextBox5.Text)
+        MiAsignatura.Curso = CInt(TextBox6.Text)
+        MiAsignatura.Descripcion = CStr(TextBox7.Text)
 
         Select Case operacion_
             Case "Agregar"
@@ -45,6 +47,10 @@
 
                 If TextBox5.Text Is Nothing Then Exit Sub
 
+                If TextBox6.Text Is Nothing Then Exit Sub
+
+                If TextBox7.Text Is Nothing Then Exit Sub
+
                 'asignaturas_list.Add(MiAsignatura)
                 asignaturas_list.InsertarAsignatura(MiAsignatura)
 
@@ -56,6 +62,7 @@
 
                 asignaturas_list.ActualizarAsignatura(MiAsignatura)
                 AsignaturasGrid.DataGridView1.Refresh()
+
         End Select
 
         Me.Close()
@@ -105,9 +112,29 @@
         End If
     End Sub
 
-    Private Sub AsignaturasForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub TextBox6_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox6.KeyPress
 
-        'TextBox1.datasource = asignaturas_list
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+
+        End If
+
+    End Sub
+
+    Private Sub TextBox7_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox7.KeyPress
+
+        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+
+        End If
+
+    End Sub
+
+    Private Sub AsignaturasForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         If operacion_ <> "Alta" Then
             'Esto está mal, lo que se inicializa son los controles no el objeto asignaturas.
@@ -120,4 +147,6 @@
         End If
 
     End Sub
+
+
 End Class
