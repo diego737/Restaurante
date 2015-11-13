@@ -55,6 +55,9 @@
 
         'Al cargar el formulario incializo MiCarrera para tener el Id que necesito modificar o eleminar.
         If operacion_ <> "Alta" Then
+            TextBox1.Text = Micarrera.id.ToString
+            TextBox2.Text = Micarrera.carrera.ToString
+
             Micarrera.id = CInt(TextBox1.Text)
             Micarrera.carrera = CStr(TextBox2.Text)
 

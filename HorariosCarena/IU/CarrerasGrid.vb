@@ -9,7 +9,6 @@
 
     Private Sub Modificar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Modificar.Click
 
-
         If carreras_list.Count = 0 Then Exit Sub
 
         CarreraForm.operacion = "Modifica"
@@ -52,6 +51,4 @@
         DataGridView1.DataSource = carreras_list
 
     End Sub
-
-    
 End Class
