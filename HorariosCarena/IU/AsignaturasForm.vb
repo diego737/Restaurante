@@ -142,7 +142,7 @@
         ComboBox1.DisplayMember = "Carrera"
         ComboBox1.ValueMember = "Id"
         ComboBox2.DataSource = docentes_list
-        ComboBox2.DisplayMember = "Nombres"
+        ComboBox2.DisplayMember = "NomYApe"
         ComboBox2.ValueMember = "Id"
         If operacion_ <> "Agregar" Then
             'Esto está mal, lo que se inicializa son los controles no el objeto asignaturas.

@@ -70,4 +70,10 @@
         End Set
     End Property
 
+    'Public ReadOnly Property NomYApe() As String
+    '    Get
+    '        Return nombres_& " " &apellidos_ 
+    '    End Get
+    'End Property
+
 End Class
