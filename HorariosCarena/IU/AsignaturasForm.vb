@@ -26,8 +26,8 @@
         'If TextBox5.Text = "" Then Exit Sub
 
         MiAsignatura.Asignados = CInt(TextBox2.Text)
-        MiAsignatura.IdCarrera = CInt(TextBox3.Text)
-        MiAsignatura.IdDocente = CInt(TextBox4.Text)
+        MiAsignatura.IdCarrera = CInt(ComboBox1.SelectedIndex.ToString)
+        MiAsignatura.IdDocente = CInt(ComboBox2.SelectedIndex.ToString)
         MiAsignatura.Modulos = CInt(TextBox5.Text)
         MiAsignatura.Curso = CInt(TextBox6.Text)
         MiAsignatura.Descripcion = CStr(TextBox7.Text)
@@ -41,9 +41,9 @@
                 'Hacerlo en los otros.
                 If String.IsNullOrEmpty(TextBox2.Text.Trim) Then Exit Sub
 
-                If TextBox3.Text Is Nothing Then Exit Sub
+                If ComboBox1.SelectedIndex = -1 Then Exit Sub
 
-                If TextBox4.Text Is Nothing Then Exit Sub
+                If ComboBox2.SelectedIndex = -1 Then Exit Sub
 
                 If TextBox5.Text Is Nothing Then Exit Sub
 
@@ -79,28 +79,29 @@
         Else
             e.Handled = True
 
-        End If
-    End Sub
-
-    Private Sub TextBox3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox3.KeyPress
-
-        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
 
         End If
     End Sub
 
-    Private Sub TextBox4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox4.KeyPress
+    'Private Sub TextBox3_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
 
-        If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
+    '    If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+    '        e.Handled = False
+    '    Else
+    '        e.Handled = True
 
-        End If
-    End Sub
+    '    End If
+    'End Sub
+
+    'Private Sub TextBox4_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+
+    '    If Char.IsNumber(e.KeyChar) Or Char.IsControl(e.KeyChar) Then
+    '        e.Handled = False
+    '    Else
+    '        e.Handled = True
+
+    '    End If
+    'End Sub
 
     Private Sub TextBox5_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox5.KeyPress
 
@@ -136,13 +137,22 @@
 
     Private Sub AsignaturasForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        'Fuente de datos modulos_list.
+        ComboBox1.DataSource = carreras_list
+        ComboBox2.DataSource = docentes_list
+
         If operacion_ <> "Alta" Then
             'Esto está mal, lo que se inicializa son los controles no el objeto asignaturas.
-            'MiAsignatura.Id = CInt(TextBox1.Text)
-            'MiAsignatura.Asignados = CInt(TextBox2.SelectedText)
-            'MiAsignatura.IdCarrera = CInt(TextBox3.SelectedText)
-            'MiAsignatura.IdDocente = CInt(TextBox4.SelectedText)
-            'MiAsignatura.Modulos = CInt(TextBox5.SelectedText)
+            TextBox1.Text = MiAsignatura.Id.ToString
+            'ComboBox1.SelectedItem = MiAsignatura.IdCarrera
+            'ComboBox2.SelectedItem = MiModulo.Inicio
+
+
+            MiAsignatura.Id = CInt(TextBox1.Text)
+            MiAsignatura.Asignados = CInt(TextBox2.SelectedText)
+            MiAsignatura.IdCarrera = CInt(ComboBox1.SelectedText)
+            MiAsignatura.IdDocente = CInt(ComboBox2.SelectedText)
+            MiAsignatura.Modulos = CInt(TextBox5.SelectedText)
 
         End If
 
