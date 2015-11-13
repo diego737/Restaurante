@@ -42,6 +42,7 @@ Public Class DisponibilidadesCollection
         For Each dr As DataRow In MiDataTable.Rows
             MiDisponibilidad = New DisponibilidadClass
 
+            MiDisponibilidad.Id = CInt(dr("Id"))
             MiDisponibilidad.IdDocente = CInt(dr("IdDocente"))
             MiDisponibilidad.IdModulo = CInt(dr("IdModulo"))
 

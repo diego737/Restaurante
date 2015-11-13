@@ -34,11 +34,10 @@
         Me.Dispose()
     End Sub
     Private Sub llenarForm1()
-        DisponibilidadForm.TextBox1.Text = DataGridView1.CurrentRow.Cells(0).Value.ToString
-        DisponibilidadForm.ComboBox1.SelectedItem = DataGridView1.CurrentRow.Cells(1).Value
-        DisponibilidadForm.ComboBox1.SelectedItem = DataGridView1.CurrentRow.Cells(2).Value
-        DisponibilidadForm.ComboBox2.SelectedItem = DataGridView1.CurrentRow.Cells(3).Value
-
+        DisponibilidadForm.MiDisponibilidad.Id = CInt(DataGridView1.CurrentRow.Cells(0).Value)
+        DisponibilidadForm.MiDisponibilidad.IdDocente = CInt(DataGridView1.CurrentRow.Cells(1).Value)
+        DisponibilidadForm.MiDisponibilidad.IdModulo = CInt(DataGridView1.CurrentRow.Cells(2).Value)
+        
     End Sub
 
     Private Sub DisponibilidadGrid_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing

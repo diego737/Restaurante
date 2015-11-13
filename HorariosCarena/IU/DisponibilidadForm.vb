@@ -1,7 +1,7 @@
 ﻿Public Class DisponibilidadForm
 
     Dim operacion_ As String
-    Dim MiDisponibilidad As New DisponibilidadClass
+    Public MiDisponibilidad As New DisponibilidadClass
 
     ''' <summary>
     ''' 
