@@ -41,4 +41,9 @@
         End Set
     End Property
 
+    Public ReadOnly Property NomyApe() As String
+        Get
+            Return Nombres_ & " " & Apellidos_
+        End Get
+    End Property
 End Class
