@@ -64,13 +64,13 @@ Public Class CarrerasCollection
         vSQL.Append("('" & Micarrera.carrera & "')")
         Micarrera.id = objBaseDatos.Insertar(vSQL.ToString)
 
-        objBaseDatos.Insertar(vSQL.ToString)
-        'Agrego MiCarrera en la colección actual.
-        Me.Add(Micarrera)
+        If Micarrera.id > 0 Then
 
-        'vResultado = True
-
-        ''Return vResultado
+            Me.Add(Micarrera)
+        Else
+            MessageBox.Show("No fue posible agregar el registro.")
+        End If
+       
 
     End Sub
 
@@ -105,6 +105,22 @@ Public Class CarrerasCollection
         vSQL.Append("Carrera='" & MiCarrera.carrera.ToString & "'")
         vSQL.Append(" VALUES ")
         ' vSQL.Append("(" & MiCarrera.carrera & "')")
+
+
+        Dim resultado As Boolean
+        resultado = objBaseDatos.Actualizar(vSQL.ToString, MiCarrera.id)
+
+        If resultado Then
+            ' Creates a new collection and assign it the properties for modulo.
+            Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiCarrera)
+
+            'Sets an PropertyDescriptor to the specific property Id.
+            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+
+            Me.Items.Item(Me.FindCore(myProperty, MiCarrera.id)) = MiCarrera
+        Else
+            MessageBox.Show("No fue posible modificar el registro.")
+        End If
     End Sub
 
 End Class

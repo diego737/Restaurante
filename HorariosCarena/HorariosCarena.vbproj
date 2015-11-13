@@ -368,6 +368,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\DataSources\AsignaturasCollection.datasource" />
+    <None Include="My Project\DataSources\CarrerasCollection.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utiles\" />
