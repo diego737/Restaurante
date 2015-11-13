@@ -367,6 +367,7 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\AsignaturasCollection.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utiles\" />

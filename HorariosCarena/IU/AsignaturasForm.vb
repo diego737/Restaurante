@@ -107,6 +107,8 @@
 
     Private Sub AsignaturasForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        'TextBox1.datasource = asignaturas_list
+
         If operacion_ <> "Alta" Then
             'Esto está mal, lo que se inicializa son los controles no el objeto asignaturas.
             'MiAsignatura.Id = CInt(TextBox1.Text)

@@ -33,6 +33,11 @@ Partial Class AsignaturasGrid
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.AsignaturasCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuAsig.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,13 +49,15 @@ Partial Class AsignaturasGrid
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 126)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
+        Me.DataGridView1.DataSource = Me.AsignaturasCollectionBindingSource
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 102)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(771, 326)
+        Me.DataGridView1.Size = New System.Drawing.Size(578, 265)
         Me.DataGridView1.TabIndex = 0
         '
         'MenuAsig
@@ -58,9 +65,9 @@ Partial Class AsignaturasGrid
         Me.MenuAsig.BackColor = System.Drawing.Color.Silver
         Me.MenuAsig.ImageScalingSize = New System.Drawing.Size(48, 48)
         Me.MenuAsig.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Agregar, Me.Modificar, Me.Eliminar, Me.Salir})
-        Me.MenuAsig.Location = New System.Drawing.Point(0, 62)
+        Me.MenuAsig.Location = New System.Drawing.Point(0, 50)
         Me.MenuAsig.Name = "MenuAsig"
-        Me.MenuAsig.Size = New System.Drawing.Size(771, 55)
+        Me.MenuAsig.Size = New System.Drawing.Size(578, 55)
         Me.MenuAsig.TabIndex = 6
         Me.MenuAsig.Text = "ToolStrip1"
         '
@@ -69,7 +76,7 @@ Partial Class AsignaturasGrid
         Me.Agregar.Image = Global.WindowsApplication1.My.Resources.Resources.Agregar48
         Me.Agregar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Agregar.Name = "Agregar"
-        Me.Agregar.Size = New System.Drawing.Size(115, 52)
+        Me.Agregar.Size = New System.Drawing.Size(101, 52)
         Me.Agregar.Text = "Agregar"
         '
         'Modificar
@@ -77,7 +84,7 @@ Partial Class AsignaturasGrid
         Me.Modificar.Image = Global.WindowsApplication1.My.Resources.Resources.Editar48
         Me.Modificar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Modificar.Name = "Modificar"
-        Me.Modificar.Size = New System.Drawing.Size(125, 52)
+        Me.Modificar.Size = New System.Drawing.Size(110, 52)
         Me.Modificar.Text = "Modificar"
         '
         'Eliminar
@@ -85,7 +92,7 @@ Partial Class AsignaturasGrid
         Me.Eliminar.Image = Global.WindowsApplication1.My.Resources.Resources.Borrar48b
         Me.Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(115, 52)
+        Me.Eliminar.Size = New System.Drawing.Size(102, 52)
         Me.Eliminar.Text = "Eliminar"
         '
         'Salir
@@ -94,16 +101,15 @@ Partial Class AsignaturasGrid
         Me.Salir.Image = Global.WindowsApplication1.My.Resources.Resources.Salir48
         Me.Salir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Salir.Name = "Salir"
-        Me.Salir.Size = New System.Drawing.Size(90, 52)
+        Me.Salir.Size = New System.Drawing.Size(81, 52)
         Me.Salir.Text = "Salir"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Asignatura48
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 4)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 63)
+        Me.PictureBox1.Size = New System.Drawing.Size(48, 51)
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
@@ -112,10 +118,9 @@ Partial Class AsignaturasGrid
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(76, 7)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(57, 6)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(197, 39)
+        Me.Label1.Size = New System.Drawing.Size(158, 31)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Asignaturas"
         '
@@ -126,20 +131,57 @@ Partial Class AsignaturasGrid
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(771, 62)
+        Me.Panel1.Size = New System.Drawing.Size(578, 50)
         Me.Panel1.TabIndex = 7
+        '
+        'AsignaturasCollectionBindingSource
+        '
+        Me.AsignaturasCollectionBindingSource.DataSource = GetType(WindowsApplication1.AsignaturasCollection)
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "IdCarrera"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "IdCarrera"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Modulos"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Modulos"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Asignados"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Asignados"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "IdDocente"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "IdDocente"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'AsignaturasGrid
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(771, 453)
+        Me.ClientSize = New System.Drawing.Size(578, 368)
         Me.Controls.Add(Me.MenuAsig)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "AsignaturasGrid"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AsignaturasGrid"
@@ -168,5 +210,10 @@ Partial Class AsignaturasGrid
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents AsignaturasCollectionBindingSource As System.Windows.Forms.BindingSource
 End Class
