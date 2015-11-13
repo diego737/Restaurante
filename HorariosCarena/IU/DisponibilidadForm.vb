@@ -61,7 +61,7 @@
         ComboBox1.DataSource = docentes_list
         'Debe coincidir con la propiedad que guarda el nombre del docente en DocenteClass.
         '¿Seguro se llama Nombre ?
-        ComboBox1.DisplayMember = "Nombre"
+        ComboBox1.DisplayMember = "Nombres"
         ComboBox1.ValueMember = "Id"
 
         ComboBox2.DataSource = modulos_list

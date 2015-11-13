@@ -65,11 +65,11 @@ Public Class DisponibilidadesCollection
         Dim vResultado As Boolean = False
 
 
-        vSQL.Append(",IdDocente")
-        vSQL.Append(",IdModulo")
+        vSQL.Append("(IdDocente")
+        vSQL.Append(",IdModulo)")
         vSQL.Append(" VALUES ")
         vSQL.Append("('" & MiDisponibilidad.IdDocente & "'")
-        vSQL.Append(",'" & MiDisponibilidad.IdModulo & "'")
+        vSQL.Append(",'" & MiDisponibilidad.IdModulo & "')")
 
         'Agrego MiHorario en la tabla horarios.
         MiDisponibilidad.Id = objBaseDatos.Insertar(vSQL.ToString)
@@ -115,7 +115,7 @@ Public Class DisponibilidadesCollection
         Dim vResultado As Boolean = False
 
 
-        vSQL.Append(",IdDocente='" & MiDisponibilidad.IdDocente.ToString)
+        vSQL.Append(",IdDocente='" & MiDisponibilidad.IdDocente.ToString & "'")
         vSQL.Append("',IdModulo='" & MiDisponibilidad.IdModulo.ToString & "'")
 
         Dim resultado As Boolean
