@@ -30,11 +30,11 @@ Partial Class CarrerasGrid
         Me.Eliminar = New System.Windows.Forms.ToolStripButton
         Me.Salir = New System.Windows.Forms.ToolStripLabel
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Label1 = New System.Windows.Forms.Label
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.CarrerasCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.CarrerasCollectionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -52,12 +52,12 @@ Partial Class CarrerasGrid
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.DataGridView1.DataSource = Me.CarrerasCollectionBindingSource
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 105)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(651, 449)
+        Me.DataGridView1.Size = New System.Drawing.Size(651, 344)
         Me.DataGridView1.TabIndex = 0
         '
         'ToolStrip1
@@ -113,15 +113,6 @@ Partial Class CarrerasGrid
         Me.Panel1.Size = New System.Drawing.Size(651, 50)
         Me.Panel1.TabIndex = 2
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Carrera48
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(48, 48)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -131,6 +122,19 @@ Partial Class CarrerasGrid
         Me.Label1.Size = New System.Drawing.Size(120, 31)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Carreras"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.Carrera48
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(48, 48)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'CarrerasCollectionBindingSource
+        '
+        Me.CarrerasCollectionBindingSource.DataSource = GetType(WindowsApplication1.CarrerasCollection)
         '
         'DataGridViewTextBoxColumn7
         '
@@ -142,13 +146,10 @@ Partial Class CarrerasGrid
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "carrera"
+        Me.DataGridViewTextBoxColumn8.FillWeight = 200.0!
         Me.DataGridViewTextBoxColumn8.HeaderText = "carrera"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'CarrerasCollectionBindingSource
-        '
-        Me.CarrerasCollectionBindingSource.DataSource = GetType(WindowsApplication1.CarrerasCollection)
         '
         'CarrerasGrid
         '
@@ -156,9 +157,9 @@ Partial Class CarrerasGrid
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.carreras_grid2
         Me.ClientSize = New System.Drawing.Size(651, 449)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Name = "CarrerasGrid"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CarrerasGrid"
@@ -188,10 +189,10 @@ Partial Class CarrerasGrid
     Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Salir As System.Windows.Forms.ToolStripLabel
-    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CarrerasCollectionBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents CarrerasCollectionBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
