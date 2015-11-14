@@ -29,7 +29,6 @@
                 'If ComboBox1.SelectedIndex = -1 Then Exit Sub
                 If String.IsNullOrEmpty(TextBox2.Text.Trim) Then Exit Sub
 
-
                 carreras_list.InsertarCarrera(Micarrera)
 
             Case "Elimina"
@@ -51,15 +50,13 @@
 
     Private Sub CarreraForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-
-
         'Al cargar el formulario incializo MiCarrera para tener el Id que necesito modificar o eleminar.
         If operacion_ <> "Alta" Then
             TextBox1.Text = Micarrera.id.ToString
             TextBox2.Text = Micarrera.carrera.ToString
 
-            Micarrera.id = CInt(TextBox1.Text)
-            Micarrera.carrera = CStr(TextBox2.Text)
+            'Micarrera.id = CInt(TextBox1.Text)
+            'Micarrera.carrera = CStr(TextBox2.Text)
 
         End If
 

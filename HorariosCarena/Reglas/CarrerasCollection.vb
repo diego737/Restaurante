@@ -29,7 +29,6 @@ Public Class CarrerasCollection
         Me.TraerCarreras()
     End Sub
 
-
     Public Function TraerCarreras() As CarrerasCollection
         Dim objBaseDatos As New BaseDatosClass
         Dim MiDataTable As New DataTable
@@ -80,34 +79,29 @@ Public Class CarrerasCollection
         objBaseDatos.objTabla = "Carreras"
         Dim resultado As Boolean
         resultado = objBaseDatos.Eliminar(MiCarrera.id)
+
         If resultado Then
             ' Creates a new collection and assign it the properties for modulo.
             Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiCarrera)
 
             'Sets an PropertyDescriptor to the specific property Id.
-            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            Dim myProperty As PropertyDescriptor = properties.Find("id", False)
 
             Me.RemoveAt(Me.FindCore(myProperty, MiCarrera.id))
+        Else
+            MessageBox.Show("No fue posible agregar el registro.")
         End If
     End Sub
 
-    'Public Sub ActualizarModulo(ByVal MiModulo As ModuloClass)
     Public Sub ActualizarCarrera(ByVal MiCarrera As CarreraClass)
 
         'Instancio el el Objeto BaseDatosClass para acceder al la base hporarios.
         Dim objBaseDatos As New BaseDatosClass
         objBaseDatos.objTabla = "Carreras"
 
-        'Actualizo la tabla horarios con el Id.
-        'CORREGIR objBaseDatos.Actualizar(MiCarrera, Id)
-
         Dim vSQL As New StringBuilder
-        Dim vResultado As Boolean = False
 
         vSQL.Append("Carrera='" & MiCarrera.carrera & "'")
-
-        ' vSQL.Append("(" & MiCarrera.carrera & "')")
-
 
         Dim resultado As Boolean
         resultado = objBaseDatos.Actualizar(vSQL.ToString, MiCarrera.id)
@@ -117,7 +111,7 @@ Public Class CarrerasCollection
             Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiCarrera)
 
             'Sets an PropertyDescriptor to the specific property Id.
-            Dim myProperty As PropertyDescriptor = properties.Find("Id", False)
+            Dim myProperty As PropertyDescriptor = properties.Find("id", False)
 
             Me.Items.Item(Me.FindCore(myProperty, MiCarrera.id)) = MiCarrera
         Else

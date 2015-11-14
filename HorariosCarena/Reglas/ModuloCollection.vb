@@ -116,7 +116,6 @@ Public Class ModuloCollection
         objBaseDatos.objTabla = "Modulos"
 
         Dim vSQL As New StringBuilder
-        Dim vResultado As Boolean = False
 
         vSQL.Append("IdDia='" & MiModulo.IdDia.ToString & "'")
         vSQL.Append(",Inicio='" & MiModulo.Inicio.ToString & "'")
