@@ -1,4 +1,5 @@
 ﻿Public Class HorarioClass
+    'En este caso hay una propiedad por cada columna de la tabla horarios.
     Dim Id_ As Integer
     Dim IdCarrera_ As Integer
     Dim IdDia_ As Integer

@@ -37,6 +37,7 @@
 
                 If ComboBox4.SelectedIndex = -1 Then Exit Sub
 
+                'El método InsertarHorario de la colección carga MiHorario.
                 horarios_list.InsertarHorario(MiHorario)
 
             Case "Elimina"
@@ -53,6 +54,7 @@
     End Sub
 
     Private Sub Cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancelar.Click
+        'Cierra el actual formulario.
         Me.Close()
     End Sub
 
@@ -98,4 +100,5 @@
             ComboBox3.SelectedIndex = ComboBox2.SelectedIndex
         End If
     End Sub
+
 End Class

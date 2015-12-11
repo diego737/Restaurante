@@ -5,16 +5,19 @@ Public Class HorariosCollection
     Inherits BindingList(Of HorarioClass)
 
     Protected Overrides Sub OnAddingNew(ByVal e As AddingNewEventArgs)
-
+        'Este método define como se van agregar los elementos a la colección.
         e.NewObject = New HorarioClass()
 
     End Sub
 
+    'Propiedad que habilita la búsqueda en la colección ya que no trae ese método en forma nativa.
     Protected Overrides ReadOnly Property SupportsSearchingCore() As Boolean
         Get
             Return True
         End Get
     End Property
+
+    'Método que busca un ítem dentro de la colección.
     Protected Overrides Function FindCore(ByVal prop As PropertyDescriptor, ByVal key As Object) As Integer
         For Each modulo In Me
             If prop.GetValue(modulo).Equals(key) Then
@@ -41,21 +44,29 @@ Public Class HorariosCollection
 
         Dim Mihorario As HorarioClass
 
+        'Establece la propiedad objTabla que define sobre que tabla
+        'se van a realizar las  operaciones.
         objBaseDatos.objTabla = "horarios"
+        'Ejecuta el método consultar.
         MiDataTable = objBaseDatos.Consultar
 
+        'Recorre cada elemento del DataTable.
         For Each dr As DataRow In MiDataTable.Rows
+            'Crea una instancia de HorarioClass
             Mihorario = New HorarioClass
 
+            'Establece las propiedades de Mihorario a partir del DataTable.
             Mihorario.Id = CInt(dr("Id"))
             Mihorario.IdCarrera = CInt(dr("IdCarrera"))
             Mihorario.IdDia = CInt(dr("IdDia"))
             Mihorario.IdAsignatura = CInt(dr("IdAsignatura"))
             Mihorario.IdModulo = CInt(dr("IdModulo"))
 
+            'Agrega la instancia MiHorario a la actual colección.
             Me.Add(Mihorario)
         Next
 
+        'Retorna la colección.
         Return Me
 
     End Function
@@ -78,7 +89,6 @@ Public Class HorariosCollection
         vSQL.Append(",'" & MiHorario.IdDia & "'")
         vSQL.Append(",'" & MiHorario.IdModulo & "')")
 
-
         'Agrego MiHorario en la tabla horarios.
         MiHorario.Id = objBaseDatos.Insertar(vSQL.ToString)
 
@@ -96,7 +106,6 @@ Public Class HorariosCollection
         Dim resultado As Boolean
         resultado = objBaseDatos.Eliminar(MiHorario.Id)
         If resultado Then
-
 
             'Creates a new collection and assign it the properties for modulo.
             Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
@@ -126,10 +135,13 @@ Public Class HorariosCollection
 
         'Actualizo la tabla horarios con el Id.
         Dim resultado As Boolean
+        'El método actualizar es una función que devuelve True o False
+        'Según como haya resultado la operación sobre la tabla SQL.
         resultado = objBaseDatos.Actualizar(vSQL.ToString, MiHorario.Id)
 
         If resultado Then
-
+            'El código a continuación sirve para localizar el ítem en la lista
+            'en este caso un horario.
             ' Creates a new collection and assign it the properties for modulo.
             Dim properties As PropertyDescriptorCollection = TypeDescriptor.GetProperties(MiHorario)
 
